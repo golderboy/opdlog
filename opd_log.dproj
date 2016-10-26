@@ -1,0 +1,274 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{EAA94F12-014C-4F94-8AAB-FED27D8A4213}</ProjectGuid>
+			<MainSource>opd_log.dpr</MainSource>
+			<ProjectVersion>12.2</ProjectVersion>
+			<Base>True</Base>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<Platform>Win32</Platform>
+			<AppType>Application</AppType>
+			<FrameworkType>VCL</FrameworkType>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_UsePackage>vclx;vcl;VclSmp;rtl;vclimg;svnui;svn;bdertl;TeeUI;TeeDB;Tee;vclactnband;vcldb;dbrtl;vcldbx;vcltouch;xmlrtl;dsnap;dsnapcon;vclib;ibxpress;adortl;IndyCore;IndySystem;IndyProtocols;inet;intrawebdb_110_150;Intraweb_110_150;vclie;websnap;webdsnap;inetdb;inetdbbde;inetdbxpress;soaprtl;vclribbon;dbexpress;DbxCommonDriver;DataSnapIndy10ServerTransport;DataSnapProviderClient;DbxClientDriver;DataSnapClient;dbxcds;DataSnapServer;AzureCloud;DBXInterBaseDriver;DBXMySQLDriver;DBXFirebirdDriver;DBXSybaseASEDriver;DBXSybaseASADriver;DBXOracleDriver;DBXMSSQLDriver;DBXInformixDriver;DBXDb2Driver;dacvcl150;dac150;mydacvcl150;mydac150;mysqlmon150;ZComponent150;ZDbc150;ZPlain150;ZCore150;ZParseSql150;DCPdelphiXE;RaizeComponentsVcl;RaizeComponentsVclDb;JclVcl;Jcl;JvCore;JvSystem;JvStdCtrls;JvAppFrm;JvBands;JvDB;JvDlgs;JvBDE;JvControls;JvCmp;JvCrypt;JvCustom;JvDocking;JvDotNetCtrls;JvGlobus;JvHMI;JvJans;JvManagedThreads;JvMM;JvNet;JvPageComps;JvPascalInterpreter;JclDeveloperTools;JvPluginSystem;JvPrintPreview;JvRuntimeDesign;JvTimeFramework;JvWizards;JvXPCtrls;JSDialogPack;dxCoreRS15;dxServerModeRS15;cxDataRS15;cxLibraryRS15;dxGDIPlusRS15;dxThemeRS15;dxADOServerModeRS15;dxDBXServerModeRS15;cxEditorsRS15;dxmdsRS15;dxBarRS15;dxComnRS15;dxBarDBNavRS15;dxBarExtDBItemsRS15;dxBarExtItemsRS15;dxRibbonRS15;cxBarEditItemRS15;dxdbtrRS15;dxtrmdRS15;cxPageControlRS15;dxDockingRS15;dxFlowChartRS15;cxPageControldxBarPopupMenuRS15;dxTabbedMDIRS15;dxLayoutControlRS15;dxNavBarRS15;dxorgcRS15;dxdborRS15;cxGridRS15;cxExportRS15;cxPivotGridRS15;cxPivotGridChartRS15;cxPivotGridOLAPRS15;cxTreeListRS15;cxTreeListdxBarPopupMenuRS15;cxSchedulerRS15;cxSchedulerGridRS15;dcldxSkinsCoreRS15;dxSkinsCoreRS15;dxSkinscxPCPainterRS15;dxSkinscxSchedulerPainterRS15;dxSkinsdxDLPainterRS15;dxSkinsdxBarPainterRS15;dxSkinsdxNavBarPainterRS15;dxSkinsdxRibbonPainterRS15;dxSpellCheckerRS15;cxSpreadSheetRS15;cxVerticalGridRS15;dxPSCoreRS15;dxPSLnksRS15;dxPScxCommonRS15;dxPScxExtCommonRS15;dxPScxGridLnkRS15;dxPSdxLCLnkRS15;dxPScxPivotGridLnkRS15;dxPScxSchedulerLnkRS15;dxPScxSSLnkRS15;dxPScxTLLnkRS15;dxPScxVGridLnkRS15;dxPSTeeChartRS15;dxPSDBTeeChartRS15;dxPSdxOCLnkRS15;dxPSdxDBOCLnkRS15;dxPSdxDBTVLnkRS15;dxPSdxFCLnkRS15;dxPScxPCProdRS15;dxPsPrVwAdvRS15;dxPSPrVwRibbonRS15;dxSkinBlackRS15;dxSkinBlueRS15;dxSkinCaramelRS15;dxSkinCoffeeRS15;dxSkinDarkRoomRS15;dxSkinDarkSideRS15;dxSkinFoggyRS15;dxSkinGlassOceansRS15;dxSkiniMaginaryRS15;dxSkinLilianRS15;dxSkinLiquidSkyRS15;dxSkinLondonLiquidSkyRS15;dxSkinMcSkinRS15;dxSkinMoneyTwinsRS15;dxSkinOffice2007BlackRS15;dxSkinOffice2007BlueRS15;dxSkinOffice2007GreenRS15;dxSkinOffice2007PinkRS15;dxSkinOffice2007SilverRS15;dxSkinOffice2010BlackRS15;dxSkinOffice2010BlueRS15;dxSkinOffice2010SilverRS15;dxSkinPumpkinRS15;dxSkinSevenRS15;dxSkinSharpRS15;dxSkinSilverRS15;dxSkinSpringTimeRS15;dxSkinStardustRS15;dxSkinSummer2008RS15;dxSkinValentineRS15;dxSkinXmas2008BlueRS15;dxSkinBlueprintRS15;dxSkinDevExpressDarkStyleRS15;dxSkinDevExpressStyleRS15;dxSkinHighContrastRS15;dxSkinSevenClassicRS15;dxSkinSharpPlusRS15;dxSkinTheAsphaltWorldRS15;dxSkinVS2010RS15;dxSkinWhiteprintRS15;dxTileControlRS15;JclContainers</DCC_UsePackage>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_DcuOutput>.\$(Config)\$(Platform)</DCC_DcuOutput>
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
+			<DCC_ExeOutput>.\$(Config)\$(Platform)</DCC_ExeOutput>
+			<DCC_E>false</DCC_E>
+			<DCC_N>false</DCC_N>
+			<DCC_S>false</DCC_S>
+			<DCC_F>false</DCC_F>
+			<DCC_K>false</DCC_K>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+			<DCC_Optimize>false</DCC_Optimize>
+			<DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="opd_log.dpr">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="main_Unit.pas">
+				<Form>main_u</Form>
+			</DCCReference>
+			<DCCReference Include="db_connect_module.pas">
+				<Form>db_connect_m</Form>
+				<DesignClass>TDataModule</DesignClass>
+			</DCCReference>
+			<DCCReference Include="blood_mian_f.pas">
+				<Form>blood_mian_form</Form>
+			</DCCReference>
+			<DCCReference Include="blood_stock_f.pas">
+				<Form>blood_stock_form</Form>
+			</DCCReference>
+			<DCCReference Include="pay_blood_list_f.pas">
+				<Form>pay_blood_form</Form>
+			</DCCReference>
+			<DCCReference Include="payblood_f.pas">
+				<Form>payblood_form</Form>
+			</DCCReference>
+			<DCCReference Include="connection_unit.pas">
+				<Form>connection_form</Form>
+			</DCCReference>
+			<DCCReference Include="login_f.pas">
+				<Form>login_form</Form>
+			</DCCReference>
+			<DCCReference Include="test_server_f.pas">
+				<Form>test_connect</Form>
+			</DCCReference>
+			<DCCReference Include="report_rb1k_f.pas">
+				<Form>report_rb1k</Form>
+			</DCCReference>
+			<DCCReference Include="show_erlog_f.pas">
+				<Form>erlog_form</Form>
+			</DCCReference>
+			<DCCReference Include="show_emslog_f.pas">
+				<Form>emslog_form</Form>
+			</DCCReference>
+			<DCCReference Include="room_config_f.pas">
+				<Form>room_config_from</Form>
+			</DCCReference>
+			<DCCReference Include="show_physic_f.pas">
+				<Form>show_physic_form</Form>
+			</DCCReference>
+			<DCCReference Include="main_admin.pas">
+				<Form>main_admin_form</Form>
+			</DCCReference>
+			<DCCReference Include="show_medlog_f.pas">
+				<Form>show_med_form</Form>
+			</DCCReference>
+			<DCCReference Include="show_dentlog_f.pas">
+				<Form>show_dent_form</Form>
+			</DCCReference>
+			<DCCReference Include="show_opdlog.pas">
+				<Form>opdlog_f</Form>
+			</DCCReference>
+			<DCCReference Include="show_clinic_f.pas">
+				<Form>show_clinic_form</Form>
+			</DCCReference>
+			<DCCReference Include="f43_anc_f.pas">
+				<Form>f43_anc_from</Form>
+			</DCCReference>
+			<DCCReference Include="f43_women_f.pas">
+				<Form>f43_women_form</Form>
+			</DCCReference>
+			<DCCReference Include="f43_fp_f.pas">
+				<Form>f43_fp_form</Form>
+			</DCCReference>
+			<DCCReference Include="f43_postnatal_f.pas">
+				<Form>f43_postnatal_form</Form>
+			</DCCReference>
+			<DCCReference Include="f43_prenatal_f.pas">
+				<Form>f43_prenatal_form</Form>
+			</DCCReference>
+			<DCCReference Include="f43_labor_f.pas">
+				<Form>f43_labor_form</Form>
+			</DCCReference>
+			<DCCReference Include="f43_newborn_f.pas">
+				<Form>f43_newborn_form</Form>
+			</DCCReference>
+			<DCCReference Include="f43_newborncare_f.pas">
+				<Form>f43_newborncare_form</Form>
+			</DCCReference>
+			<DCCReference Include="f43_epi_f.pas">
+				<Form>f43_epi_form</Form>
+			</DCCReference>
+			<DCCReference Include="rukai_f.pas">
+				<Form>Rukai_from</Form>
+			</DCCReference>
+			<DCCReference Include="sql_monitor_f.pas">
+				<Form>FrmLogSql</Form>
+			</DCCReference>
+			<DCCReference Include="active_log_f.pas">
+				<Form>active_log_form</Form>
+			</DCCReference>
+			<DCCReference Include="miniEMR_f.pas">
+				<Form>miniEMR_form</Form>
+			</DCCReference>
+			<DCCReference Include="report_ipd95_f.pas">
+				<Form>report_ipt95_form</Form>
+			</DCCReference>
+			<DCCReference Include="f43_chronic_f.pas">
+				<Form>f43_chronic_form</Form>
+			</DCCReference>
+			<DCCReference Include="f43_chronicfu_f.pas">
+				<Form>f43_chronicfu_form</Form>
+			</DCCReference>
+			<DCCReference Include="kpi_fanc_f.pas">
+				<Form>kpi_fanc_form</Form>
+			</DCCReference>
+			<DCCReference Include="kpi_pre5_f.pas">
+				<Form>kpi_pre5_form</Form>
+			</DCCReference>
+			<DCCReference Include="kpi_fpost3_f.pas">
+				<Form>kpi_post3_form</Form>
+			</DCCReference>
+			<DCCReference Include="Qtarget_women_f.pas">
+				<Form>target_women_form</Form>
+			</DCCReference>
+			<DCCReference Include="Qtarget_0_5y_f.pas">
+				<Form>target_0_5y_form</Form>
+			</DCCReference>
+			<DCCReference Include="Qtarget_35_60y_f.pas">
+				<Form>targer_35_60y_form</Form>
+			</DCCReference>
+			<DCCReference Include="Qtarget_person_f.pas">
+				<Form>target_person_form</Form>
+			</DCCReference>
+			<DCCReference Include="report_r506_f.pas">
+				<Form>report_r506_form</Form>
+			</DCCReference>
+			<DCCReference Include="Qtarget_60y_f.pas">
+				<Form>targer_60y_form</Form>
+			</DCCReference>
+			<DCCReference Include="Qtarget_ncd_f.pas">
+				<Form>target_ncd_form</Form>
+			</DCCReference>
+			<DCCReference Include="f43_accident_f.pas">
+				<Form>f43_accident_form</Form>
+			</DCCReference>
+			<DCCReference Include="f43_servillance_f.pas">
+				<Form>f43_servillance_form</Form>
+			</DCCReference>
+			<DCCReference Include="f43_death_f.pas">
+				<Form>f43_death_form</Form>
+			</DCCReference>
+			<DCCReference Include="f43_drugal_f.pas">
+				<Form>f43_drugal_form</Form>
+			</DCCReference>
+			<DCCReference Include="f43_dental_f.pas">
+				<Form>f43_dental_form</Form>
+			</DCCReference>
+			<DCCReference Include="show_money_f.pas">
+				<Form>chk_money_form</Form>
+			</DCCReference>
+			<DCCReference Include="chk_patient_f.pas">
+				<Form>chk_patient_form</Form>
+			</DCCReference>
+			<DCCReference Include="chk_diag_f.pas">
+				<Form>chk_diag_form</Form>
+			</DCCReference>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\8.0\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\8.0\UserTools.proj"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Source>
+						<Source Name="MainSource">opd_log.dpr</Source>
+					</Source>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1054</VersionInfo>
+						<VersionInfo Name="CodePage">874</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dcloffice2k150.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclofficexp150.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+					</Excluded_Packages>
+				</Delphi.Personality>
+				<Platforms>
+					<Platform value="Win32">True</Platform>
+				</Platforms>
+				<ModelSupport>False</ModelSupport>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>
