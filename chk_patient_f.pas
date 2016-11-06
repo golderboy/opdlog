@@ -85,6 +85,48 @@ type
     function  GetTempDir : string;
     procedure RzBitBtn1Click(Sender: TObject);
     procedure post_date_btn2Click(Sender: TObject);
+    procedure cxGridDBColumn4CustomDrawCell(Sender: TcxCustomGridTableView;
+      ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
+      var ADone: Boolean);
+    procedure cxGridDBColumn3CustomDrawCell(Sender: TcxCustomGridTableView;
+      ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
+      var ADone: Boolean);
+    procedure cxGridDBColumn5CustomDrawCell(Sender: TcxCustomGridTableView;
+      ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
+      var ADone: Boolean);
+    procedure cxGridDBColumn6CustomDrawCell(Sender: TcxCustomGridTableView;
+      ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
+      var ADone: Boolean);
+    procedure cxGridDBColumn7CustomDrawCell(Sender: TcxCustomGridTableView;
+      ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
+      var ADone: Boolean);
+    procedure cxGridDBColumn9CustomDrawCell(Sender: TcxCustomGridTableView;
+      ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
+      var ADone: Boolean);
+    procedure cxGridDBColumn10CustomDrawCell(Sender: TcxCustomGridTableView;
+      ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
+      var ADone: Boolean);
+    procedure cxGridDBColumn13CustomDrawCell(Sender: TcxCustomGridTableView;
+      ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
+      var ADone: Boolean);
+    procedure cxGridDBColumn14CustomDrawCell(Sender: TcxCustomGridTableView;
+      ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
+      var ADone: Boolean);
+    procedure cxGridDBColumn17CustomDrawCell(Sender: TcxCustomGridTableView;
+      ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
+      var ADone: Boolean);
+    procedure cxGridDBColumn18CustomDrawCell(Sender: TcxCustomGridTableView;
+      ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
+      var ADone: Boolean);
+    procedure cxGridDBColumn19CustomDrawCell(Sender: TcxCustomGridTableView;
+      ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
+      var ADone: Boolean);
+    procedure cxGridDBColumn11CustomDrawCell(Sender: TcxCustomGridTableView;
+      ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
+      var ADone: Boolean);
+    procedure cxGridDBColumn12CustomDrawCell(Sender: TcxCustomGridTableView;
+      ACanvas: TcxCanvas; AViewInfo: TcxGridTableDataCellViewInfo;
+      var ADone: Boolean);
   private
     { Private declarations }
   public
@@ -99,6 +141,189 @@ implementation
 uses db_connect_module;
 
 {$R *.dfm}
+
+procedure Tchk_patient_form.cxGridDBColumn10CustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+  var position : Integer;
+begin
+    position := ansipos('occupation',AViewInfo.GridRecord.Values[20]);
+    if position > 0 then
+      begin
+       // if VarToStr(AViewInfo.GridRecord.Values[20]) = '%Pname not match,%' then
+        Acanvas.brush.Color := clRed ;
+      end;
+end;
+
+procedure Tchk_patient_form.cxGridDBColumn11CustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+  var position : Integer;
+begin
+    position := ansipos('citizenship',AViewInfo.GridRecord.Values[20]);
+    if position > 0 then
+      begin
+       // if VarToStr(AViewInfo.GridRecord.Values[20]) = '%Pname not match,%' then
+        Acanvas.brush.Color := clRed ;
+      end;
+end;
+
+procedure Tchk_patient_form.cxGridDBColumn12CustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+  var position : Integer;
+begin
+    position := ansipos('nationality',AViewInfo.GridRecord.Values[20]);
+    if position > 0 then
+      begin
+       // if VarToStr(AViewInfo.GridRecord.Values[20]) = '%Pname not match,%' then
+        Acanvas.brush.Color := clRed ;
+      end;
+end;
+
+procedure Tchk_patient_form.cxGridDBColumn13CustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+  var position : Integer;
+begin
+    position := ansipos('pttype',AViewInfo.GridRecord.Values[20]);
+    if position > 0 then
+      begin
+       // if VarToStr(AViewInfo.GridRecord.Values[20]) = '%Pname not match,%' then
+        Acanvas.brush.Color := clRed ;
+      end;
+end;
+
+procedure Tchk_patient_form.cxGridDBColumn14CustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+  var position : Integer;
+begin
+    position := ansipos('type_area',AViewInfo.GridRecord.Values[20]);
+    if position > 0 then
+      begin
+       // if VarToStr(AViewInfo.GridRecord.Values[20]) = '%Pname not match,%' then
+        Acanvas.brush.Color := clRed ;
+      end;
+end;
+
+procedure Tchk_patient_form.cxGridDBColumn17CustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+  var position : Integer;
+begin
+    position := ansipos('moo',AViewInfo.GridRecord.Values[20]);
+    if position > 0 then
+      begin
+       // if VarToStr(AViewInfo.GridRecord.Values[20]) = '%Pname not match,%' then
+        Acanvas.brush.Color := clRed ;
+      end;
+end;
+
+procedure Tchk_patient_form.cxGridDBColumn18CustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+  var position : Integer;
+begin
+    position := ansipos('tumbon',AViewInfo.GridRecord.Values[20]);
+    if position > 0 then
+      begin
+       // if VarToStr(AViewInfo.GridRecord.Values[20]) = '%Pname not match,%' then
+        Acanvas.brush.Color := clRed ;
+      end;
+end;
+
+procedure Tchk_patient_form.cxGridDBColumn19CustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+  var position : Integer;
+begin
+    position := ansipos('chwpart',AViewInfo.GridRecord.Values[20]);
+    if position > 0 then
+      begin
+       // if VarToStr(AViewInfo.GridRecord.Values[20]) = '%Pname not match,%' then
+        Acanvas.brush.Color := clRed ;
+      end;
+end;
+
+procedure Tchk_patient_form.cxGridDBColumn3CustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+  var position : Integer;
+begin
+    position := ansipos('CID',AViewInfo.GridRecord.Values[20]);
+    if position > 0 then
+      begin
+       // if VarToStr(AViewInfo.GridRecord.Values[20]) = '%Pname not match,%' then
+        Acanvas.brush.Color := clRed ;
+      end;
+end;
+
+procedure Tchk_patient_form.cxGridDBColumn4CustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+  var position : Integer;
+begin
+    position := ansipos('Pname',AViewInfo.GridRecord.Values[20]);
+    if position > 0 then
+      begin
+       // if VarToStr(AViewInfo.GridRecord.Values[20]) = '%Pname not match,%' then
+        Acanvas.brush.Color := clRed ;
+      end;
+
+end;
+
+procedure Tchk_patient_form.cxGridDBColumn5CustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+  var position : Integer;
+begin
+    position := ansipos('Name',AViewInfo.GridRecord.Values[20]);
+    if position > 0 then
+      begin
+       // if VarToStr(AViewInfo.GridRecord.Values[20]) = '%Pname not match,%' then
+        Acanvas.brush.Color := clRed ;
+      end;
+end;
+
+procedure Tchk_patient_form.cxGridDBColumn6CustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+  var position : Integer;
+begin
+    position := ansipos('lname',AViewInfo.GridRecord.Values[20]);
+    if position > 0 then
+      begin
+       // if VarToStr(AViewInfo.GridRecord.Values[20]) = '%Pname not match,%' then
+        Acanvas.brush.Color := clRed ;
+      end;
+end;
+
+procedure Tchk_patient_form.cxGridDBColumn7CustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+  var position : Integer;
+begin
+    position := ansipos('sex',AViewInfo.GridRecord.Values[20]);
+    if position > 0 then
+      begin
+       // if VarToStr(AViewInfo.GridRecord.Values[20]) = '%Pname not match,%' then
+        Acanvas.brush.Color := clRed ;
+      end;
+end;
+
+procedure Tchk_patient_form.cxGridDBColumn9CustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+  var position : Integer;
+begin
+    position := ansipos('marry',AViewInfo.GridRecord.Values[20]);
+    if position > 0 then
+      begin
+       // if VarToStr(AViewInfo.GridRecord.Values[20]) = '%Pname not match,%' then
+        Acanvas.brush.Color := clRed ;
+      end;
+end;
 
 procedure Tchk_patient_form.excel_export_btnClick(Sender: TObject);
 begin

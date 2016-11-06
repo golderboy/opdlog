@@ -85,9 +85,9 @@ end;
 
 procedure Tmain_admin_form.DB_MonitorClick(Sender: TObject);
 begin
-    miniEMR_form := TminiEMR_form.Create(application);
-    miniEMR_form.ShowModal;
-    miniEMR_form.Free;
+    FrmLogSql := TFrmLogSql.Create(application);
+    FrmLogSql.ShowModal;
+    FrmLogSql.Free;
 end;
 
 procedure Tmain_admin_form.dxBarLargeButton12Click(Sender: TObject);

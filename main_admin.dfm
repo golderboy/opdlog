@@ -105,8 +105,8 @@ object main_admin_form: Tmain_admin_form
           Visible = True
           ItemName = 'exit_btn'
         end>
-      OneOnRow = True
-      Row = 1
+      OneOnRow = False
+      Row = 0
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -125,7 +125,7 @@ object main_admin_form: Tmain_admin_form
           Visible = True
           ItemName = 'dxBarLargeButton15'
         end>
-      OneOnRow = True
+      OneOnRow = False
       Row = 0
       UseOwnFont = False
       Visible = True
@@ -1830,7 +1830,6 @@ object main_admin_form: Tmain_admin_form
     object DB_Monitor: TdxBarLargeButton
       Caption = 'db_monitor'
       Category = 0
-      Enabled = False
       Hint = 'db_monitor'
       Visible = ivAlways
       OnClick = DB_MonitorClick

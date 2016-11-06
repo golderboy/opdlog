@@ -119,8 +119,8 @@ object chk_patient_form: Tchk_patient_form
       NumGlyphs = 2
     end
     object excel_export_btn: TRzBitBtn
-      Left = 680
-      Top = 10
+      Left = 736
+      Top = -25
       Anchors = [akTop, akRight]
       Caption = 'EXCEL'
       TabOrder = 4
@@ -466,22 +466,27 @@ object chk_patient_form: Tchk_patient_form
       end
       object cxGridDBColumn3: TcxGridDBColumn
         DataBinding.FieldName = 'cid'
+        OnCustomDrawCell = cxGridDBColumn3CustomDrawCell
         Width = 97
       end
       object cxGridDBColumn4: TcxGridDBColumn
         DataBinding.FieldName = 'pname'
+        OnCustomDrawCell = cxGridDBColumn4CustomDrawCell
         Width = 60
       end
       object cxGridDBColumn5: TcxGridDBColumn
         DataBinding.FieldName = 'fname'
+        OnCustomDrawCell = cxGridDBColumn5CustomDrawCell
         Width = 110
       end
       object cxGridDBColumn6: TcxGridDBColumn
         DataBinding.FieldName = 'lname'
+        OnCustomDrawCell = cxGridDBColumn6CustomDrawCell
         Width = 120
       end
       object cxGridDBColumn7: TcxGridDBColumn
         DataBinding.FieldName = 'sex'
+        OnCustomDrawCell = cxGridDBColumn7CustomDrawCell
         Width = 39
       end
       object cxGridDBColumn8: TcxGridDBColumn
@@ -490,26 +495,32 @@ object chk_patient_form: Tchk_patient_form
       end
       object cxGridDBColumn9: TcxGridDBColumn
         DataBinding.FieldName = 'marrystatus'
+        OnCustomDrawCell = cxGridDBColumn9CustomDrawCell
         Width = 87
       end
       object cxGridDBColumn10: TcxGridDBColumn
         DataBinding.FieldName = 'occupation'
+        OnCustomDrawCell = cxGridDBColumn10CustomDrawCell
         Width = 72
       end
       object cxGridDBColumn11: TcxGridDBColumn
         DataBinding.FieldName = 'citizenship'
+        OnCustomDrawCell = cxGridDBColumn11CustomDrawCell
         Width = 80
       end
       object cxGridDBColumn12: TcxGridDBColumn
         DataBinding.FieldName = 'nationality'
+        OnCustomDrawCell = cxGridDBColumn12CustomDrawCell
         Width = 78
       end
       object cxGridDBColumn13: TcxGridDBColumn
         DataBinding.FieldName = 'pttype'
+        OnCustomDrawCell = cxGridDBColumn13CustomDrawCell
         Width = 55
       end
       object cxGridDBColumn14: TcxGridDBColumn
         DataBinding.FieldName = 'type_area'
+        OnCustomDrawCell = cxGridDBColumn14CustomDrawCell
         Width = 67
       end
       object cxGridDBColumn15: TcxGridDBColumn
@@ -522,6 +533,7 @@ object chk_patient_form: Tchk_patient_form
       end
       object cxGridDBColumn17: TcxGridDBColumn
         DataBinding.FieldName = 'moopart'
+        OnCustomDrawCell = cxGridDBColumn17CustomDrawCell
         Width = 68
       end
       object cxGridDBColumn18: TcxGridDBColumn
@@ -604,7 +616,7 @@ object chk_patient_form: Tchk_patient_form
         #39#39'),'
       'IF(p.pname is null ,'#39'Pname IS NULL,'#39','#39#39'),'
       'if(p.fname like '#39'%'#3610#3609'.%'#39','#39'name is false,'#39','#39#39'),'
-      'if(p.lname like '#39'%-%'#39','#39'lanme is false,'#39','#39#39'),'
+      'if(p.lname like '#39'%-%'#39','#39'lname is false,'#39','#39#39'),'
       'if(p.sex not in(1,2),'#39'sex is false,'#39','#39#39'),'
       'if(p.birthday = '#39'0000-00-00'#39','#39'birthday is false,'#39','#39#39'),'
       'if(p.marrystatus not in (1,2,3,4,5,6,9),'#39'marry not maych,'#39','#39#39'),'
@@ -720,7 +732,7 @@ object chk_patient_form: Tchk_patient_form
         'if(p.pname not in (SELECT `name` from pname),'#39'Pname not match,'#39',' +
         #39#39'),'
       'IF(p.pname is null ,'#39'Pname IS NULL,'#39','#39#39'),'
-      'if(p.lname like '#39'%-%'#39','#39'lanme is false,'#39','#39#39'),'
+      'if(p.lname like '#39'%-%'#39','#39'lname is false,'#39','#39#39'),'
       'if(p.sex not in(1,2),'#39'sex is false,'#39','#39#39'),'
       'if(p.birthday = '#39'0000-00-00'#39','#39'birthday is false,'#39','#39#39'),'
       'if(p.marrystatus not in (1,2,3,4,5,6,9),'#39'marry not maych,'#39','#39#39'),'
@@ -741,6 +753,9 @@ object chk_patient_form: Tchk_patient_form
         #39'pttype not match,'#39','#39#39'),'
       'IF(p.type_area ="",'#39'type_area IS NULL,'#39','#39#39'),'
       'IF(p.type_area is null,'#39'type_area IS NULL,'#39','#39#39'),'
+      
+        'IF(p.type_area != pe.house_regist_type_id,'#39'type_area NOT MATCH,'#39 +
+        ','#39#39'),'
       'IF(p.addrpart is null,'#39'home_number IS NULL,'#39','#39#39'),'
       'IF(p.moopart is null,'#39'moo IS NULL,'#39','#39#39'),'
       'IF(p.tmbpart is null,'#39'tumbon IS NULL,'#39','#39#39'),'
