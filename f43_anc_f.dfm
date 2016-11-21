@@ -302,19 +302,24 @@ object f43_anc_from: Tf43_anc_from
       end
       object show_visitDBTableView1GRAVIDA: TcxGridDBColumn
         DataBinding.FieldName = 'GRAVIDA'
+        OnCustomDrawCell = show_visitDBTableView1GRAVIDACustomDrawCell
       end
       object show_visitDBTableView1ANCNO: TcxGridDBColumn
         DataBinding.FieldName = 'ANCNO'
+        OnCustomDrawCell = show_visitDBTableView1ANCNOCustomDrawCell
       end
       object show_visitDBTableView1GA: TcxGridDBColumn
         DataBinding.FieldName = 'GA'
+        OnCustomDrawCell = show_visitDBTableView1GACustomDrawCell
       end
       object show_visitDBTableView1ANCRESULT: TcxGridDBColumn
         DataBinding.FieldName = 'ANCRESULT'
+        OnCustomDrawCell = show_visitDBTableView1ANCRESULTCustomDrawCell
         Width = 88
       end
       object show_visitDBTableView1ANCPLACE: TcxGridDBColumn
         DataBinding.FieldName = 'ANCPLACE'
+        OnCustomDrawCell = show_visitDBTableView1ANCPLACECustomDrawCell
         Width = 89
       end
       object show_visitDBTableView1PROVIDER: TcxGridDBColumn
@@ -379,10 +384,12 @@ object f43_anc_from: Tf43_anc_from
       
         'a1.preg_no AS GRAVIDA, a2.anc_service_number AS ANCNO,a2.pa_week' +
         ' AS GA,'
-      '(SELECT CASE a1.has_risk'
-      'WHEN '#39'Y'#39' THEN '#39'1'#39
-      'WHEN '#39'N'#39' THEN '#39'2'#39
-      'ELSE NULL END)AS ANCRESULT,'
+      
+        '(IF(a1.has_risk = '#39'N'#39','#39'2'#39',IF(a1.has_risk = '#39'Y'#39','#39'1'#39','#39'1'#39')))AS ANCR' +
+        'ESULT,'
+      
+        '#(SELECT CASE a1.has_risk WHEN '#39'Y'#39' THEN '#39'1'#39' WHEN '#39'N'#39' THEN '#39'2'#39' EL' +
+        'SE NULL END)AS ANCRESULT,'
       '(SELECT hospitalcode FROM opdconfig) AS ANCPLACE,'
       'doctor.cid AS PROVIDER,'
       
@@ -409,7 +416,7 @@ object f43_anc_from: Tf43_anc_from
         'ext'
       '#AND a2.anc_service_date BETWEEN 20160101 AND 20160131'
       ''
-      ''
+      '/*'
       'UNION ALL'
       'SELECT '
       '(SELECT hospitalcode FROM opdconfig) AS HOSPCODE,'
@@ -444,7 +451,8 @@ object f43_anc_from: Tf43_anc_from
         'LEFT OUTER JOIN person_anc_service a2 ON ano.precare_date=a2.anc' +
         '_service_date AND pnc.person_anc_id=a2.person_anc_id'
       'AND ano.precare_date BETWEEN :date_start_text AND :date_end_text'
-      '#AND ano.precare_date BETWEEN 20160101 AND 20160131')
+      '#AND ano.precare_date BETWEEN 20160101 AND 20160131'
+      '*/')
     ReadOnly = True
     RefreshOptions = [roAfterInsert, roAfterUpdate, roBeforeEdit]
     Options.AutoRefresh = True
@@ -452,14 +460,6 @@ object f43_anc_from: Tf43_anc_from
     Left = 320
     Top = 168
     ParamData = <
-      item
-        DataType = ftUnknown
-        Name = 'date_start_text'
-      end
-      item
-        DataType = ftUnknown
-        Name = 'date_end_text'
-      end
       item
         DataType = ftUnknown
         Name = 'date_start_text'

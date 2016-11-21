@@ -52,8 +52,24 @@ type
     procedure post_date_btnClick(Sender: TObject);
     procedure excel_export_btnClick(Sender: TObject);
     function  GetTempDir : string;
+    //function VarToInt : integer;
     procedure RzBitBtn1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure show_visitDBTableView1HEIGHTCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1WAIST_CMCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1SBPCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1DBPCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1WEIGHTCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
   private
     { Private declarations }
   public
@@ -73,6 +89,11 @@ procedure Tf43_chronicfu_form.excel_export_btnClick(Sender: TObject);
 begin
  ExportGridToExcel(gettempdir + 'data_export.xls', show_visit, True, True);
  shellexecute(handle, 'Open', pchar(gettempdir + 'data_export.xls'), nil, nil,sw_normal);
+end;
+
+function VarToInt(const AVariant: Variant): integer;
+begin
+  Result := StrToIntDef(Trim(VarToStr(AVariant)), 0);
 end;
 
 procedure Tf43_chronicfu_form.FormShow(Sender: TObject);
@@ -120,6 +141,48 @@ end;
 procedure Tf43_chronicfu_form.RzBitBtn1Click(Sender: TObject);
 begin
 close;
+end;
+
+procedure Tf43_chronicfu_form.show_visitDBTableView1DBPCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if (VarToStr(AViewInfo.GridRecord.Values[8]) = '') or (VarToStr(AViewInfo.GridRecord.Values[8]) <= '0') then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tf43_chronicfu_form.show_visitDBTableView1HEIGHTCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if VarToStr(AViewInfo.GridRecord.Values[5]) = '0.00' then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tf43_chronicfu_form.show_visitDBTableView1SBPCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if (VarToStr(AViewInfo.GridRecord.Values[7]) = '') or (VarToStr(AViewInfo.GridRecord.Values[7]) <= '0') then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tf43_chronicfu_form.show_visitDBTableView1WAIST_CMCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+    if VarToStr(AViewInfo.GridRecord.Values[6]) = '' then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tf43_chronicfu_form.show_visitDBTableView1WEIGHTCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+
+begin
+
+if VarToStr(AViewInfo.GridRecord.Values[4]) = '0.00' then
+        Acanvas.brush.Color := clRed ;
 end;
 
 end.

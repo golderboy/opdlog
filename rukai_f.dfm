@@ -389,13 +389,26 @@ object Rukai_from: TRukai_from
       'UPDATE person '
       'set person_house_position_id = '#39'2'#39
       'where person_house_position_id is null'
-      'OR person_house_position_id not in (1,2);')
+      'OR person_house_position_id not in (1,2);'
+      ''
+      'update nondrugitems '
+      'set unitcost = price'
+      'where unitcost = ""'
+      'OR unitcost is null ;'
+      ''
+      'update opitemrece '
+      'set cost = unitprice'
+      'where cost = 0'
+      'OR cost is null ;'
+      ''
+      'UPDATE person as p '
+      'INNER JOIN patient as pt ON pt.hn = patient_hn'
+      'SET p.pname = pt.pname'
+      'where p.pname != pt.pname')
     ParentFont = False
     PlainText = True
     ScrollBars = ssVertical
     TabOrder = 4
-    ExplicitLeft = 6
-    ExplicitTop = 111
   end
   object Qrukai: TMyQuery
     SQLUpdate.Strings = (

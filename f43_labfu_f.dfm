@@ -1,9 +1,9 @@
-object f43_dental_form: Tf43_dental_form
+object f43_labfu_form: Tf43_labfu_form
   Left = 0
   Top = 0
-  Caption = 'f43_dental_form'
-  ClientHeight = 545
-  ClientWidth = 780
+  Caption = 'f43_labfu_form'
+  ClientHeight = 527
+  ClientWidth = 750
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,17 +14,17 @@ object f43_dental_form: Tf43_dental_form
   WindowState = wsMaximized
   OnShow = FormShow
   DesignSize = (
-    780
-    545)
+    750
+    527)
   PixelsPerInch = 96
   TextHeight = 13
   object header_opdlog: TJvNavPanelHeader
     Left = 0
     Top = 0
-    Width = 780
+    Width = 750
     Height = 33
     Align = alTop
-    Caption = ' DENTAL'
+    Caption = 'LAB_FU'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
     Font.Height = -16
@@ -32,16 +32,20 @@ object f43_dental_form: Tf43_dental_form
     Font.Style = [fsBold]
     ParentFont = False
     ImageIndex = 0
+    ExplicitLeft = -36
+    ExplicitWidth = 786
   end
   object Panel2: TPanel
     Left = 0
     Top = 33
-    Width = 780
+    Width = 750
     Height = 41
     Align = alTop
     TabOrder = 1
+    ExplicitLeft = -36
+    ExplicitWidth = 786
     DesignSize = (
-      780
+      750
       41)
     object date_start_text: TcxDateEdit
       Left = 70
@@ -61,7 +65,7 @@ object f43_dental_form: Tf43_dental_form
       Caption = #3623#3633#3609#3607#3637#3656
     end
     object post_date_btn: TRzBitBtn
-      Left = 559
+      Left = 529
       Top = 10
       Width = 107
       Anchors = [akTop, akRight]
@@ -120,9 +124,10 @@ object f43_dental_form: Tf43_dental_form
         5E5E5E5EE8E8E8E8E8E8E8818181818181818181E8E8E8E8E8E8E8E8E8E8E8E8
         E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
+      ExplicitLeft = 565
     end
     object excel_export_btn: TRzBitBtn
-      Left = 679
+      Left = 649
       Top = 10
       Anchors = [akTop, akRight]
       Caption = 'EXCEL'
@@ -180,20 +185,23 @@ object f43_dental_form: Tf43_dental_form
         5E5E5E5E5E5E5E5EE8E8E8E8E8E8E8E2E2E2E2E2E2E2E2E2E8E8E8E8E8E8E8E8
         E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
+      ExplicitLeft = 685
     end
   end
   object Panel1: TPanel
     Left = 0
-    Top = 518
-    Width = 780
+    Top = 500
+    Width = 750
     Height = 27
     Align = alBottom
     TabOrder = 2
+    ExplicitLeft = -36
+    ExplicitWidth = 786
     DesignSize = (
-      780
+      750
       27)
     object RzBitBtn1: TRzBitBtn
-      Left = 702
+      Left = 672
       Top = 3
       Anchors = [akRight, akBottom]
       Caption = 'Exit'
@@ -251,6 +259,7 @@ object f43_dental_form: Tf43_dental_form
         57A2A2A2E8E8E8E8E8E8E8DE8181DED781818181E8E8E8E8E8E8E8E8E8AC8257
         57E8E8E8E8E8E8E8E8E8E8E8E8AC818181E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
+      ExplicitLeft = 708
     end
     object cxLabel1: TcxLabel
       Left = 40
@@ -267,8 +276,8 @@ object f43_dental_form: Tf43_dental_form
     AlignWithMargins = True
     Left = 3
     Top = 77
-    Width = 774
-    Height = 438
+    Width = 744
+    Height = 420
     Align = alClient
     Font.Charset = THAI_CHARSET
     Font.Color = clWindowText
@@ -277,9 +286,12 @@ object f43_dental_form: Tf43_dental_form
     Font.Style = []
     ParentFont = False
     TabOrder = 3
+    ExplicitLeft = -30
+    ExplicitWidth = 780
+    ExplicitHeight = 442
     object show_visitDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
-      DataController.DataSource = Df43_dent
+      DataController.DataSource = Df43_labfu
       DataController.Summary.DefaultGroupSummaryItems = <>
       DataController.Summary.FooterSummaryItems = <>
       DataController.Summary.SummaryGroups = <>
@@ -292,124 +304,24 @@ object f43_dental_form: Tf43_dental_form
       end
       object show_visitDBTableView1PID: TcxGridDBColumn
         DataBinding.FieldName = 'PID'
+        Width = 69
       end
       object show_visitDBTableView1SEQ: TcxGridDBColumn
         DataBinding.FieldName = 'SEQ'
+        Width = 90
       end
       object show_visitDBTableView1DATE_SERV: TcxGridDBColumn
         DataBinding.FieldName = 'DATE_SERV'
         Width = 99
       end
-      object show_visitDBTableView1DENTTYPE: TcxGridDBColumn
-        DataBinding.FieldName = 'DENTTYPE'
-        OnCustomDrawCell = show_visitDBTableView1DENTTYPECustomDrawCell
-        Width = 80
+      object show_visitDBTableView1LABTEST: TcxGridDBColumn
+        DataBinding.FieldName = 'LABTEST'
+        OnCustomDrawCell = show_visitDBTableView1LABTESTCustomDrawCell
+        Width = 67
       end
-      object show_visitDBTableView1SERVPLACE: TcxGridDBColumn
-        DataBinding.FieldName = 'SERVPLACE'
-        OnCustomDrawCell = show_visitDBTableView1SERVPLACECustomDrawCell
-        Width = 98
-      end
-      object show_visitDBTableView1PTEETH: TcxGridDBColumn
-        DataBinding.FieldName = 'PTEETH'
-        Width = 73
-      end
-      object show_visitDBTableView1PCARIES: TcxGridDBColumn
-        DataBinding.FieldName = 'PCARIES'
-        Width = 64
-      end
-      object show_visitDBTableView1PFILLING: TcxGridDBColumn
-        DataBinding.FieldName = 'PFILLING'
-        Width = 63
-      end
-      object show_visitDBTableView1PEXTRACT: TcxGridDBColumn
-        DataBinding.FieldName = 'PEXTRACT'
-        Width = 90
-      end
-      object show_visitDBTableView1DTEETH: TcxGridDBColumn
-        DataBinding.FieldName = 'DTEETH'
-        Width = 62
-      end
-      object show_visitDBTableView1DCARIES: TcxGridDBColumn
-        DataBinding.FieldName = 'DCARIES'
-        Width = 65
-      end
-      object show_visitDBTableView1DFILLING: TcxGridDBColumn
-        DataBinding.FieldName = 'DFILLING'
-        Width = 76
-      end
-      object show_visitDBTableView1DEXTRACT: TcxGridDBColumn
-        DataBinding.FieldName = 'DEXTRACT'
-        Width = 79
-      end
-      object show_visitDBTableView1NEED_FLUORIDE: TcxGridDBColumn
-        DataBinding.FieldName = 'NEED_FLUORIDE'
-        OnCustomDrawCell = show_visitDBTableView1NEED_FLUORIDECustomDrawCell
-        Width = 118
-      end
-      object show_visitDBTableView1NEED_SCALING: TcxGridDBColumn
-        DataBinding.FieldName = 'NEED_SCALING'
-        OnCustomDrawCell = show_visitDBTableView1NEED_SCALINGCustomDrawCell
-        Width = 108
-      end
-      object show_visitDBTableView1NEED_SEALANT: TcxGridDBColumn
-        DataBinding.FieldName = 'NEED_SEALANT'
-        OnCustomDrawCell = show_visitDBTableView1NEED_SEALANTCustomDrawCell
-        Width = 113
-      end
-      object show_visitDBTableView1NEED_PFILLING: TcxGridDBColumn
-        DataBinding.FieldName = 'NEED_PFILLING'
-        OnCustomDrawCell = show_visitDBTableView1NEED_PFILLINGCustomDrawCell
-        Width = 108
-      end
-      object show_visitDBTableView1NEED_DFILLING: TcxGridDBColumn
-        DataBinding.FieldName = 'NEED_DFILLING'
-        OnCustomDrawCell = show_visitDBTableView1NEED_DFILLINGCustomDrawCell
-        Width = 109
-      end
-      object show_visitDBTableView1NEED_PEXTRACT: TcxGridDBColumn
-        DataBinding.FieldName = 'NEED_PEXTRACT'
-        OnCustomDrawCell = show_visitDBTableView1NEED_PEXTRACTCustomDrawCell
-        Width = 123
-      end
-      object show_visitDBTableView1NEED_DEXTRACT: TcxGridDBColumn
-        DataBinding.FieldName = 'NEED_DEXTRACT'
-        OnCustomDrawCell = show_visitDBTableView1NEED_DEXTRACTCustomDrawCell
-        Width = 136
-      end
-      object show_visitDBTableView1NPROSTHESIS: TcxGridDBColumn
-        DataBinding.FieldName = 'NPROSTHESIS'
-        Width = 115
-      end
-      object show_visitDBTableView1PERMANENT_PERMANENT: TcxGridDBColumn
-        DataBinding.FieldName = 'PERMANENT_PERMANENT'
-        Width = 185
-      end
-      object show_visitDBTableView1PERMANENT_PROSTHESIS: TcxGridDBColumn
-        DataBinding.FieldName = 'PERMANENT_PROSTHESIS'
-        Width = 198
-      end
-      object show_visitDBTableView1PROSTHESIS_PROSTHESIS: TcxGridDBColumn
-        DataBinding.FieldName = 'PROSTHESIS_PROSTHESIS'
-        Width = 187
-      end
-      object show_visitDBTableView1GUM: TcxGridDBColumn
-        DataBinding.FieldName = 'GUM'
-        OnCustomDrawCell = show_visitDBTableView1GUMCustomDrawCell
-        Width = 48
-      end
-      object show_visitDBTableView1SCHOOLTYPE: TcxGridDBColumn
-        DataBinding.FieldName = 'SCHOOLTYPE'
-        OnCustomDrawCell = show_visitDBTableView1SCHOOLTYPECustomDrawCell
-        Width = 109
-      end
-      object show_visitDBTableView1CLASS: TcxGridDBColumn
-        DataBinding.FieldName = 'CLASS'
-        OnCustomDrawCell = show_visitDBTableView1CLASSCustomDrawCell
-        Width = 49
-      end
-      object show_visitDBTableView1PROVIDER: TcxGridDBColumn
-        DataBinding.FieldName = 'PROVIDER'
+      object show_visitDBTableView1LABRESULT: TcxGridDBColumn
+        DataBinding.FieldName = 'LABRESULT'
+        OnCustomDrawCell = show_visitDBTableView1LABRESULTCustomDrawCell
         Width = 97
       end
       object show_visitDBTableView1D_UPDATE: TcxGridDBColumn
@@ -419,22 +331,6 @@ object f43_dental_form: Tf43_dental_form
       object show_visitDBTableView1CID: TcxGridDBColumn
         DataBinding.FieldName = 'CID'
         Width = 97
-      end
-      object show_visitDBTableView1HN: TcxGridDBColumn
-        DataBinding.FieldName = 'HN'
-        Width = 69
-      end
-      object show_visitDBTableView1ptname: TcxGridDBColumn
-        DataBinding.FieldName = 'ptname'
-        Width = 143
-      end
-      object show_visitDBTableView1typearea: TcxGridDBColumn
-        DataBinding.FieldName = 'typearea'
-        Width = 72
-      end
-      object show_visitDBTableView1discharge: TcxGridDBColumn
-        DataBinding.FieldName = 'discharge'
-        Width = 78
       end
     end
     object show_visitLevel1: TcxGridLevel
@@ -449,7 +345,7 @@ object f43_dental_form: Tf43_dental_form
     Visible = False
     Width = 691
   end
-  object Qf43_dent: TMyQuery
+  object Qf43_labfu: TMyQuery
     SQLInsert.Strings = (
       'INSERT INTO opdscreen'
       
@@ -461,74 +357,258 @@ object f43_dental_form: Tf43_dental_form
         ' :pulse, :temperature, :rr, :height, :bmi, :hpi, :pmh, :waist)')
     Connection = db_connect_m.connect_db
     SQL.Strings = (
-      'SELECT '
-      '(SELECT hospitalcode FROM opdconfig) AS HOSPCODE,'#9
-      'IFNULL(p.person_id,o.hn) AS PID,'
-      'dc.vn AS SEQ,'
+      'SELECT DISTINCT'
+      '(SELECT hospitalcode FROM opdconfig) AS HOSPCODE,'
+      'IFNULL(p.person_id,lh.hn) AS PID,'
+      '/*lh.hn,*/'
+      'lh.vn AS SEQ,'
       
-        'IF(o.vstdate='#39#39' OR o.vstdate = NULL,'#39#39',DATE_FORMAT(o.vstdate,'#39'%Y' +
-        '%m%d'#39')) AS DATE_SERV,'
+        'IF(lh.order_date IS NULL OR TRIM(lh.order_date)='#39#39' OR lh.order_d' +
+        'ate LIKE '#39'0000-00-00%'#39','#39#39',DATE_FORMAT(lh.order_date,'#39'%Y%m%d'#39') ) ' +
+        'AS DATE_SERV, '
+      'CASE sys_var.sys_name'
+      'WHEN "lab_link_fbs" THEN '#39'01'#39
+      'WHEN "lab_link_2Hr" THEN '#39'02'#39
+      'WHEN "lab_link_DTX" THEN '#39'03'#39
+      'WHEN "lab_link_BloodSugar" THEN '#39'04'#39
+      'WHEN "lab_link_hba1c" THEN '#39'05'#39
+      'WHEN "lab_link_tg" THEN '#39'06'#39
+      'WHEN "lab_link_tc" THEN '#39'07'#39
+      'WHEN "lab_link_hdl" THEN '#39'08'#39
+      'WHEN "lab_link_ldl" THEN '#39'09'#39
+      'WHEN "lab_link_bun" THEN '#39'10'#39
+      'WHEN "lab_link_cr" THEN '#39'11'#39
+      'WHEN "lab_link_Micro_Albumine" THEN '#39'12'#39
+      'WHEN "lab_link_urine_creatinine"  THEN '#39'13'#39
+      'WHEN "lab_link_macro_albumin" THEN '#39'14'#39
+      'WHEN "lab_link_hb" THEN '#39'16'#39
+      'WHEN "lab_link_upcr" THEN '#39'17'#39
+      'WHEN "lab_link_tco2" THEN '#39'18'#39
+      'WHEN "lab_link_bicarb" THEN '#39'19'#39
+      'WHEN "lab_link_phosphate" THEN '#39'20'#39
+      'WHEN "lab_link_pth" THEN '#39'21'#39
+      'END AS LABTEST,'
       
-        'IF(dc.dental_care_type_id IS NULL OR dc.dental_care_type_id = '#39#39 +
-        ','#39'5'#39',dc.dental_care_type_id) AS DENTTYPE,'
+        'IF(lo.lab_order_result IS NOT NULL OR TRIM(lo.lab_order_result)<' +
+        '>'#39#39', REPLACE(FORMAT(lo.lab_order_result,2),'#39','#39','#39#39'), FORMAT(0,2))' +
+        ' AS LABRESULT,'
       
-        'IF(dc.dental_care_service_place_type_id  IS NULL OR dc.dental_ca' +
-        're_service_place_type_id  = '#39#39','#39'1'#39',dc.dental_care_service_place_' +
-        'type_id ) AS SERVPLACE,'
-      'IFNULL(dc.pteeth,'#39'0'#39') AS PTEETH,'
-      'IFNULL(dc.pcaries,'#39'0'#39') AS PCARIES,'
-      'IFNULL(dc.pfilling,'#39'0'#39') AS PFILLING,'
-      'IFNULL(dc.pextract,'#39'0'#39') AS PEXTRACT,'
-      'IFNULL(dc.dteeth,'#39'0'#39') AS DTEETH,'
-      'IFNULL(dc.dcaries,'#39'0'#39') AS DCARIES,'
-      'IFNULL(dc.dfilling,'#39'0'#39')AS DFILLING,'
-      'IFNULL(dc.dextract,'#39'0'#39') AS DEXTRACT,'
-      'IF(dc.need_fluoride ='#39'Y'#39','#39'1'#39','#39'2'#39') AS NEED_FLUORIDE,'
-      'IF(dc.need_scaling  ='#39'Y'#39','#39'1'#39','#39'2'#39') AS NEED_SCALING,'
-      'IFNULL(dc.need_sealant,'#39'0'#39') AS NEED_SEALANT,'
-      'IFNULL(dc.need_pfilling,'#39'0'#39') AS NEED_PFILLING,'
-      'IFNULL(dc.need_dfilling,'#39'0'#39') AS NEED_DFILLING,'
-      'IFNULL(dc.need_pextract,'#39'0'#39') AS NEED_PEXTRACT,'
-      'IFNULL(dc.need_dextract,'#39'0'#39') AS NEED_DEXTRACT,'
-      'IFNULL(dc.dental_care_nprosthesis_id,'#39'4'#39') AS NPROSTHESIS,'
-      'IFNULL(dc.permanent_perma,'#39'0'#39') AS PERMANENT_PERMANENT,'
-      'IFNULL(dc.permanent_prost,'#39'0'#39') AS PERMANENT_PROSTHESIS,'
-      'IFNULL(dc.prosthesis_prost,'#39'0'#39') AS PROSTHESIS_PROSTHESIS,'
+        'IF(concat(lh.report_date,'#39' '#39',lh.report_time) IS NULL OR TRIM(con' +
+        'cat(lh.report_date,'#39' '#39',lh.report_time))='#39#39' OR concat(lh.report_d' +
+        'ate,'#39' '#39',lh.report_time) LIKE '#39'0000-00-00%'#39',DATE_FORMAT(concat(lh' +
+        '.report_date,'#39' '#39',lh.report_time),'#39'%Y%m%d%H%i%s'#39'),DATE_FORMAT(con' +
+        'cat(lh.report_date,'#39' '#39',lh.report_time),'#39'%Y%m%d%H%i%s'#39') ) AS D_UP' +
+        'DATE,  '
+      'IF(v.cid IS NOT NULL OR v.cid <> '#39#39',v.cid,pt.cid) AS CID'
+      'FROM lab_head lh'
       
-        'CONCAT(IFNULL(dental_care_gum_type_id_1,'#39'9'#39'),IFNULL(dental_care_' +
-        'gum_type_id_2,'#39'9'#39'),IFNULL(dental_care_gum_type_id_3,'#39'9'#39'),'
+        'LEFT JOIN lab_order lo ON lh.lab_order_number = lo.lab_order_num' +
+        'ber'
       
-        'IFNULL(dental_care_gum_type_id_4,'#39'9'#39'),IFNULL(dental_care_gum_typ' +
-        'e_id_5,'#39'9'#39'),IFNULL(dental_care_gum_type_id_6,'#39'9'#39'))AS GUM,'
-      'IFNULL(dc.dental_care_school_type_id,'#39#39') AS SCHOOLTYPE,'
-      'IFNULL(dc.dental_care_school_class_type_id,'#39#39') AS CLASS,'
+        'LEFT OUTER JOIN lab_items ON lo.lab_items_code = lab_items.lab_i' +
+        'tems_code'
       
-        'IFNULL((SELECT cid FROM doctor WHERE dc.doctor = `code`),'#39#39') AS ' +
-        'PROVIDER,'
+        'LEFT OUTER JOIN sys_var ON sys_var.sys_value = lab_items.lab_ite' +
+        'ms_name '
+      'LEFT OUTER JOIN patient pt ON lh.hn=pt.hn'
+      'LEFT OUTER JOIN doctor d ON d.code=lh.doctor_code  '
+      'LEFT OUTER JOIN vn_stat v ON v.vn=lh.vn  '
+      'LEFT OUTER JOIN spclty sp ON sp.spclty = lh.spclty  '
+      'LEFT OUTER JOIN an_stat a ON a.an=lh.vn  '
       
-        'IF(dc.entry_datetime IS NULL OR TRIM(dc.entry_datetime)='#39#39' OR dc' +
-        '.entry_datetime LIKE '#39'0000-00-00%'#39','#39#39',DATE_FORMAT(dc.entry_datet' +
-        'ime,'#39'%Y%m%d%H%i%s'#39'))AS D_UPDATE,'
-      'IFNULL(IFNULL(pt.cid,p.cid),'#39#39') AS CID,'
-      'IFNULL(p.patient_hn,pt.hn) as HN,'
+        'LEFT OUTER JOIN kskdepartment k ON k.depcode = lh.order_departme' +
+        'nt  '
+      'LEFT OUTER JOIN ward w ON w.ward = a.ward  '
+      'LEFT OUTER JOIN iptadm adm ON adm.an = a.an  '
       
-        'IFNULL(concat(p.pname,p.fname," ",p.lname),concat(pt.pname,pt.fn' +
-        'ame," ",pt.lname)) as ptname,'
-      'IFNULL(p.house_regist_type_id,pt.type_area) as typearea,'
-      'p.person_discharge_id as discharge'
+        'LEFT OUTER JOIN lab_perform_status lp ON lp.lab_perform_status_i' +
+        'd = lh.lab_perform_status_id '
+      'LEFT OUTER JOIN person p ON lh.hn = p.patient_hn'
+      'WHERE (sys_value IS NOT NULL AND sys_value <>'#39#39')'
+      'AND sys_var.sys_name IN ('#39'lab_link_fbs'#39' '
+      ','#39'lab_link_2Hr'#39' '
+      ','#39'lab_link_DTX'#39' '
+      ','#39'lab_link_BloodSugar'#39' '
+      ','#39'lab_link_hba1c'#39' '
+      ','#39'lab_link_tg'#39' '
+      ','#39'lab_link_tc'#39' '
+      ','#39'lab_link_hdl'#39' '
+      ','#39'lab_link_ldl'#39' '
+      ','#39'lab_link_bun'#39' '
+      ','#39'lab_link_cr'#39' '
+      ','#39'lab_link_Micro_Albumine'#39' '
+      ','#39'lab_link_urine_creatinine'#39'  '
+      ','#39'lab_link_macro_albumin'#39' '
+      ','#39'lab_link_hb'#39' '
+      ','#39'lab_link_upcr'#39' '
+      ','#39'lab_link_tco2'#39
+      ','#39'lab_link_bicarb'#39
+      ','#39'lab_link_phosphate'#39
+      ','#39'lab_link_pth'#39' )'
+      'AND lh.order_date between :date_start_text AND :date_end_text'
+      
+        '/*AND lh.hn IN(SELECT hn FROM clinicmember WHERE clinic IN (SELE' +
+        'CT clinic FROM clinic WHERE chronic= '#39'Y'#39')) AND lo.confirm = '#39'Y'#39'*' +
+        '/'
+      'AND lp.lab_perform_status_name = '#39#3619#3634#3618#3591#3634#3609#3612#3621#3649#3621#3657#3623#39
+      '/*Design By TAKIS TEAM 02/02/2558 lab_link*/'
       ''
-      'FROM dental_care dc'
-      'LEFT JOIN ovst o ON dc.vn = o.vn'
-      'LEFT JOIN person p ON o.hn = p.patient_hn'
-      'LEFT JOIN patient pt ON o.hn = pt.hn'
-      'WHERE pt.hn IS NOT NULL '
-      '#AND o.vstdate BETWEEN 20160701 AND 20160731'
-      'AND o.vstdate BETWEEN :date_start_text AND :date_end_text'
-      '#BETWEEN :date_start_text AND :date_end_text')
+      'UNION ALL'
+      ''
+      'SELECT DISTINCT'
+      '(SELECT hospitalcode FROM opdconfig) AS HOSPCODE,'
+      'IFNULL(p.person_id,lh.hn) AS PID,'
+      '/*lh.hn,*/'
+      'lh.vn AS SEQ,'
+      
+        'IF(lh.order_date IS NULL OR TRIM(lh.order_date)='#39#39' OR lh.order_d' +
+        'ate LIKE '#39'0000-00-00%'#39','#39#39',DATE_FORMAT(lh.order_date,'#39'%Y%m%d'#39') ) ' +
+        'AS DATE_SERV, '
+      'CASE sys_lab_code.sys_lab_name'
+      'WHEN "FBS" THEN '#39'01'#39
+      'WHEN "2HR" THEN '#39'02'#39
+      'WHEN "DTX" THEN '#39'03'#39
+      'WHEN "BloodSugar" THEN '#39'04'#39
+      'WHEN "HbA1c" THEN '#39'05'#39
+      'WHEN "Triglyceride" THEN '#39'06'#39
+      'WHEN "Total Cholesterol" THEN '#39'07'#39
+      'WHEN "HDL" THEN '#39'08'#39
+      'WHEN "LDL" THEN '#39'09'#39
+      'WHEN "BUN" THEN '#39'10'#39
+      'WHEN "Creatinine" THEN '#39'11'#39
+      'WHEN "Micro Albumin" THEN '#39'12'#39
+      'WHEN "lab_link_Micro_Albumine" THEN '#39'12'#39
+      'WHEN "Urine Creatinine" THEN '#39'13'#39
+      'WHEN "Macro Albumin" THEN '#39'14'#39
+      'WHEN "Hb" THEN '#39'16'#39
+      'WHEN "UPCR" THEN '#39'17'#39
+      'WHEN "TCO2"  THEN '#39'18'#39
+      'WHEN "Bicarb"  THEN '#39'19'#39
+      'WHEN "Phosphate" THEN '#39'20'#39
+      'WHEN "PTH"  THEN '#39'21'#39
+      'END AS LABTEST,'
+      
+        'IF(lo.lab_order_result IS NOT NULL OR TRIM(lo.lab_order_result)<' +
+        '>'#39#39', REPLACE(FORMAT(lo.lab_order_result,2),'#39','#39','#39#39'), FORMAT(0,2))' +
+        ' AS LABRESULT,'
+      
+        'IF(concat(lh.report_date,'#39' '#39',lh.report_time) IS NULL OR TRIM(con' +
+        'cat(lh.report_date,'#39' '#39',lh.report_time))='#39#39' OR concat(lh.report_d' +
+        'ate,'#39' '#39',lh.report_time) LIKE '#39'0000-00-00%'#39',DATE_FORMAT(concat(lh' +
+        '.report_date,'#39' '#39',lh.report_time),'#39'%Y%m%d%H%i%s'#39'),DATE_FORMAT(con' +
+        'cat(lh.report_date,'#39' '#39',lh.report_time),'#39'%Y%m%d%H%i%s'#39') ) AS D_UP' +
+        'DATE,  '
+      'IF(v.cid IS NOT NULL OR v.cid <> '#39#39',v.cid,pt.cid) AS CID'
+      ''
+      ''
+      'FROM lab_head lh'
+      
+        'LEFT JOIN lab_order lo ON lh.lab_order_number = lo.lab_order_num' +
+        'ber'
+      
+        'LEFT OUTER JOIN lab_items ON lo.lab_items_code = lab_items.lab_i' +
+        'tems_code'
+      
+        'LEFT OUTER JOIN sys_lab_link ON sys_lab_link.lab_items_code = lo' +
+        '.lab_items_code'
+      
+        'LEFT OUTER JOIN sys_lab_code ON sys_lab_code.sys_lab_code_id = s' +
+        'ys_lab_link.sys_lab_code_id'
+      'LEFT OUTER JOIN patient pt ON lh.hn=pt.hn'
+      'LEFT OUTER JOIN doctor d ON d.code=lh.doctor_code  '
+      'LEFT OUTER JOIN vn_stat v ON v.vn=lh.vn  '
+      'LEFT OUTER JOIN spclty sp ON sp.spclty = lh.spclty  '
+      'LEFT OUTER JOIN an_stat a ON a.an=lh.vn  '
+      
+        'LEFT OUTER JOIN kskdepartment k ON k.depcode = lh.order_departme' +
+        'nt  '
+      'LEFT OUTER JOIN ward w ON w.ward = a.ward  '
+      'LEFT OUTER JOIN iptadm adm ON adm.an = a.an  '
+      
+        'LEFT OUTER JOIN lab_perform_status lp ON lp.lab_perform_status_i' +
+        'd = lh.lab_perform_status_id '
+      'LEFT OUTER JOIN person p ON lh.hn = p.patient_hn'
+      
+        'WHERE (sys_lab_code.lab_items_name_list IS NOT NULL AND sys_lab_' +
+        'code.lab_items_name_list <>'#39#39')'
+      'AND sys_lab_code.sys_lab_name IN ('#39'2HR'#39','
+      '        '#39'DTX'#39','
+      '        '#39'BloodSugar'#39','
+      '        '#39'HbA1c'#39','
+      '        '#39'Triglyceride'#39','
+      '        '#39'Total Cholesterol'#39','
+      '        '#39'HDL'#39','
+      '        '#39'LDL'#39','
+      '        '#39'BUN'#39','
+      '        '#39'Creatinine'#39','
+      '        '#39'Micro Albumin'#39','
+      '        '#39'Urine Creatinine'#39','
+      '        '#39'Macro Albumin'#39','
+      '        '#39'Hb'#39','
+      '        '#39'UPCR'#39','
+      '        '#39'TCO2'#39','
+      '        '#39'Bicarb'#39','
+      '        '#39'Phosphate'#39','
+      '        '#39'PTH'#39')'
+      'And lh.order_date between :date_start_text AND :date_end_text'
+      
+        '/*AND lh.hn IN(SELECT hn FROM clinicmember WHERE clinic IN (SELE' +
+        'CT clinic FROM clinic WHERE chronic= '#39'Y'#39')) AND lo.confirm = '#39'Y'#39'*' +
+        '/'
+      'AND lp.lab_perform_status_name = '#39#3619#3634#3618#3591#3634#3609#3612#3621#3649#3621#3657#3623#39
+      '/*Design By TAKIS TEAM 02/02/2558 lab_multiple_link */'
+      ''
+      'UNION ALL'
+      ''
+      'SELECT'
+      '(SELECT hospitalcode FROM opdconfig) AS HOSPCODE,'
+      'IFNULL(p.person_id,ov.hn) AS PID,'
+      'ov.vn AS SEQ,'
+      
+        'IF(ov.vstdate IS NULL OR TRIM(ov.vstdate )='#39#39' OR ov.vstdate  LIK' +
+        'E '#39'0000-00-00%'#39','#39#39',DATE_FORMAT(ov.vstdate ,'#39'%Y%m%d'#39') ) AS DATE_S' +
+        'ERV,'
+      #39'15'#39' AS LABTEST,'
+      
+        'IF(ovqg.ckd_epi IS NOT NULL OR TRIM(ovqg.ckd_epi)<>'#39#39', REPLACE(F' +
+        'ORMAT(ovqg.ckd_epi,2),'#39','#39','#39#39'), FORMAT(0,2)) AS LABRESULT,'
+      'CASE '
+      
+        'WHEN ov.vstdate IS NOT NULL AND ov.cur_dep_time IS NOT NULL  THE' +
+        'N DATE_FORMAT(CONCAT(ov.vstdate,'#39' '#39',ov.cur_dep_time),"%Y%m%d%H%i' +
+        '%s")'
+      
+        'WHEN ov.vstdate IS NOT NULL AND ov.cur_dep_time IS NULL  THEN DA' +
+        'TE_FORMAT(CONCAT(ov.vstdate,'#39' '#39',ov.vsttime),"%Y%m%d%H%i%s")'
+      'ELSE NULL END'
+      'AS D_UPDATE,'
+      'IF(vt.cid IS NOT NULL OR vt.cid <> '#39#39',vt.cid,pt.cid) AS CID'
+      ''
+      'FROM ovst_gfr ovqg  '
+      'LEFT OUTER JOIN ovst ov ON ovqg.vn = ov.vn  '
+      'LEFT OUTER JOIN patient pt ON pt.hn=ov.hn '
+      
+        'LEFT OUTER JOIN ovstdiag odx ON odx.vn=ov.vn and odx.diagtype= '#39 +
+        '1'#39' '
+      'LEFT OUTER JOIN kskdepartment sp ON sp.depcode=ov.cur_dep '
+      'LEFT OUTER JOIN ovstost oost ON oost.ovstost=ov.ovstost '
+      'LEFT OUTER JOIN icd101 icd1 ON icd1.code=odx.icd10 '
+      'LEFT OUTER JOIN icd101 ix ON ix.code=substring(odx.icd10,1,3)  '
+      'LEFT OUTER JOIN pttype pty ON pty.pttype=ov.pttype  '
+      'LEFT OUTER JOIN vn_lock vk ON vk.vn = ov.vn '
+      'LEFT OUTER JOIN ovstist st ON st.ovstist = ov.ovstist  '
+      'LEFT OUTER JOIN vn_stat vt ON vt.vn=ov.vn  '
+      'LEFT OUTER JOIN vn_opd_complete c ON c.vn=ov.vn  '
+      'LEFT OUTER JOIN ovst_seq ovq ON ovq.vn = ov.vn  '
+      'LEFT OUTER JOIN person p ON p.patient_hn = odx.hn'
+      '#WHERE ov.vstdate between 20161001 and 20161031'
+      'WHERE ov.vstdate between :date_start_text AND :date_end_text'
+      '/*Design By Glison 27/01/2558*/')
     ReadOnly = True
     RefreshOptions = [roAfterInsert, roAfterUpdate, roBeforeEdit]
     Options.AutoRefresh = True
     Options.AutoRefreshInterval = 120
+    Active = True
     Left = 320
     Top = 168
     ParamData = <
@@ -539,10 +619,26 @@ object f43_dental_form: Tf43_dental_form
       item
         DataType = ftUnknown
         Name = 'date_end_text'
+      end
+      item
+        DataType = ftUnknown
+        Name = 'date_start_text'
+      end
+      item
+        DataType = ftUnknown
+        Name = 'date_end_text'
+      end
+      item
+        DataType = ftUnknown
+        Name = 'date_start_text'
+      end
+      item
+        DataType = ftUnknown
+        Name = 'date_end_text'
       end>
   end
-  object Df43_dent: TMyDataSource
-    DataSet = Qf43_dent
+  object Df43_labfu: TMyDataSource
+    DataSet = Qf43_labfu
     Left = 424
     Top = 168
   end

@@ -300,22 +300,27 @@ object f43_postnatal_form: Tf43_postnatal_form
       end
       object show_visitDBTableView1GRAVIDA: TcxGridDBColumn
         DataBinding.FieldName = 'GRAVIDA'
+        OnCustomDrawCell = show_visitDBTableView1GRAVIDACustomDrawCell
         Width = 66
       end
       object show_visitDBTableView1BDATE: TcxGridDBColumn
         DataBinding.FieldName = 'BDATE'
+        OnCustomDrawCell = show_visitDBTableView1BDATECustomDrawCell
         Width = 64
       end
       object show_visitDBTableView1PPCARE: TcxGridDBColumn
         DataBinding.FieldName = 'PPCARE'
+        OnCustomDrawCell = show_visitDBTableView1PPCARECustomDrawCell
         Width = 73
       end
       object show_visitDBTableView1PPPLACE: TcxGridDBColumn
         DataBinding.FieldName = 'PPPLACE'
+        OnCustomDrawCell = show_visitDBTableView1PPPLACECustomDrawCell
         Width = 79
       end
       object show_visitDBTableView1PPRESULT: TcxGridDBColumn
         DataBinding.FieldName = 'PPRESULT'
+        OnCustomDrawCell = show_visitDBTableView1PPRESULTCustomDrawCell
         Width = 78
       end
       object show_visitDBTableView1PROVIDER: TcxGridDBColumn
@@ -407,7 +412,46 @@ object f43_postnatal_form: Tf43_postnatal_form
       'LEFT OUTER JOIN person p ON p.person_id = pa.person_id'
       'LEFT JOIN doctor ON pa.anc_register_staff = doctor.`name`'
       '#where pa.last_update between 20160401 and 20160431'
-      'where pa.last_update between :date_start_text AND :date_end_text')
+      'where pa.last_update between :date_start_text AND :date_end_text'
+      ''
+      'UNION ALL'
+      'SELECT DISTINCT'
+      '(SELECT hospitalcode FROM opdconfig) AS HOSPCODE,  '
+      'p.person_id AS PID,'
+      'ppc.vn AS SEQ,'
+      'pa.preg_no  AS GRAVIDA,'
+      
+        'IF(pa.labor_date IS NULL OR TRIM(pa.labor_date)='#39#39' OR pa.labor_d' +
+        'ate LIKE '#39'0000-00-00%'#39','#39#39',DATE_FORMAT(pa.labor_date,'#39'%Y%m%d'#39')) A' +
+        'S BDATE,'
+      
+        'IF(ppc.care_date IS NULL OR TRIM(ppc.care_date)='#39#39' OR ppc.care_d' +
+        'ate LIKE '#39'0000-00-00%'#39','#39#39',DATE_FORMAT(ppc.care_date,'#39'%Y%m%d'#39')) A' +
+        'S PPCARE,'
+      '(SELECT hospitalcode FROM opdconfig) AS PPPLACE,'
+      '(SELECT CASE ppc.uterus_level_normal'
+      'WHEN '#39'Y'#39' THEN '#39'1'#39
+      'WHEN '#39'N'#39' THEN '#39'0'#39
+      'ELSE '#39'9'#39'  END )AS PPRESULT, '
+      'doctor.cid AS PROVIDER,'
+      
+        'IF(pa.last_update IS NULL OR TRIM(pa.last_update)='#39#39' OR pa.last_' +
+        'update LIKE '#39'0000-00-00%'#39','#39#39',DATE_FORMAT(pa.last_update,'#39'%Y%m%d%' +
+        'H%i%s'#39') ) AS D_UPDATE,'
+      'p.cid AS CID,'
+      'p.patient_hn as HN,'
+      'concat(p.pname,p.fname," ",p.lname) as ptname,'
+      'p.house_regist_type_id as typearea,'
+      'p.person_discharge_id as discharge'
+      ''
+      'FROM person_anc_preg_care ppc'
+      
+        'LEFT OUTER JOIN person_anc pa ON ppc.person_anc_id = pa.person_a' +
+        'nc_id'
+      'LEFT OUTER JOIN person p ON p.person_id = pa.person_id'
+      'LEFT JOIN doctor ON pa.anc_register_staff = doctor.`name`'
+      '#where pa.last_update between 20160401 and 20160431'
+      'where ppc.care_date between :date_start_text AND :date_end_text')
     ReadOnly = True
     RefreshOptions = [roAfterInsert, roAfterUpdate, roBeforeEdit]
     Options.AutoRefresh = True
@@ -415,6 +459,14 @@ object f43_postnatal_form: Tf43_postnatal_form
     Left = 320
     Top = 168
     ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'date_start_text'
+      end
+      item
+        DataType = ftUnknown
+        Name = 'date_end_text'
+      end
       item
         DataType = ftUnknown
         Name = 'date_start_text'

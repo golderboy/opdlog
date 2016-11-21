@@ -4,7 +4,7 @@ object miniEMR_form: TminiEMR_form
   Top = 0
   VertScrollBar.Smooth = True
   Caption = 'miniEMR_form'
-  ClientHeight = 746
+  ClientHeight = 742
   ClientWidth = 1246
   Color = clBtnFace
   ParentFont = True
@@ -27,16 +27,14 @@ object miniEMR_form: TminiEMR_form
     Font.Style = [fsBold]
     ParentFont = False
     ImageIndex = 0
-    ExplicitWidth = 773
   end
   object Panel1: TPanel
     Left = 0
-    Top = 696
+    Top = 692
     Width = 1246
     Height = 50
     Align = alBottom
     TabOrder = 1
-    ExplicitWidth = 773
     DesignSize = (
       1246
       50)
@@ -101,17 +99,16 @@ object miniEMR_form: TminiEMR_form
         57A2A2A2E8E8E8E8E8E8E8DE8181DED781818181E8E8E8E8E8E8E8E8E8AC8257
         57E8E8E8E8E8E8E8E8E8E8E8E8AC818181E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 679
     end
     object RzBitBtn2: TRzBitBtn
-      Left = 1048
+      Left = 1064
       Top = 6
       Width = 82
       Height = 35
       Anchors = [akRight, akBottom]
       Caption = 'Print'
       TabOrder = 1
-      OnClick = RzBitBtn1Click
+      OnClick = RzBitBtn2Click
       Glyph.Data = {
         36060000424D3606000000000000360400002800000020000000100000000100
         08000000000000020000730E0000730E00000001000000000000000000003300
@@ -164,7 +161,6 @@ object miniEMR_form: TminiEMR_form
         5E5E5E5E5E5E5E5EE8E8E8E8E8E8E8E2E2E2E2E2E2E2E2E2E8E8E8E8E8E8E8E8
         E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 575
     end
   end
   object person_text: TDBMemo
@@ -176,30 +172,23 @@ object miniEMR_form: TminiEMR_form
     Align = alTop
     DataField = 'person_tag'
     TabOrder = 2
-    ExplicitWidth = 767
   end
   object Panel2: TPanel
     AlignWithMargins = True
     Left = 3
     Top = 244
     Width = 1240
-    Height = 193
+    Height = 189
     Align = alClient
     TabOrder = 3
-    ExplicitWidth = 767
-    ExplicitHeight = 199
     object cxGrid1: TcxGrid
       AlignWithMargins = True
       Left = 4
       Top = 4
       Width = 623
-      Height = 185
+      Height = 181
       Align = alClient
       TabOrder = 0
-      ExplicitLeft = 636
-      ExplicitTop = 5
-      ExplicitWidth = 606
-      ExplicitHeight = 127
       object cxGrid1DBTableView1: TcxGridDBTableView
         Navigator.Buttons.CustomButtons = <>
         DataController.DataSource = Dlab_note
@@ -235,11 +224,9 @@ object miniEMR_form: TminiEMR_form
       Left = 633
       Top = 4
       Width = 603
-      Height = 185
+      Height = 181
       Align = alRight
       TabOrder = 1
-      ExplicitLeft = 160
-      ExplicitHeight = 191
       object GdrugDBTableView1: TcxGridDBTableView
         Navigator.Buttons.CustomButtons = <>
         DataController.DataSource = Ddrug_note
@@ -264,12 +251,11 @@ object miniEMR_form: TminiEMR_form
   object Panel5: TPanel
     AlignWithMargins = True
     Left = 3
-    Top = 584
+    Top = 580
     Width = 1240
     Height = 109
     Align = alBottom
     TabOrder = 4
-    ExplicitWidth = 767
     object Gmed: TcxGrid
       AlignWithMargins = True
       Left = 4
@@ -278,7 +264,6 @@ object miniEMR_form: TminiEMR_form
       Height = 101
       Align = alClient
       TabOrder = 0
-      ExplicitWidth = 150
       object GmedDBTableView1: TcxGridDBTableView
         Navigator.Buttons.CustomButtons = <>
         DataController.DataSource = Dmed_note
@@ -303,7 +288,6 @@ object miniEMR_form: TminiEMR_form
       Height = 101
       Align = alRight
       TabOrder = 1
-      ExplicitLeft = 160
       object GxrayDBTableView1: TcxGridDBTableView
         Navigator.Buttons.CustomButtons = <>
         DataController.DataSource = Dxray_note
@@ -341,19 +325,15 @@ object miniEMR_form: TminiEMR_form
     ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 5
-    ExplicitWidth = 773
   end
   object Panel3: TPanel
     AlignWithMargins = True
     Left = 3
-    Top = 443
+    Top = 439
     Width = 1240
     Height = 135
     Align = alBottom
     TabOrder = 6
-    ExplicitLeft = 0
-    ExplicitTop = 447
-    ExplicitWidth = 1246
     object Gdent: TcxGrid
       AlignWithMargins = True
       Left = 4
@@ -362,7 +342,6 @@ object miniEMR_form: TminiEMR_form
       Height = 127
       Align = alClient
       TabOrder = 0
-      ExplicitWidth = 153
       object GdentDBTableView1: TcxGridDBTableView
         Navigator.Buttons.CustomButtons = <>
         DataController.DataSource = Ddent_note
@@ -390,7 +369,6 @@ object miniEMR_form: TminiEMR_form
       Height = 127
       Align = alRight
       TabOrder = 1
-      ExplicitLeft = 636
       object GdiagDBTableView1: TcxGridDBTableView
         Navigator.Buttons.CustomButtons = <>
         DataController.DataSource = Ddaig_note
@@ -434,6 +412,7 @@ object miniEMR_form: TminiEMR_form
       'limit 1')
     ReadOnly = True
     AutoCalcFields = False
+    Active = True
     Left = 120
     Top = 16
     ParamData = <
@@ -600,7 +579,7 @@ object miniEMR_form: TminiEMR_form
   end
   object Dxray_note: TDataSource
     DataSet = Qxray_note
-    Left = 592
+    Left = 600
     Top = 72
   end
   object Qxray_note: TMyQuery
@@ -710,5 +689,263 @@ object miniEMR_form: TminiEMR_form
     DataSet = Qdaig_note
     Left = 392
     Top = 16
+  end
+  object FReport: TfrxReport
+    Version = '5.5.8'
+    DataSetName = 'FReport'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 42684.425002141200000000
+    ReportOptions.LastChange = 42684.465794768500000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 32
+    Top = 280
+    Datasets = <
+      item
+        DataSet = Fperson
+        DataSetName = 'Fperson'
+      end
+      item
+        DataSet = Fxray_note
+        DataSetName = 'Fxray_note'
+      end
+      item
+        DataSet = Fdoctor_note
+        DataSetName = 'Fdoctor_note'
+      end
+      item
+        DataSet = Fnure_note
+        DataSetName = 'Fnure_note'
+      end
+      item
+        DataSet = Fmed_note
+        DataSetName = 'Fmed_note'
+      end
+      item
+        DataSet = Fdrug_note
+        DataSetName = 'Fdrug_note'
+      end
+      item
+        DataSet = Fdiag_note
+        DataSetName = 'Fdiag_note'
+      end
+      item
+        DataSet = Fdent_note
+        DataSetName = 'Fdent_note'
+      end
+      item
+        DataSet = Flab_note
+        DataSetName = 'Flab_note'
+      end>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      object Memo1: TfrxMemoView
+        Align = baCenter
+        Left = 28.346475000000000000
+        Width = 661.417750000000000000
+        Height = 34.015770000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -27
+        Font.Name = 'TH SarabunPSK'
+        Font.Style = [fsBold]
+        HAlign = haCenter
+        Memo.UTF8W = (
+          'MINI_EMR')
+        ParentFont = False
+      end
+      object frxDBDataset1phm: TfrxMemoView
+        Left = 26.456710000000000000
+        Top = 294.803340000000000000
+        Width = 665.197280000000000000
+        Height = 18.897650000000000000
+        DataField = 'phm'
+        DataSet = Fperson
+        DataSetName = 'Fperson'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -21
+        Font.Name = 'TH SarabunPSK'
+        Font.Style = []
+        Memo.UTF8W = (
+          '[Fperson."phm"]')
+        ParentFont = False
+      end
+      object frxDBDataset1person_tag: TfrxMemoView
+        Left = 26.456710000000000000
+        Top = 41.574830000000000000
+        Width = 665.197280000000000000
+        Height = 22.677180000000000000
+        DataField = 'person_tag'
+        DataSet = Fperson
+        DataSetName = 'Fperson'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -21
+        Font.Name = 'TH SarabunPSK'
+        Font.Style = []
+        Memo.UTF8W = (
+          '[Fperson."person_tag"]')
+        ParentFont = False
+      end
+      object frxDBDataset1cc: TfrxMemoView
+        Left = 26.456710000000000000
+        Top = 102.047310000000000000
+        Width = 665.197280000000000000
+        Height = 30.236240000000000000
+        DataField = 'cc'
+        DataSet = Fperson
+        DataSetName = 'Fperson'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -21
+        Font.Name = 'TH SarabunPSK'
+        Font.Style = []
+        Memo.UTF8W = (
+          '[Fperson."cc"]')
+        ParentFont = False
+      end
+      object frxDBDataset1hpi: TfrxMemoView
+        Left = 26.456710000000000000
+        Top = 143.622140000000000000
+        Width = 665.197280000000000000
+        Height = 139.842610000000000000
+        DataField = 'hpi'
+        DataSet = Fperson
+        DataSetName = 'Fperson'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -21
+        Font.Name = 'TH SarabunPSK'
+        Font.Style = []
+        Memo.UTF8W = (
+          '[Fperson."hpi"]')
+        ParentFont = False
+      end
+      object frxDBDataset1health_tag: TfrxMemoView
+        Left = 26.456710000000000000
+        Top = 71.811070000000000000
+        Width = 665.197280000000000000
+        Height = 18.897650000000000000
+        DataField = 'health_tag'
+        DataSet = Fperson
+        DataSetName = 'Fperson'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -21
+        Font.Name = 'TH SarabunPSK'
+        Font.Style = []
+        Memo.UTF8W = (
+          '[Fperson."health_tag"]')
+        ParentFont = False
+      end
+    end
+  end
+  object Fdiag_note: TfrxDBDataset
+    UserName = 'Fdiag_note'
+    CloseDataSource = False
+    DataSource = Ddaig_note
+    BCDToCurrency = False
+    Left = 88
+    Top = 280
+  end
+  object Fdrug_note: TfrxDBDataset
+    UserName = 'Fdrug_note'
+    CloseDataSource = False
+    DataSource = Ddrug_note
+    BCDToCurrency = False
+    Left = 152
+    Top = 280
+  end
+  object Flab_note: TfrxDBDataset
+    UserName = 'Flab_note'
+    CloseDataSource = False
+    DataSource = Dlab_note
+    BCDToCurrency = False
+    Left = 216
+    Top = 280
+  end
+  object Fdent_note: TfrxDBDataset
+    UserName = 'Fdent_note'
+    CloseDataSource = False
+    DataSource = Ddent_note
+    BCDToCurrency = False
+    Left = 280
+    Top = 280
+  end
+  object Fmed_note: TfrxDBDataset
+    UserName = 'Fmed_note'
+    CloseDataSource = False
+    DataSource = Dmed_note
+    BCDToCurrency = False
+    Left = 352
+    Top = 280
+  end
+  object Fxray_note: TfrxDBDataset
+    UserName = 'Fxray_note'
+    CloseDataSource = False
+    DataSource = Dxray_note
+    BCDToCurrency = False
+    Left = 416
+    Top = 280
+  end
+  object Dperson: TMyDataSource
+    DataSet = Qperson
+    Left = 248
+    Top = 136
+  end
+  object Dnure_note: TMyDataSource
+    DataSet = Qnure_note
+    Left = 328
+    Top = 136
+  end
+  object Ddoctor_note: TMyDataSource
+    DataSet = Qdoctor_note
+    Left = 400
+    Top = 136
+  end
+  object Fperson: TfrxDBDataset
+    UserName = 'Fperson'
+    CloseDataSource = False
+    DataSource = Dperson
+    BCDToCurrency = False
+    Left = 72
+    Top = 344
+  end
+  object Fnure_note: TfrxDBDataset
+    UserName = 'Fnure_note'
+    CloseDataSource = False
+    DataSource = Dnure_note
+    BCDToCurrency = False
+    Left = 152
+    Top = 344
+  end
+  object Fdoctor_note: TfrxDBDataset
+    UserName = 'Fdoctor_note'
+    CloseDataSource = False
+    DataSource = Ddoctor_note
+    BCDToCurrency = False
+    Left = 224
+    Top = 344
   end
 end

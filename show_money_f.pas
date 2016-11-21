@@ -50,6 +50,15 @@ type
     procedure emr_btnClick(Sender: TObject);
     procedure RzBitBtn1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure show_visitDBTableView1pdxCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1incomeCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1costCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
   private
     { Private declarations }
   public
@@ -108,6 +117,30 @@ end;
 procedure Tchk_money_form.RzBitBtn1Click(Sender: TObject);
 begin
 close;
+end;
+
+procedure Tchk_money_form.show_visitDBTableView1costCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if VarToStr(AViewInfo.GridRecord.Values[10]) = '' then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tchk_money_form.show_visitDBTableView1incomeCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if VarToStr(AViewInfo.GridRecord.Values[5]) = '' then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tchk_money_form.show_visitDBTableView1pdxCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if VarToStr(AViewInfo.GridRecord.Values[4]) = '' then
+        Acanvas.brush.Color := clRed ;
 end;
 
 end.

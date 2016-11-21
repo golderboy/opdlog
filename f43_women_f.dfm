@@ -296,6 +296,7 @@ object f43_women_form: Tf43_women_form
       end
       object show_visitDBTableView1FPTYPE: TcxGridDBColumn
         DataBinding.FieldName = 'FPTYPE'
+        OnCustomDrawCell = show_visitDBTableView1FPTYPECustomDrawCell
         Width = 59
       end
       object show_visitDBTableView1NOFPCAUSE: TcxGridDBColumn
@@ -303,10 +304,12 @@ object f43_women_form: Tf43_women_form
       end
       object show_visitDBTableView1TOTALSON: TcxGridDBColumn
         DataBinding.FieldName = 'TOTALSON'
+        OnCustomDrawCell = show_visitDBTableView1TOTALSONCustomDrawCell
         Width = 91
       end
       object show_visitDBTableView1NUMBERSON: TcxGridDBColumn
         DataBinding.FieldName = 'NUMBERSON'
+        OnCustomDrawCell = show_visitDBTableView1NUMBERSONCustomDrawCell
         Width = 94
       end
       object show_visitDBTableView1ABORTION: TcxGridDBColumn

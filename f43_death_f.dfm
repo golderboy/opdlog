@@ -40,9 +40,6 @@ object f43_death_form: Tf43_death_form
     Height = 41
     Align = alTop
     TabOrder = 1
-    ExplicitLeft = -10
-    ExplicitTop = 49
-    ExplicitWidth = 779
     DesignSize = (
       769
       41)
@@ -123,7 +120,6 @@ object f43_death_form: Tf43_death_form
         5E5E5E5EE8E8E8E8E8E8E8818181818181818181E8E8E8E8E8E8E8E8E8E8E8E8
         E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 558
     end
     object excel_export_btn: TRzBitBtn
       Left = 668
@@ -184,7 +180,6 @@ object f43_death_form: Tf43_death_form
         5E5E5E5E5E5E5E5EE8E8E8E8E8E8E8E2E2E2E2E2E2E2E2E2E8E8E8E8E8E8E8E8
         E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 678
     end
   end
   object Panel1: TPanel
@@ -194,8 +189,6 @@ object f43_death_form: Tf43_death_form
     Height = 27
     Align = alBottom
     TabOrder = 2
-    ExplicitLeft = -10
-    ExplicitWidth = 779
     DesignSize = (
       769
       27)
@@ -258,7 +251,6 @@ object f43_death_form: Tf43_death_form
         57A2A2A2E8E8E8E8E8E8E8DE8181DED781818181E8E8E8E8E8E8E8E8E8AC8257
         57E8E8E8E8E8E8E8E8E8E8E8E8AC818181E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 701
     end
     object cxLabel1: TcxLabel
       Left = 40
@@ -285,10 +277,6 @@ object f43_death_form: Tf43_death_form
     Font.Style = []
     ParentFont = False
     TabOrder = 3
-    ExplicitLeft = -4
-    ExplicitTop = 93
-    ExplicitWidth = 773
-    ExplicitHeight = 408
     object show_visitDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = Df43_death
@@ -319,6 +307,7 @@ object f43_death_form: Tf43_death_form
       end
       object show_visitDBTableView1DDEATH: TcxGridDBColumn
         DataBinding.FieldName = 'DDEATH'
+        OnCustomDrawCell = show_visitDBTableView1DDEATHCustomDrawCell
         Width = 75
       end
       object show_visitDBTableView1CDEATH_A: TcxGridDBColumn
@@ -339,10 +328,12 @@ object f43_death_form: Tf43_death_form
       end
       object show_visitDBTableView1ODISEASE: TcxGridDBColumn
         DataBinding.FieldName = 'ODISEASE'
+        OnCustomDrawCell = show_visitDBTableView1ODISEASECustomDrawCell
         Width = 86
       end
       object show_visitDBTableView1CDEATH: TcxGridDBColumn
         DataBinding.FieldName = 'CDEATH'
+        OnCustomDrawCell = show_visitDBTableView1CDEATHCustomDrawCell
         Width = 74
       end
       object show_visitDBTableView1PREGDEATH: TcxGridDBColumn
@@ -351,6 +342,7 @@ object f43_death_form: Tf43_death_form
       end
       object show_visitDBTableView1PDEATH: TcxGridDBColumn
         DataBinding.FieldName = 'PDEATH'
+        OnCustomDrawCell = show_visitDBTableView1PDEATHCustomDrawCell
         Width = 62
       end
       object show_visitDBTableView1PROVIDER: TcxGridDBColumn

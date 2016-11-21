@@ -40,7 +40,6 @@ object f43_chronicfu_form: Tf43_chronicfu_form
     Height = 41
     Align = alTop
     TabOrder = 1
-    ExplicitTop = 49
     DesignSize = (
       785
       41)
@@ -278,8 +277,6 @@ object f43_chronicfu_form: Tf43_chronicfu_form
     Font.Style = []
     ParentFont = False
     TabOrder = 3
-    ExplicitTop = 93
-    ExplicitHeight = 385
     object show_visitDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = Df43_chronicfu
@@ -307,22 +304,27 @@ object f43_chronicfu_form: Tf43_chronicfu_form
       end
       object show_visitDBTableView1WEIGHT: TcxGridDBColumn
         DataBinding.FieldName = 'WEIGHT'
+        OnCustomDrawCell = show_visitDBTableView1WEIGHTCustomDrawCell
         Width = 60
       end
       object show_visitDBTableView1HEIGHT: TcxGridDBColumn
         DataBinding.FieldName = 'HEIGHT'
+        OnCustomDrawCell = show_visitDBTableView1HEIGHTCustomDrawCell
         Width = 57
       end
       object show_visitDBTableView1WAIST_CM: TcxGridDBColumn
         DataBinding.FieldName = 'WAIST_CM'
+        OnCustomDrawCell = show_visitDBTableView1WAIST_CMCustomDrawCell
         Width = 76
       end
       object show_visitDBTableView1SBP: TcxGridDBColumn
         DataBinding.FieldName = 'SBP'
+        OnCustomDrawCell = show_visitDBTableView1SBPCustomDrawCell
         Width = 45
       end
       object show_visitDBTableView1DBP: TcxGridDBColumn
         DataBinding.FieldName = 'DBP'
+        OnCustomDrawCell = show_visitDBTableView1DBPCustomDrawCell
         Width = 46
       end
       object show_visitDBTableView1FOOT: TcxGridDBColumn

@@ -296,62 +296,77 @@ object f43_newborn_form: Tf43_newborn_form
       end
       object show_visitDBTableView1MPID: TcxGridDBColumn
         DataBinding.FieldName = 'MPID'
+        OnCustomDrawCell = show_visitDBTableView1MPIDCustomDrawCell
         Width = 51
       end
       object show_visitDBTableView1GRAVIDA: TcxGridDBColumn
         DataBinding.FieldName = 'GRAVIDA'
+        OnCustomDrawCell = show_visitDBTableView1GRAVIDACustomDrawCell
         Width = 66
       end
       object show_visitDBTableView1GA: TcxGridDBColumn
         DataBinding.FieldName = 'GA'
+        OnCustomDrawCell = show_visitDBTableView1GACustomDrawCell
         Width = 25
       end
       object show_visitDBTableView1BDATE: TcxGridDBColumn
         DataBinding.FieldName = 'BDATE'
+        OnCustomDrawCell = show_visitDBTableView1BDATECustomDrawCell
         Width = 64
       end
       object show_visitDBTableView1BTIME: TcxGridDBColumn
         DataBinding.FieldName = 'BTIME'
+        OnCustomDrawCell = show_visitDBTableView1BTIMECustomDrawCell
         Width = 48
       end
       object show_visitDBTableView1BPLACE: TcxGridDBColumn
         DataBinding.FieldName = 'BPLACE'
+        OnCustomDrawCell = show_visitDBTableView1BPLACECustomDrawCell
         Width = 70
       end
       object show_visitDBTableView1BHOSP: TcxGridDBColumn
         DataBinding.FieldName = 'BHOSP'
+        OnCustomDrawCell = show_visitDBTableView1BHOSPCustomDrawCell
         Width = 65
       end
       object show_visitDBTableView1BIRTHNO: TcxGridDBColumn
         DataBinding.FieldName = 'BIRTHNO'
+        OnCustomDrawCell = show_visitDBTableView1BIRTHNOCustomDrawCell
         Width = 79
       end
       object show_visitDBTableView1BTYPE: TcxGridDBColumn
         DataBinding.FieldName = 'BTYPE'
+        OnCustomDrawCell = show_visitDBTableView1BTYPECustomDrawCell
         Width = 51
       end
       object show_visitDBTableView1BDOCTOR: TcxGridDBColumn
         DataBinding.FieldName = 'BDOCTOR'
+        OnCustomDrawCell = show_visitDBTableView1BDOCTORCustomDrawCell
         Width = 73
       end
       object show_visitDBTableView1BWEIGHT: TcxGridDBColumn
         DataBinding.FieldName = 'BWEIGHT'
+        OnCustomDrawCell = show_visitDBTableView1BWEIGHTCustomDrawCell
         Width = 81
       end
       object show_visitDBTableView1ASPHYXIA: TcxGridDBColumn
         DataBinding.FieldName = 'ASPHYXIA'
+        OnCustomDrawCell = show_visitDBTableView1ASPHYXIACustomDrawCell
         Width = 84
       end
       object show_visitDBTableView1VITK: TcxGridDBColumn
         DataBinding.FieldName = 'VITK'
+        OnCustomDrawCell = show_visitDBTableView1VITKCustomDrawCell
         Width = 35
       end
       object show_visitDBTableView1TSH: TcxGridDBColumn
         DataBinding.FieldName = 'TSH'
+        OnCustomDrawCell = show_visitDBTableView1TSHCustomDrawCell
         Width = 34
       end
       object show_visitDBTableView1TSHRESULT: TcxGridDBColumn
         DataBinding.FieldName = 'TSHRESULT'
+        OnCustomDrawCell = show_visitDBTableView1TSHRESULTCustomDrawCell
         Width = 88
       end
       object show_visitDBTableView1D_UPDATE: TcxGridDBColumn

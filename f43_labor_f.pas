@@ -55,6 +55,36 @@ type
     procedure excel_export_btnClick(Sender: TObject);
     function  GetTempDir : string;
     procedure FormShow(Sender: TObject);
+    procedure show_visitDBTableView1GRAVIDACustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1LMPCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1EDCCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1BDATECustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1BRESULTCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1BPLACECustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1BHOSPCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1BTYPECustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1LBORNCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1SBORNCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
   private
     { Private declarations }
   public
@@ -121,6 +151,86 @@ end;
 procedure Tf43_labor_form.RzBitBtn1Click(Sender: TObject);
 begin
 close;
+end;
+
+procedure Tf43_labor_form.show_visitDBTableView1BDATECustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if (VarToStr(AViewInfo.GridRecord.Values[5]) = '') OR (VarToStr(AViewInfo.GridRecord.Values[5]) = '0')then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tf43_labor_form.show_visitDBTableView1BHOSPCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if (VarToStr(AViewInfo.GridRecord.Values[8]) = '') OR (VarToStr(AViewInfo.GridRecord.Values[8]) = '00000')then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tf43_labor_form.show_visitDBTableView1BPLACECustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if (VarToStr(AViewInfo.GridRecord.Values[7]) = '') OR (VarToStr(AViewInfo.GridRecord.Values[7]) = '0')then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tf43_labor_form.show_visitDBTableView1BRESULTCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if (VarToStr(AViewInfo.GridRecord.Values[6]) = '') OR (VarToStr(AViewInfo.GridRecord.Values[6]) = '0')then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tf43_labor_form.show_visitDBTableView1BTYPECustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if (VarToStr(AViewInfo.GridRecord.Values[9]) = '') OR (VarToStr(AViewInfo.GridRecord.Values[9]) = '0')then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tf43_labor_form.show_visitDBTableView1EDCCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if (VarToStr(AViewInfo.GridRecord.Values[4]) = '') OR (VarToStr(AViewInfo.GridRecord.Values[4]) = '0')then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tf43_labor_form.show_visitDBTableView1GRAVIDACustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if (VarToStr(AViewInfo.GridRecord.Values[2]) = '') OR (VarToStr(AViewInfo.GridRecord.Values[2]) = '0')then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tf43_labor_form.show_visitDBTableView1LBORNCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if (VarToStr(AViewInfo.GridRecord.Values[11]) = '0') AND (VarToStr(AViewInfo.GridRecord.Values[12]) = '0')then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tf43_labor_form.show_visitDBTableView1LMPCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if (VarToStr(AViewInfo.GridRecord.Values[3]) = '') OR (VarToStr(AViewInfo.GridRecord.Values[3]) = '0')then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tf43_labor_form.show_visitDBTableView1SBORNCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if (VarToStr(AViewInfo.GridRecord.Values[12]) = '0') OR (VarToStr(AViewInfo.GridRecord.Values[11]) = '0')then
+        Acanvas.brush.Color := clRed ;
 end;
 
 end.

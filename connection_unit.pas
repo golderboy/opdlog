@@ -7,7 +7,7 @@ uses
   Dialogs, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, Menus, cxControls,
   cxContainer, cxEdit, cxTextEdit, StdCtrls, cxButtons, ExtCtrls, JvExControls,
   JvNavigationPane, DB, DBAccess, MyAccess,
-  IniFiles, cxMaskEdit, cxSpinEdit;
+  IniFiles, cxMaskEdit, cxSpinEdit, Buttons;
 
 type
   Tconnection_form = class(TForm)
@@ -39,11 +39,24 @@ type
     port_slave: TcxSpinEdit;
     Label12: TLabel;
     connect_btn_slave: TcxButton;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    Label18: TLabel;
+    host_opd: TcxTextEdit;
+    database_opd: TcxTextEdit;
+    user_opd: TcxTextEdit;
+    pass_opd: TcxTextEdit;
+    port_opd: TcxSpinEdit;
+    connect_btn_opd: TBitBtn;
     procedure FormCreate(Sender: TObject);
     procedure save_btnClick(Sender: TObject);
     procedure connect_btnClick(Sender: TObject);
     procedure exit_btnClick(Sender: TObject);
     procedure connect_btn_slaveClick(Sender: TObject);
+    procedure connect_btn_opdClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -75,6 +88,12 @@ begin
    controlstore.WriteString('opdlog_2','pass_slave',pass_slave.Text);
    controlstore.WriteString('opdlog_2','port_slave',port_slave.Text);
 
+   controlstore.WriteString('opdlog_3','host_opd',host_opd.Text);
+   controlstore.WriteString('opdlog_3','database_opd',database_opd.Text);
+   controlstore.WriteString('opdlog_3','user_opd',user_opd.Text);
+   controlstore.WriteString('opdlog_3','pass_opd',pass_opd.Text);
+   controlstore.WriteString('opdlog_3','port_opd',port_opd.Text);
+
    controlstore.Free;
    close;
 end;
@@ -102,6 +121,30 @@ begin
         end;
    end;
 
+end;
+
+procedure Tconnection_form.connect_btn_opdClick(Sender: TObject);
+begin
+   db_connect_m.connect_opd.Server := host_opd.Text;
+   db_connect_m.connect_opd.Database := database_opd.Text;
+   db_connect_m.connect_opd.Username := user_opd.Text;
+   db_connect_m.connect_opd.Password := pass_opd.Text;
+   db_connect_m.connect_opd.Port := port_opd.Value;
+   db_connect_m.connect_opd.Options.Charset := 'utf8';
+   try
+
+   db_connect_m.connect_opd.Connected := true;
+
+   if db_connect_m.connect_opd.Connected then
+      begin
+      showmessage('Connect ok..');
+      end;
+   except
+     on e : exception do
+        begin
+        showmessage('False Connect!!'+e.Message);
+        end;
+   end;
 end;
 
 procedure Tconnection_form.connect_btn_slaveClick(Sender: TObject);
@@ -151,6 +194,12 @@ begin
 		user_slave.Text := controlstore.ReadString('opdlog_2','user_slave','sa');
 		pass_slave.Text := controlstore.ReadString('opdlog_2','pass_slave','');
 		port_slave.Text := controlstore.ReadString('opdlog_2','port_slave','3306');
+
+    host_opd.Text := controlstore.ReadString('opdlog_3','host_opd','127.0.0.1');
+		database_opd.Text := controlstore.ReadString('opdlog_3','database_opd','hos');
+		user_opd.Text := controlstore.ReadString('opdlog_3','user_opd','sa');
+		pass_opd.Text := controlstore.ReadString('opdlog_3','pass_opd','');
+		port_opd.Text := controlstore.ReadString('opdlog_3','port_opd','3306');
    end;
 end;
 

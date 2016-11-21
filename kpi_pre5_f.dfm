@@ -127,6 +127,10 @@ object kpi_pre5_form: Tkpi_pre5_form
     Font.Style = []
     ParentFont = False
     TabOrder = 2
+    ExplicitLeft = 152
+    ExplicitTop = 91
+    ExplicitWidth = 460
+    ExplicitHeight = 210
     object show_visitDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = Dkpi_pre5
@@ -157,10 +161,12 @@ object kpi_pre5_form: Tkpi_pre5_form
       end
       object show_visitDBTableView1discharge_date: TcxGridDBColumn
         DataBinding.FieldName = 'discharge_date'
+        OnCustomDrawCell = show_visitDBTableView1discharge_dateCustomDrawCell
         Width = 102
       end
       object show_visitDBTableView1labor_date: TcxGridDBColumn
         DataBinding.FieldName = 'labor_date'
+        OnCustomDrawCell = show_visitDBTableView1labor_dateCustomDrawCell
         Width = 78
       end
       object show_visitDBTableView1Fname: TcxGridDBColumn
@@ -174,21 +180,27 @@ object kpi_pre5_form: Tkpi_pre5_form
       end
       object show_visitDBTableView1preg_no: TcxGridDBColumn
         DataBinding.FieldName = 'preg_no'
+        OnCustomDrawCell = show_visitDBTableView1preg_noCustomDrawCell
       end
       object show_visitDBTableView1pp1: TcxGridDBColumn
         DataBinding.FieldName = 'pp1'
+        OnCustomDrawCell = show_visitDBTableView1pp1CustomDrawCell
       end
       object show_visitDBTableView1pp2: TcxGridDBColumn
         DataBinding.FieldName = 'pp2'
+        OnCustomDrawCell = show_visitDBTableView1pp2CustomDrawCell
       end
       object show_visitDBTableView1pp3: TcxGridDBColumn
         DataBinding.FieldName = 'pp3'
+        OnCustomDrawCell = show_visitDBTableView1pp3CustomDrawCell
       end
       object show_visitDBTableView1pp4: TcxGridDBColumn
         DataBinding.FieldName = 'pp4'
+        OnCustomDrawCell = show_visitDBTableView1pp4CustomDrawCell
       end
       object show_visitDBTableView1pp5: TcxGridDBColumn
         DataBinding.FieldName = 'pp5'
+        OnCustomDrawCell = show_visitDBTableView1pp5CustomDrawCell
       end
     end
     object show_visitLevel1: TcxGridLevel
@@ -340,8 +352,8 @@ object kpi_pre5_form: Tkpi_pre5_form
       Caption = #3611#3637#3591#3610
     end
     object list_year: TComboBox
-      Left = 73
-      Top = 7
+      Left = 69
+      Top = 6
       Width = 62
       Height = 21
       ItemIndex = 1
@@ -367,6 +379,7 @@ object kpi_pre5_form: Tkpi_pre5_form
     Connection = db_connect_m.connect_db
     SQL.Strings = (
       'set @year = :year-543 ;'
+      '#set @year = :2016-543 ;'
       ''
       
         'SELECT a.person_anc_id,a.person_id,p.patient_hn,a.discharge,a.di' +
@@ -399,9 +412,9 @@ object kpi_pre5_form: Tkpi_pre5_form
       'LEFT OUTER JOIN person as p ON p.person_id = a.person_id'
       'where  p.house_regist_type_id is not null'
       
-        'AND a.labor_date BETWEEN concat(@year-1,'#39'0110'#39') AND concat(@year' +
+        'AND a.labor_date BETWEEN concat(@year-1,'#39'1001'#39') AND concat(@year' +
         ','#39'0930'#39')'
-      'AND a.discharge = "N"'
+      '#AND a.discharge = "N"'
       ''
       'GROUP BY person_id,a.preg_no '
       'ORDER BY p.person_id asc')

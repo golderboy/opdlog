@@ -24,6 +24,7 @@ type
     password_t: TcxTextEdit;
     memo_t: TcxMemo;
     Qopd_admin: TMyQuery;
+    version: TcxTextEdit;
     procedure login_bitClick(Sender: TObject);
     procedure RzBitBtn1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -35,6 +36,8 @@ type
   public
     { Public declarations }
     controlstore : TIniFile;
+    log_date : TDateTime;
+    username: String;
   end;
 
 var
@@ -99,6 +102,12 @@ begin
          if db_connect_m.connect_db.Connected then
             begin
             showmessage('Connect ok..');
+
+              if version.Text <> db_connect_m.Qversion.FieldByName('version').AsString then
+                  begin
+                    showmessage('OPDLOG IS Low Version.');
+                  end;
+
             end;
          except
            on e : exception do
@@ -111,7 +120,8 @@ begin
 end;
 
 procedure Tlogin_form.login_bitClick(Sender: TObject);
-var pwd : String;
+var pwd,log_sql : String;
+
 begin
   Qopd_admin.Close;
   pwd := md5(password_t.Text);
@@ -125,6 +135,12 @@ begin
     if  Qopd_admin.RecordCount > 0 then
           begin
             showmessage (' Login ADMIN ...OK');
+//
+        db_connect_m.Qlog.sql.text := 'Insert into log_opd(log_id,log_date,log_user,log_status,log_sql) '+
+             '  values("",now(),"'+username_t.text+'","login",'+QuotedStr(Qopd_admin.sql.text)+' )   ';
+    //showmessage(Qlog.sql.text);
+    db_connect_m.Qlog.ExecSQL;
+//
             username_t.Text := '';
             password_t.Text := '';
             main_admin_form := Tmain_admin_form.Create(application);
@@ -142,6 +158,13 @@ begin
            if  Qopd_user.RecordCount > 0 then
                   begin
                     showmessage (' Login USER ...OK');
+
+    //
+        db_connect_m.Qlog.sql.text := 'Insert into log_opd(log_id,log_date,log_user,log_status,log_sql) '+
+             '  values("",now(),"'+username_t.text+'","login",'+QuotedStr(Qopd_user.sql.text)+' )   ';
+    //showmessage(db_connect_m.Qlog.sql.text);
+    db_connect_m.Qlog.ExecSQL;
+    //
                     username_t.Text := '';
                     password_t.Text := '';
                     main_u := Tmain_u.Create(application);
@@ -153,7 +176,7 @@ begin
                      showmessage ('USERNAME OR PASSWORD IS NOT VALUE 001');
                      //showmessage (Qopd_user.sql.text+IntToStr(Qopd_user.RecordCount));
                      //memo_t.Visible := true;        //
-                     //memo_t.Text :=  Qopd_user.sql.text;  //
+                     //memo_t.Text :=  Qlog.sql.text;  //
                      username_t.Text := '';
                      password_t.Text := '';
                    end

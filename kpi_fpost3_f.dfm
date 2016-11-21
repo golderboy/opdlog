@@ -303,10 +303,12 @@ object kpi_post3_form: Tkpi_post3_form
       end
       object show_visitDBTableView1discharge_date: TcxGridDBColumn
         DataBinding.FieldName = 'discharge_date'
+        OnCustomDrawCell = show_visitDBTableView1discharge_dateCustomDrawCell
         Width = 108
       end
       object show_visitDBTableView1labor_date: TcxGridDBColumn
         DataBinding.FieldName = 'labor_date'
+        OnCustomDrawCell = show_visitDBTableView1labor_dateCustomDrawCell
       end
       object show_visitDBTableView1Fname: TcxGridDBColumn
         DataBinding.FieldName = 'Fname'
@@ -319,15 +321,19 @@ object kpi_post3_form: Tkpi_post3_form
       end
       object show_visitDBTableView1preg_no: TcxGridDBColumn
         DataBinding.FieldName = 'preg_no'
+        OnCustomDrawCell = show_visitDBTableView1preg_noCustomDrawCell
       end
       object show_visitDBTableView1care1: TcxGridDBColumn
         DataBinding.FieldName = 'care1'
+        OnCustomDrawCell = show_visitDBTableView1care1CustomDrawCell
       end
       object show_visitDBTableView1care2: TcxGridDBColumn
         DataBinding.FieldName = 'care2'
+        OnCustomDrawCell = show_visitDBTableView1care2CustomDrawCell
       end
       object show_visitDBTableView1care3: TcxGridDBColumn
         DataBinding.FieldName = 'care3'
+        OnCustomDrawCell = show_visitDBTableView1care3CustomDrawCell
       end
     end
     object show_visitLevel1: TcxGridLevel
@@ -388,7 +394,7 @@ object kpi_post3_form: Tkpi_post3_form
       'LEFT OUTER JOIN person as p ON p.person_id = a.person_id'
       'where  p.house_regist_type_id is not null'
       
-        'AND a.labor_date BETWEEN concat(@year-1,'#39'0110'#39') AND concat(@year' +
+        'AND a.labor_date BETWEEN concat(@year-1,'#39'1001'#39') AND concat(@year' +
         ','#39'0930'#39')'
       ''
       'GROUP BY person_id,a.preg_no '

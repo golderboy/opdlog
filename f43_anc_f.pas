@@ -52,6 +52,21 @@ type
     procedure FormShow(Sender: TObject);
     function  GetTempDir : string;
     procedure excel_export_btnClick(Sender: TObject);
+    procedure show_visitDBTableView1GRAVIDACustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1ANCNOCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1GACustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1ANCRESULTCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1ANCPLACECustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
   private
     { Private declarations }
   public
@@ -120,6 +135,46 @@ end;
 procedure Tf43_anc_from.RzBitBtn1Click(Sender: TObject);
 begin
 close;
+end;
+
+procedure Tf43_anc_from.show_visitDBTableView1ANCNOCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if VarToStr(AViewInfo.GridRecord.Values[5]) = '' then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tf43_anc_from.show_visitDBTableView1ANCPLACECustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if VarToStr(AViewInfo.GridRecord.Values[8]) = '' then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tf43_anc_from.show_visitDBTableView1ANCRESULTCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if VarToStr(AViewInfo.GridRecord.Values[7]) = '' then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tf43_anc_from.show_visitDBTableView1GACustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if VarToStr(AViewInfo.GridRecord.Values[6]) = '' then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tf43_anc_from.show_visitDBTableView1GRAVIDACustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if VarToStr(AViewInfo.GridRecord.Values[4]) = '' then
+        Acanvas.brush.Color := clRed ;
 end;
 
 end.

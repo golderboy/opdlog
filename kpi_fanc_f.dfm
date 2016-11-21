@@ -313,95 +313,117 @@ object kpi_fanc_form: Tkpi_fanc_form
       object show_visitDBTableView1anc_register_date: TcxGridDBColumn
         Caption = 'register'
         DataBinding.FieldName = 'anc_register_date'
+        OnCustomDrawCell = show_visitDBTableView1anc_register_dateCustomDrawCell
       end
       object show_visitDBTableView1pre_labor_service1_date: TcxGridDBColumn
         Caption = 'service1'
         DataBinding.FieldName = 'pre_labor_service1_date'
+        OnCustomDrawCell = show_visitDBTableView1pre_labor_service1_dateCustomDrawCell
       end
       object show_visitDBTableView1preg_no: TcxGridDBColumn
         DataBinding.FieldName = 'preg_no'
+        OnCustomDrawCell = show_visitDBTableView1preg_noCustomDrawCell
         Width = 68
       end
       object show_visitDBTableView1current_preg_age: TcxGridDBColumn
         Caption = 'preg_age'
         DataBinding.FieldName = 'current_preg_age'
+        OnCustomDrawCell = show_visitDBTableView1current_preg_ageCustomDrawCell
       end
       object show_visitDBTableView1edc: TcxGridDBColumn
         DataBinding.FieldName = 'edc'
+        OnCustomDrawCell = show_visitDBTableView1edcCustomDrawCell
       end
       object show_visitDBTableView1lmp: TcxGridDBColumn
         DataBinding.FieldName = 'lmp'
+        OnCustomDrawCell = show_visitDBTableView1lmpCustomDrawCell
       end
       object show_visitDBTableView1vaccine_tt_complete: TcxGridDBColumn
         Caption = 'tt_complete'
         DataBinding.FieldName = 'vaccine_tt_complete'
+        OnCustomDrawCell = show_visitDBTableView1vaccine_tt_completeCustomDrawCell
         Width = 75
       end
       object show_visitDBTableView1vaccine_tt1_date: TcxGridDBColumn
         Caption = 'vcc_tt1'
         DataBinding.FieldName = 'vaccine_tt1_date'
+        OnCustomDrawCell = show_visitDBTableView1vaccine_tt1_dateCustomDrawCell
       end
       object show_visitDBTableView1vaccine_tt2_date: TcxGridDBColumn
         Caption = 'vcc_tt2'
         DataBinding.FieldName = 'vaccine_tt2_date'
+        OnCustomDrawCell = show_visitDBTableView1vaccine_tt2_dateCustomDrawCell
       end
       object show_visitDBTableView1vaccine_tt3_date: TcxGridDBColumn
         Caption = 'vcc_tt3'
         DataBinding.FieldName = 'vaccine_tt3_date'
+        OnCustomDrawCell = show_visitDBTableView1vaccine_tt3_dateCustomDrawCell
       end
       object show_visitDBTableView1vaccine_tt4_date: TcxGridDBColumn
         Caption = 'vcc_tt4'
         DataBinding.FieldName = 'vaccine_tt4_date'
+        OnCustomDrawCell = show_visitDBTableView1vaccine_tt4_dateCustomDrawCell
       end
       object show_visitDBTableView1vaccine_dtanc1_date: TcxGridDBColumn
         Caption = 'vcc_dtanc1'
         DataBinding.FieldName = 'vaccine_dtanc1_date'
+        OnCustomDrawCell = show_visitDBTableView1vaccine_dtanc1_dateCustomDrawCell
         Width = 100
       end
       object show_visitDBTableView1vaccine_dtanc2_date: TcxGridDBColumn
         Caption = 'vcc_dtanc2'
         DataBinding.FieldName = 'vaccine_dtanc2_date'
+        OnCustomDrawCell = show_visitDBTableView1vaccine_dtanc2_dateCustomDrawCell
         Width = 74
       end
       object show_visitDBTableView1vaccine_dtanc3_date: TcxGridDBColumn
         Caption = 'vcc_dtanc3'
         DataBinding.FieldName = 'vaccine_dtanc3_date'
+        OnCustomDrawCell = show_visitDBTableView1vaccine_dtanc3_dateCustomDrawCell
       end
       object show_visitDBTableView1vaccine_dtanc4_date: TcxGridDBColumn
         Caption = 'vcc_dtanc4'
         DataBinding.FieldName = 'vaccine_dtanc4_date'
+        OnCustomDrawCell = show_visitDBTableView1vaccine_dtanc4_dateCustomDrawCell
       end
       object show_visitDBTableView1vaccine_dtanc5_date: TcxGridDBColumn
         Caption = 'vcc_dtanc5'
         DataBinding.FieldName = 'vaccine_dtanc5_date'
+        OnCustomDrawCell = show_visitDBTableView1vaccine_dtanc5_dateCustomDrawCell
       end
       object show_visitDBTableView1blood_vdrl1_result: TcxGridDBColumn
         Caption = 'blood_vdrl1'
         DataBinding.FieldName = 'blood_vdrl1_result'
+        OnCustomDrawCell = show_visitDBTableView1blood_vdrl1_resultCustomDrawCell
         Width = 89
       end
       object show_visitDBTableView1blood_vdrl2_result: TcxGridDBColumn
         Caption = 'blood_vdrl2'
         DataBinding.FieldName = 'blood_vdrl2_result'
+        OnCustomDrawCell = show_visitDBTableView1blood_vdrl2_resultCustomDrawCell
         Width = 89
       end
       object show_visitDBTableView1blood_hct_grade: TcxGridDBColumn
         Caption = 'hct_grade'
         DataBinding.FieldName = 'blood_hct_grade'
+        OnCustomDrawCell = show_visitDBTableView1blood_hct_gradeCustomDrawCell
       end
       object show_visitDBTableView1blood_hct_result: TcxGridDBColumn
         Caption = 'hct_result'
         DataBinding.FieldName = 'blood_hct_result'
+        OnCustomDrawCell = show_visitDBTableView1blood_hct_resultCustomDrawCell
         Width = 74
       end
       object show_visitDBTableView1blood_hiv1_result: TcxGridDBColumn
         Caption = 'blood_hiv1'
         DataBinding.FieldName = 'blood_hiv1_result'
+        OnCustomDrawCell = show_visitDBTableView1blood_hiv1_resultCustomDrawCell
         Width = 88
       end
       object show_visitDBTableView1blood_hiv2_result: TcxGridDBColumn
         Caption = 'blood_hiv2'
         DataBinding.FieldName = 'blood_hiv2_result'
+        OnCustomDrawCell = show_visitDBTableView1blood_hiv2_resultCustomDrawCell
         Width = 88
       end
     end

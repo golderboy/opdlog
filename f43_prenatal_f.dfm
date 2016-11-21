@@ -24,7 +24,7 @@ object f43_prenatal_form: Tf43_prenatal_form
     Width = 777
     Height = 49
     Align = alTop
-    Caption = 'POSTNATAL'
+    Caption = 'PRENATAL'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
     Font.Height = -16
@@ -32,6 +32,7 @@ object f43_prenatal_form: Tf43_prenatal_form
     Font.Style = [fsBold]
     ParentFont = False
     ImageIndex = 0
+    ExplicitTop = 4
   end
   object Panel2: TPanel
     Left = 0
@@ -296,14 +297,17 @@ object f43_prenatal_form: Tf43_prenatal_form
       end
       object show_visitDBTableView1GRAVIDA: TcxGridDBColumn
         DataBinding.FieldName = 'GRAVIDA'
+        OnCustomDrawCell = show_visitDBTableView1GRAVIDACustomDrawCell
         Width = 66
       end
       object show_visitDBTableView1LMP: TcxGridDBColumn
         DataBinding.FieldName = 'LMP'
+        OnCustomDrawCell = show_visitDBTableView1LMPCustomDrawCell
         Width = 62
       end
       object show_visitDBTableView1EDC: TcxGridDBColumn
         DataBinding.FieldName = 'EDC'
+        OnCustomDrawCell = show_visitDBTableView1EDCCustomDrawCell
         Width = 62
       end
       object show_visitDBTableView1VDRL_RESULT: TcxGridDBColumn
@@ -320,14 +324,17 @@ object f43_prenatal_form: Tf43_prenatal_form
       end
       object show_visitDBTableView1DATE_HCT: TcxGridDBColumn
         DataBinding.FieldName = 'DATE_HCT'
+        OnCustomDrawCell = show_visitDBTableView1DATE_HCTCustomDrawCell
         Width = 78
       end
       object show_visitDBTableView1HCT_RESULT: TcxGridDBColumn
         DataBinding.FieldName = 'HCT_RESULT'
+        OnCustomDrawCell = show_visitDBTableView1HCT_RESULTCustomDrawCell
         Width = 95
       end
       object show_visitDBTableView1THALASSEMIA: TcxGridDBColumn
         DataBinding.FieldName = 'THALASSEMIA'
+        OnCustomDrawCell = show_visitDBTableView1THALASSEMIACustomDrawCell
         Width = 112
       end
       object show_visitDBTableView1D_UPDATE: TcxGridDBColumn
@@ -445,6 +452,90 @@ object f43_prenatal_form: Tf43_prenatal_form
       'WHERE (a.discharge <> '#39'N'#39' OR a.discharge IS NULL) '
       '#AND a.last_update BETWEEN 20160401 AND 20160431'
       'AND a.last_update BETWEEN :date_start_text AND :date_end_text'
+      'GROUP BY a.person_anc_id,a.person_id,a.preg_no'
+      ''
+      'UNION ALL'
+      ''
+      'SELECT DISTINCT'
+      '(SELECT hospitalcode FROM opdconfig) AS HOSPCODE,'
+      'ps.person_id AS PID,'
+      'a.preg_no AS GRAVIDA,'
+      
+        'IF(a.lmp IS NULL OR TRIM(a.lmp)='#39#39' OR a.lmp LIKE '#39'0000-00-00%'#39','#39 +
+        #39',DATE_FORMAT(a.lmp,'#39'%Y%m%d'#39')) AS LMP,'
+      
+        'IF(a.edc IS NULL OR TRIM(a.edc)='#39#39' OR a.edc LIKE '#39'0000-00-00%'#39','#39 +
+        #39',DATE_FORMAT(a.edc,'#39'%Y%m%d'#39')) AS EDC, '
+      
+        'CASE l1.lab_result_normal IN (SELECT l1.anc_lab_id FROM anc_lab ' +
+        'al WHERE l1.anc_lab_id=al.anc_lab_id AND al.anc_lab_code = "VDRL' +
+        '1")'
+      #9#9'WHEN '#39'Y'#39' THEN '#39'1'#39
+      #9#9'WHEN '#39'N'#39' THEN '#39'2'#39
+      #9#9'ELSE 9 END AS VDRL_RESULT, '
+      
+        'CASE l1.lab_result_normal IN (SELECT l1.anc_lab_id FROM anc_lab ' +
+        'al WHERE l1.anc_lab_id=al.anc_lab_id AND al.anc_lab_code = "HB")'
+      #9#9'WHEN '#39'Y'#39' THEN '#39'1'#39
+      #9#9'WHEN '#39'N'#39' THEN '#39'2'#39
+      #9#9'ELSE 9 END AS HB_RESULT, '
+      
+        'CASE l1.lab_result_normal IN (SELECT l1.anc_lab_id FROM anc_lab ' +
+        'al WHERE l1.anc_lab_id=al.anc_lab_id AND al.anc_lab_code = "HIV1' +
+        '")'
+      #9#9'WHEN '#39'Y'#39' THEN '#39'1'#39
+      #9#9'WHEN '#39'N'#39' THEN '#39'2'#39
+      #9#9'ELSE 9 END AS HIV_RESULT,'
+      
+        'IF(a.thalassemia_screen_date IS NULL OR TRIM(a.thalassemia_scree' +
+        'n_date)='#39#39' OR a.edc LIKE '#39'0000-00-00%'#39','#39#39',DATE_FORMAT(a.thalasse' +
+        'mia_screen_date,'#39'%Y%m%d'#39'))AS DATE_HCT,'
+      
+        'CASE l1.lab_result_normal IN (SELECT l1.anc_lab_id FROM anc_lab ' +
+        'al WHERE l1.anc_lab_id=al.anc_lab_id AND al.anc_lab_code = "HCT1' +
+        '")'
+      #9#9'WHEN '#39'Y'#39' THEN '#39'1'#39
+      #9#9'WHEN '#39'N'#39' THEN '#39'2'#39
+      #9#9'ELSE 9 END AS HCT_RESULT,'
+      'CASE a.thalasseima_wife_hbtyping_result'
+      #9#9'WHEN '#39'Y'#39' THEN '#39'1'#39
+      #9#9'WHEN '#39'N'#39' THEN '#39'2'#39
+      #9#9'ELSE 9 END AS  THALASSEMIA, '
+      
+        'IF(a.last_update IS NULL OR TRIM(a.last_update)='#39#39' OR a.last_upd' +
+        'ate LIKE '#39'0000-00-00%'#39','#39#39',DATE_FORMAT(a.last_update,'#39'%Y%m%d%H%i%' +
+        's'#39'))AS D_UPDATE,'
+      'ps.cid AS CID,'
+      'ps.patient_hn as HN,'
+      'concat(ps.pname,ps.fname," ",ps.lname) as ptname,'
+      'ps.house_regist_type_id as typearea,'
+      'ps.person_discharge_id as discharge'
+      ''
+      'FROM person_anc a'
+      'LEFT OUTER JOIN person ps ON ps.person_id = a.person_id'
+      ''
+      'LEFT OUTER JOIN ipt ON ipt.hn = ps.patient_hn'
+      'LEFT OUTER JOIN ipt_labour ON ipt_labour.an = ipt.an'
+      
+        'LEFT OUTER JOIN ipt_labour_infant ilf ON  ilf.ipt_labour_id = ip' +
+        't_labour.ipt_labour_id'
+      'LEFT OUTER JOIN ipt_pregnancy ip ON ip.an = ipt_labour.an'
+      ''
+      
+        'LEFT OUTER JOIN person_anc_service pase ON pase.person_anc_id=a.' +
+        'person_anc_id'
+      
+        'LEFT OUTER JOIN person_anc_lab l1 ON pase.person_anc_service_id ' +
+        '= l1.person_anc_service_id '
+      ''
+      
+        'WHERE ipt.dchdate IS NOT NULL AND ilf.birth_date  BETWEEN :date_' +
+        'start_text AND :date_end_text'
+      
+        'OR    ipt.dchdate <> '#39#39'       AND ilf.birth_date  BETWEEN :date_' +
+        'start_text AND :date_end_text'
+      ' '
+      ''
       'GROUP BY a.person_anc_id,a.person_id,a.preg_no')
     ReadOnly = True
     RefreshOptions = [roAfterInsert, roAfterUpdate, roBeforeEdit]
@@ -453,6 +544,22 @@ object f43_prenatal_form: Tf43_prenatal_form
     Left = 320
     Top = 168
     ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'date_start_text'
+      end
+      item
+        DataType = ftUnknown
+        Name = 'date_end_text'
+      end
+      item
+        DataType = ftUnknown
+        Name = 'date_start_text'
+      end
+      item
+        DataType = ftUnknown
+        Name = 'date_end_text'
+      end
       item
         DataType = ftUnknown
         Name = 'date_start_text'

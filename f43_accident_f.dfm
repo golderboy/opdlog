@@ -32,8 +32,6 @@ object f43_accident_form: Tf43_accident_form
     Font.Style = [fsBold]
     ParentFont = False
     ImageIndex = 0
-    ExplicitLeft = -26
-    ExplicitWidth = 790
   end
   object Panel2: TPanel
     Left = 0
@@ -42,8 +40,6 @@ object f43_accident_form: Tf43_accident_form
     Height = 41
     Align = alTop
     TabOrder = 1
-    ExplicitLeft = -26
-    ExplicitWidth = 790
     DesignSize = (
       764
       41)
@@ -124,7 +120,6 @@ object f43_accident_form: Tf43_accident_form
         5E5E5E5EE8E8E8E8E8E8E8818181818181818181E8E8E8E8E8E8E8E8E8E8E8E8
         E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 569
     end
     object excel_export_btn: TRzBitBtn
       Left = 663
@@ -185,7 +180,6 @@ object f43_accident_form: Tf43_accident_form
         5E5E5E5E5E5E5E5EE8E8E8E8E8E8E8E2E2E2E2E2E2E2E2E2E8E8E8E8E8E8E8E8
         E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 689
     end
   end
   object Panel1: TPanel
@@ -195,7 +189,6 @@ object f43_accident_form: Tf43_accident_form
     Height = 27
     Align = alBottom
     TabOrder = 2
-    ExplicitTop = 499
     DesignSize = (
       764
       27)
@@ -258,7 +251,6 @@ object f43_accident_form: Tf43_accident_form
         57A2A2A2E8E8E8E8E8E8E8DE8181DED781818181E8E8E8E8E8E8E8E8E8AC8257
         57E8E8E8E8E8E8E8E8E8E8E8E8AC818181E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 712
     end
     object cxLabel1: TcxLabel
       Left = 40
@@ -285,9 +277,6 @@ object f43_accident_form: Tf43_accident_form
     Font.Style = []
     ParentFont = False
     TabOrder = 3
-    ExplicitLeft = -20
-    ExplicitWidth = 784
-    ExplicitHeight = 399
     object show_visitDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = Df43_accident
@@ -315,73 +304,91 @@ object f43_accident_form: Tf43_accident_form
       end
       object show_visitDBTableView1DATETIME_AE: TcxGridDBColumn
         DataBinding.FieldName = 'DATETIME_AE'
+        OnCustomDrawCell = show_visitDBTableView1DATETIME_AECustomDrawCell
         Width = 104
       end
       object show_visitDBTableView1AETYPE: TcxGridDBColumn
         DataBinding.FieldName = 'AETYPE'
+        OnCustomDrawCell = show_visitDBTableView1AETYPECustomDrawCell
         Width = 72
       end
       object show_visitDBTableView1AEPLACE: TcxGridDBColumn
         DataBinding.FieldName = 'AEPLACE'
+        OnCustomDrawCell = show_visitDBTableView1AEPLACECustomDrawCell
         Width = 67
       end
       object show_visitDBTableView1TYPEIN_AE: TcxGridDBColumn
         DataBinding.FieldName = 'TYPEIN_AE'
+        OnCustomDrawCell = show_visitDBTableView1TYPEIN_AECustomDrawCell
         Width = 80
       end
       object show_visitDBTableView1TRAFFIC: TcxGridDBColumn
         DataBinding.FieldName = 'TRAFFIC'
+        OnCustomDrawCell = show_visitDBTableView1TRAFFICCustomDrawCell
         Width = 62
       end
       object show_visitDBTableView1VEHICLE: TcxGridDBColumn
         DataBinding.FieldName = 'VEHICLE'
+        OnCustomDrawCell = show_visitDBTableView1VEHICLECustomDrawCell
         Width = 74
       end
       object show_visitDBTableView1ALCOHOL: TcxGridDBColumn
         DataBinding.FieldName = 'ALCOHOL'
+        OnCustomDrawCell = show_visitDBTableView1ALCOHOLCustomDrawCell
         Width = 68
       end
       object show_visitDBTableView1NACROTIC_DRUG: TcxGridDBColumn
         DataBinding.FieldName = 'NACROTIC_DRUG'
+        OnCustomDrawCell = show_visitDBTableView1NACROTIC_DRUGCustomDrawCell
         Width = 134
       end
       object show_visitDBTableView1BELT: TcxGridDBColumn
         DataBinding.FieldName = 'BELT'
+        OnCustomDrawCell = show_visitDBTableView1BELTCustomDrawCell
         Width = 40
       end
       object show_visitDBTableView1HELMET: TcxGridDBColumn
         DataBinding.FieldName = 'HELMET'
+        OnCustomDrawCell = show_visitDBTableView1HELMETCustomDrawCell
         Width = 73
       end
       object show_visitDBTableView1AIRWAY: TcxGridDBColumn
         DataBinding.FieldName = 'AIRWAY'
+        OnCustomDrawCell = show_visitDBTableView1AIRWAYCustomDrawCell
         Width = 71
       end
       object show_visitDBTableView1STOPBLEED: TcxGridDBColumn
         DataBinding.FieldName = 'STOPBLEED'
+        OnCustomDrawCell = show_visitDBTableView1STOPBLEEDCustomDrawCell
       end
       object show_visitDBTableView1SPLINT: TcxGridDBColumn
         DataBinding.FieldName = 'SPLINT'
+        OnCustomDrawCell = show_visitDBTableView1SPLINTCustomDrawCell
         Width = 53
       end
       object show_visitDBTableView1FLUID: TcxGridDBColumn
         DataBinding.FieldName = 'FLUID'
+        OnCustomDrawCell = show_visitDBTableView1FLUIDCustomDrawCell
         Width = 56
       end
       object show_visitDBTableView1URGENCY: TcxGridDBColumn
         DataBinding.FieldName = 'URGENCY'
+        OnCustomDrawCell = show_visitDBTableView1URGENCYCustomDrawCell
         Width = 73
       end
       object show_visitDBTableView1COMA_EYE: TcxGridDBColumn
         DataBinding.FieldName = 'COMA_EYE'
+        OnCustomDrawCell = show_visitDBTableView1COMA_EYECustomDrawCell
         Width = 79
       end
       object show_visitDBTableView1COMA_SPEAK: TcxGridDBColumn
         DataBinding.FieldName = 'COMA_SPEAK'
+        OnCustomDrawCell = show_visitDBTableView1COMA_SPEAKCustomDrawCell
         Width = 96
       end
       object show_visitDBTableView1COMA_MOVEMENT: TcxGridDBColumn
         DataBinding.FieldName = 'COMA_MOVEMENT'
+        OnCustomDrawCell = show_visitDBTableView1COMA_MOVEMENTCustomDrawCell
         Width = 142
       end
       object show_visitDBTableView1D_UPDATE: TcxGridDBColumn

@@ -32,8 +32,6 @@ object report_r506_form: Treport_r506_form
     Font.Style = [fsBold]
     ParentFont = False
     ImageIndex = 0
-    ExplicitLeft = -42
-    ExplicitWidth = 786
   end
   object Panel2: TPanel
     Left = 0
@@ -42,8 +40,6 @@ object report_r506_form: Treport_r506_form
     Height = 41
     Align = alTop
     TabOrder = 1
-    ExplicitLeft = -42
-    ExplicitWidth = 786
     DesignSize = (
       744
       41)
@@ -107,7 +103,6 @@ object report_r506_form: Treport_r506_form
         5E5E5E5EE8E8E8E8E8E8E8818181818181818181E8E8E8E8E8E8E8E8E8E8E8E8
         E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 565
     end
     object excel_export_btn: TRzBitBtn
       Left = 643
@@ -168,7 +163,6 @@ object report_r506_form: Treport_r506_form
         5E5E5E5E5E5E5E5EE8E8E8E8E8E8E8E2E2E2E2E2E2E2E2E2E8E8E8E8E8E8E8E8
         E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 685
     end
     object cxLabel2: TcxLabel
       Left = 40
@@ -195,9 +189,6 @@ object report_r506_form: Treport_r506_form
     Height = 27
     Align = alBottom
     TabOrder = 2
-    ExplicitLeft = -42
-    ExplicitTop = 496
-    ExplicitWidth = 786
     DesignSize = (
       744
       27)
@@ -260,7 +251,6 @@ object report_r506_form: Treport_r506_form
         57A2A2A2E8E8E8E8E8E8E8DE8181DED781818181E8E8E8E8E8E8E8E8E8AC8257
         57E8E8E8E8E8E8E8E8E8E8E8E8AC818181E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 708
     end
     object cxLabel1: TcxLabel
       Left = 40
@@ -347,9 +337,7 @@ object report_r506_form: Treport_r506_form
     Font.Style = []
     ParentFont = False
     TabOrder = 3
-    ExplicitLeft = -36
-    ExplicitWidth = 780
-    ExplicitHeight = 416
+    ExplicitLeft = -2
     object show_visitDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = Dshow_r506
@@ -361,21 +349,26 @@ object report_r506_form: Treport_r506_form
       OptionsView.GroupByBox = False
       object show_visitDBTableView1sv_number: TcxGridDBColumn
         DataBinding.FieldName = 'sv_number'
+        OnCustomDrawCell = show_visitDBTableView1sv_numberCustomDrawCell
         Width = 72
       end
       object show_visitDBTableView1send_epidem: TcxGridDBColumn
         DataBinding.FieldName = 'send_epidem'
+        OnCustomDrawCell = show_visitDBTableView1send_epidemCustomDrawCell
         Width = 89
       end
       object show_visitDBTableView1report_date: TcxGridDBColumn
         DataBinding.FieldName = 'report_date'
+        OnCustomDrawCell = show_visitDBTableView1report_dateCustomDrawCell
       end
       object show_visitDBTableView1E0: TcxGridDBColumn
         DataBinding.FieldName = 'E0'
+        OnCustomDrawCell = show_visitDBTableView1E0CustomDrawCell
         Width = 34
       end
       object show_visitDBTableView1E1: TcxGridDBColumn
         DataBinding.FieldName = 'E1'
+        OnCustomDrawCell = show_visitDBTableView1E1CustomDrawCell
         Width = 34
       end
       object show_visitDBTableView1case_refer_out: TcxGridDBColumn
@@ -401,10 +394,12 @@ object report_r506_form: Treport_r506_form
       end
       object show_visitDBTableView1begin_date: TcxGridDBColumn
         DataBinding.FieldName = 'begin_date'
+        OnCustomDrawCell = show_visitDBTableView1begin_dateCustomDrawCell
         Width = 86
       end
       object show_visitDBTableView1pdx_506: TcxGridDBColumn
         DataBinding.FieldName = 'pdx_506'
+        OnCustomDrawCell = show_visitDBTableView1pdx_506CustomDrawCell
         Width = 68
       end
       object show_visitDBTableView1icdname: TcxGridDBColumn
@@ -413,11 +408,13 @@ object report_r506_form: Treport_r506_form
       end
       object show_visitDBTableView1pdx_v: TcxGridDBColumn
         DataBinding.FieldName = 'pdx_v'
+        OnCustomDrawCell = show_visitDBTableView1pdx_vCustomDrawCell
         Width = 44
       end
       object show_visitDBTableView1sv_code506: TcxGridDBColumn
         Caption = 'code506'
         DataBinding.FieldName = 'sv_code506'
+        OnCustomDrawCell = show_visitDBTableView1sv_code506CustomDrawCell
         Width = 58
       end
       object show_visitDBTableView1r506_name: TcxGridDBColumn
@@ -426,6 +423,7 @@ object report_r506_form: Treport_r506_form
       end
       object show_visitDBTableView1ptstat: TcxGridDBColumn
         DataBinding.FieldName = 'ptstat'
+        OnCustomDrawCell = show_visitDBTableView1ptstatCustomDrawCell
         Width = 38
       end
       object show_visitDBTableView1vn: TcxGridDBColumn
@@ -461,18 +459,22 @@ object report_r506_form: Treport_r506_form
       end
       object show_visitDBTableView1moopart: TcxGridDBColumn
         DataBinding.FieldName = 'moopart'
+        OnCustomDrawCell = show_visitDBTableView1moopartCustomDrawCell
         Width = 68
       end
       object show_visitDBTableView1tmbpart: TcxGridDBColumn
         DataBinding.FieldName = 'tmbpart'
+        OnCustomDrawCell = show_visitDBTableView1tmbpartCustomDrawCell
         Width = 51
       end
       object show_visitDBTableView1amppart: TcxGridDBColumn
         DataBinding.FieldName = 'amppart'
+        OnCustomDrawCell = show_visitDBTableView1amppartCustomDrawCell
         Width = 56
       end
       object show_visitDBTableView1chwpart: TcxGridDBColumn
         DataBinding.FieldName = 'chwpart'
+        OnCustomDrawCell = show_visitDBTableView1chwpartCustomDrawCell
         Width = 52
       end
     end
@@ -510,8 +512,8 @@ object report_r506_form: Treport_r506_form
       #39#39' as r506_name,'#39#39' as ptstat,'
       'os.vn,os.hn,pt.cid,concat(pt.fname,'#39' '#39',pt.lname) as ptname,'
       
-        'pt.sex,a.age_y,a.age_m,a.age_d,pt.moopart,pt.tmbpart,pt.amppart,' +
-        'pt.chwpart'
+        'pt.sex,a.age_y,a.age_m,a.age_d,s1.moo,s1.tmbpart,s1.amppart,s1.c' +
+        'hwpart'
       ''
       ''
       'from ovst as os  '
@@ -522,6 +524,7 @@ object report_r506_form: Treport_r506_form
       
         'left outer join occupation as oc on oc.occupation = pt.occupatio' +
         'n  '
+      'LEFT OUTER JOIN surveil_member as s1 on s1.vn = os.vn '
       ''
       'WHERE a.pdx in (select icd10 from ccode506) '
       'AND a.pdx !=""'
@@ -541,8 +544,8 @@ object report_r506_form: Treport_r506_form
       #39#39' as r506_name,'#39#39' as ptstat,'
       'os.vn,os.hn,pt.cid,concat(pt.fname,'#39' '#39',pt.lname) as ptname,'
       
-        'pt.sex,v.age_y,v.age_m,v.age_d,pt.moopart,pt.tmbpart,pt.amppart,' +
-        'pt.chwpart'
+        'pt.sex,v.age_y,v.age_m,v.age_d,s1.moo,s1.tmbpart,s1.amppart,s1.c' +
+        'hwpart'
       ''
       ''
       'from ovst as os  '
@@ -553,6 +556,7 @@ object report_r506_form: Treport_r506_form
       
         'left outer join occupation as oc on oc.occupation = pt.occupatio' +
         'n  '
+      'LEFT OUTER JOIN surveil_member as s1 on s1.vn = os.vn '
       ''
       'WHERE v.pdx in (select icd10 from ccode506 ) '
       'AND v.pdx != ""'
@@ -574,8 +578,8 @@ object report_r506_form: Treport_r506_form
       's1.code506 as sv_code506,n.`name` as r506_name,s1.ptstat,'
       's1.vn,s1.hn,pt.cid,concat(pt.fname,'#39' '#39',pt.lname) as ptname,'
       
-        'pt.sex,v.age_y,v.age_m,v.age_d,pt.moopart,pt.tmbpart,pt.amppart,' +
-        'pt.chwpart'
+        'pt.sex,v.age_y,v.age_m,v.age_d,s1.moo,s1.tmbpart,s1.amppart,s1.c' +
+        'hwpart'
       ''
       ''
       'from surveil_member as s1  '

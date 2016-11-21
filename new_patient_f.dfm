@@ -1,9 +1,9 @@
-object f43_dental_form: Tf43_dental_form
+object new_patient_form: Tnew_patient_form
   Left = 0
   Top = 0
-  Caption = 'f43_dental_form'
-  ClientHeight = 545
-  ClientWidth = 780
+  Caption = 'new_patient_form'
+  ClientHeight = 542
+  ClientWidth = 753
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,18 +13,15 @@ object f43_dental_form: Tf43_dental_form
   OldCreateOrder = False
   WindowState = wsMaximized
   OnShow = FormShow
-  DesignSize = (
-    780
-    545)
   PixelsPerInch = 96
   TextHeight = 13
   object header_opdlog: TJvNavPanelHeader
     Left = 0
     Top = 0
-    Width = 780
+    Width = 753
     Height = 33
     Align = alTop
-    Caption = ' DENTAL'
+    Caption = ' CHACK NEW PATIENT'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
     Font.Height = -16
@@ -36,12 +33,12 @@ object f43_dental_form: Tf43_dental_form
   object Panel2: TPanel
     Left = 0
     Top = 33
-    Width = 780
+    Width = 753
     Height = 41
     Align = alTop
     TabOrder = 1
     DesignSize = (
-      780
+      753
       41)
     object date_start_text: TcxDateEdit
       Left = 70
@@ -60,17 +57,15 @@ object f43_dental_form: Tf43_dental_form
       Top = 18
       Caption = #3623#3633#3609#3607#3637#3656
     end
-    object post_date_btn: TRzBitBtn
-      Left = 559
-      Top = 10
-      Width = 107
+    object excel_export_btn: TRzBitBtn
+      Left = 708
+      Top = -25
       Anchors = [akTop, akRight]
-      Caption = 'Preview'
+      Caption = 'EXCEL'
       TabOrder = 3
-      OnClick = post_date_btnClick
       Glyph.Data = {
         36060000424D3606000000000000360400002800000020000000100000000100
-        08000000000000020000830E0000830E00000001000000000000000000003300
+        08000000000000020000730E0000730E00000001000000000000000000003300
         00006600000099000000CC000000FF0000000033000033330000663300009933
         0000CC330000FF33000000660000336600006666000099660000CC660000FF66
         000000990000339900006699000099990000CC990000FF99000000CC000033CC
@@ -103,31 +98,92 @@ object f43_dental_form: Tf43_dental_form
         6600D075A300ECC6D900646F710099A8AC00E2EFF10000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000E8E8E8E8E8E8
-        E8E8E8E8E8E8E8820982E8E8E8E8E8E8E8E8E8E8E8E8E8AC81ACE85E5E5E5E5E
-        5E5E5E5E5E5E82090909E88181818181818181818181AC818181E85ED7D7D7D7
-        D7D7D7D7D7DF09090982E881E8E8E8E8E8E8E8E8E8DF818181ACE85ED7E3E3E3
-        E3E3DFDFDF09090982E8E881E8ACACACACACDFDFDF818181ACE8E85ED7D7D7D7
-        E35DB3B3D7880982E8E8E881E8E8E8E8AC81E3E3D7E381ACE8E8E85ED7E3E3E3
-        81E6B3B3B3D756E8E8E8E881E8ACACAC81E3E3E3E3D756E8E8E8E85ED7D7D7D7
-        81E6D7E6B3B356E8E8E8E881E8E8E8E881E3D7E3E3E356E8E8E8E85ED7E3E3E3
-        81E6D7D7E6B356E8E8E8E881E8ACACAC81E3D7D7E3E356E8E8E8E85ED7D7D7D7
-        D781E6E6E65DDFE8E8E8E881E8E8E8E8E881E3E3E381DFE8E8E8E85ED7E3E3E3
-        E3E3818181E35EE8E8E8E881E8ACACACACAC818181E381E8E8E8E85ED7D7D7D7
-        D7D7D7D7D7D75EE8E8E8E881E8E8E8E8E8E8E8E8E8E881E8E8E8E85ED7E3E3E3
-        E3E3D75E5E5E5EE8E8E8E881E8ACACACACACE881818181E8E8E8E85ED7D7D7D7
-        D7D7D75EE35EE8E8E8E8E881E8E8E8E8E8E8E881E381E8E8E8E8E85ED7D7D7D7
-        D7D7D75E5EE8E8E8E8E8E881E8E8E8E8E8E8E88181E8E8E8E8E8E85E5E5E5E5E
-        5E5E5E5EE8E8E8E8E8E8E8818181818181818181E8E8E8E8E8E8E8E8E8E8E8E8
+        E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E809090909
+        09090909090909E8E8E8E8E88181818181818181818181E8E8E8E85E89898989
+        89898989895E5E09E8E8E8E2ACACACACACACACACACE2E281E8E85E5E5E5E5E5E
+        5E5E5E5E5E5E095E09E8E2E2E2E2E2E2E2E2E2E2E2E281E281E85ED789898989
+        8989898989895E0909E8E2E8ACACACACACACACACACACE28181E85ED789898989
+        181289B490895E5E09E8E2E8ACACACACE281ACE281ACE2E281E85ED7D7D7D7D7
+        D7D7D7D7D7D75E5E5E09E2E8E8E8E8E8E8E8E8E8E8E8E2E2E2815ED789898989
+        8989898989895E5E5E09E2E8ACACACACACACACACACACE2E2E281E85E5E5E5E5E
+        5E5E5E5E5E89895E5E09E8E2E2E2E2E2E2E2E2E2E2ACACE2E281E8E85ED7D7D7
+        D7D7D7D7D75E89895E09E8E8E2E8E8E8E8E8E8E8E8E2ACACE281E8E8E85ED7E3
+        E3E3E3E3D75E5E5E09E8E8E8E8E2E8ACACACACACE8E2E2E281E8E8E8E85ED7D7
+        D7D7D7D7D7D75EE8E8E8E8E8E8E2E8E8E8E8E8E8E8E8E2E8E8E8E8E8E8E85ED7
+        E3E3E3E3E3D75EE8E8E8E8E8E8E8E2E8ACACACACACE8E2E8E8E8E8E8E8E85ED7
+        D7D7D7D7D7D7D75EE8E8E8E8E8E8E2E8E8E8E8E8E8E8E8E2E8E8E8E8E8E8E85E
+        5E5E5E5E5E5E5E5EE8E8E8E8E8E8E8E2E2E2E2E2E2E2E2E2E8E8E8E8E8E8E8E8
         E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
     end
-    object excel_export_btn: TRzBitBtn
-      Left = 679
-      Top = 10
+    object post_date_btn2: TRzBitBtn
+      Left = 531
+      Top = 6
+      Width = 123
+      Anchors = [akTop, akRight]
+      Caption = #3605#3619#3623#3592#3626#3629#3610#3648#3610#3639#3657#3629#3591#3605#3657#3609
+      TabOrder = 4
+      OnClick = post_date_btn2Click
+      Glyph.Data = {
+        36060000424D3606000000000000360400002800000020000000100000000100
+        08000000000000020000330B0000330B00000001000000000000000000003300
+        00006600000099000000CC000000FF0000000033000033330000663300009933
+        0000CC330000FF33000000660000336600006666000099660000CC660000FF66
+        000000990000339900006699000099990000CC990000FF99000000CC000033CC
+        000066CC000099CC0000CCCC0000FFCC000000FF000033FF000066FF000099FF
+        0000CCFF0000FFFF000000003300330033006600330099003300CC003300FF00
+        330000333300333333006633330099333300CC333300FF333300006633003366
+        33006666330099663300CC663300FF6633000099330033993300669933009999
+        3300CC993300FF99330000CC330033CC330066CC330099CC3300CCCC3300FFCC
+        330000FF330033FF330066FF330099FF3300CCFF3300FFFF3300000066003300
+        66006600660099006600CC006600FF0066000033660033336600663366009933
+        6600CC336600FF33660000666600336666006666660099666600CC666600FF66
+        660000996600339966006699660099996600CC996600FF99660000CC660033CC
+        660066CC660099CC6600CCCC6600FFCC660000FF660033FF660066FF660099FF
+        6600CCFF6600FFFF660000009900330099006600990099009900CC009900FF00
+        990000339900333399006633990099339900CC339900FF339900006699003366
+        99006666990099669900CC669900FF6699000099990033999900669999009999
+        9900CC999900FF99990000CC990033CC990066CC990099CC9900CCCC9900FFCC
+        990000FF990033FF990066FF990099FF9900CCFF9900FFFF99000000CC003300
+        CC006600CC009900CC00CC00CC00FF00CC000033CC003333CC006633CC009933
+        CC00CC33CC00FF33CC000066CC003366CC006666CC009966CC00CC66CC00FF66
+        CC000099CC003399CC006699CC009999CC00CC99CC00FF99CC0000CCCC0033CC
+        CC0066CCCC0099CCCC00CCCCCC00FFCCCC0000FFCC0033FFCC0066FFCC0099FF
+        CC00CCFFCC00FFFFCC000000FF003300FF006600FF009900FF00CC00FF00FF00
+        FF000033FF003333FF006633FF009933FF00CC33FF00FF33FF000066FF003366
+        FF006666FF009966FF00CC66FF00FF66FF000099FF003399FF006699FF009999
+        FF00CC99FF00FF99FF0000CCFF0033CCFF0066CCFF0099CCFF00CCCCFF00FFCC
+        FF0000FFFF0033FFFF0066FFFF0099FFFF00CCFFFF00FFFFFF00000080000080
+        000000808000800000008000800080800000C0C0C00080808000191919004C4C
+        4C00B2B2B200E5E5E500C8AC2800E0CC6600F2EABF00B59B2400D8E9EC009933
+        6600D075A300ECC6D900646F710099A8AC00E2EFF10000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000E8ACDEE3E8E8
+        E8E8E8E8E8E8E8E8E8E8E8ACDEE3E8E8E8E8E8E8E8E8E8E8E8E8AC807A81E3E8
+        E8E8E8E8E8E8E8E8E8E8ACE28181E3E8E8E8E8E8E8E8E8E8E8E8E8CEA37A81E3
+        E8E8E8E8E8E8E8E8E8E8E8ACE28181E3E8E8E8E8E8E8E8E8E8E8E8D0CEA37A81
+        E3E8E8E8E8E8E8E8E8E8E8E3ACE28181E3E8E8E8E8E8E8E8E8E8E8E8D0CEA37A
+        81E3E8E8E8E8E8E8E8E8E8E8E3ACE28181E3E8E8E8E8E8E8E8E8E8E8E8D0CEA3
+        7AACAD82828288E3E8E8E8E8E8E3ACE281ACE3818181E2E3E8E8E8E8E8E8D0CE
+        E28288E6B3E6E682EBE8E8E8E8E8E3ACE281E2ACACACAC81E3E8E8E8E8E8E8E3
+        8289B3B3B3D7D7D782E3E8E8E8E8E8E381E3ACACACE3E3E381E3E8E8E8E8E8AD
+        88B3E6B3B3D7D7D7E688E8E8E8E8E8E3E2ACACACACE3E3E3ACE2E8E8E8E8E888
+        89E6E6B3B3B3D7D7E682E8E8E8E8E8E2E3ACACACACACE3E3AC81E8E8E8E8E882
+        E6E6E6E6B3B3B3B3B382E8E8E8E8E881ACACACACACACACACAC81E8E8E8E8E888
+        E6B3E6E6E6B3B3B3E682E8E8E8E8E8E2ACACACACACACACACAC81E8E8E8E8E8AD
+        88D7D7E6E6E6E6B38888E8E8E8E8E8E3E2E3E3ACACACACACE2E2E8E8E8E8E8E3
+        82EBD7B3E6E6E68982E3E8E8E8E8E8E381E3E3ACACACACE381E3E8E8E8E8E8E8
+        AD82ADE6E6E68882ADE8E8E8E8E8E8E8E381E3ACACACE281E3E8E8E8E8E8E8E8
+        E8E38882828282E3E8E8E8E8E8E8E8E8E8E3E281818181E3E8E8}
+      NumGlyphs = 2
+    end
+    object RzBitBtn2: TRzBitBtn
+      Left = 673
+      Top = 6
       Anchors = [akTop, akRight]
       Caption = 'EXCEL'
-      TabOrder = 4
-      OnClick = excel_export_btnClick
+      TabOrder = 5
+      OnClick = RzBitBtn2Click
       Glyph.Data = {
         36060000424D3606000000000000360400002800000020000000100000000100
         08000000000000020000730E0000730E00000001000000000000000000003300
@@ -184,16 +240,16 @@ object f43_dental_form: Tf43_dental_form
   end
   object Panel1: TPanel
     Left = 0
-    Top = 518
-    Width = 780
+    Top = 515
+    Width = 753
     Height = 27
     Align = alBottom
     TabOrder = 2
     DesignSize = (
-      780
+      753
       27)
     object RzBitBtn1: TRzBitBtn
-      Left = 702
+      Left = 675
       Top = 3
       Anchors = [akRight, akBottom]
       Caption = 'Exit'
@@ -267,8 +323,8 @@ object f43_dental_form: Tf43_dental_form
     AlignWithMargins = True
     Left = 3
     Top = 77
-    Width = 774
-    Height = 438
+    Width = 747
+    Height = 435
     Align = alClient
     Font.Charset = THAI_CHARSET
     Font.Color = clWindowText
@@ -277,179 +333,100 @@ object f43_dental_form: Tf43_dental_form
     Font.Style = []
     ParentFont = False
     TabOrder = 3
-    object show_visitDBTableView1: TcxGridDBTableView
+    object cxGridDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
-      DataController.DataSource = Df43_dent
+      DataController.DataSource = DPatient
       DataController.Summary.DefaultGroupSummaryItems = <>
       DataController.Summary.FooterSummaryItems = <>
       DataController.Summary.SummaryGroups = <>
       Filtering.ColumnFilteredItemsList = True
       OptionsData.Appending = True
       OptionsView.GroupByBox = False
-      object show_visitDBTableView1HOSPCODE: TcxGridDBColumn
-        DataBinding.FieldName = 'HOSPCODE'
-        Width = 82
+      object cxGridDBTableView1firstday: TcxGridDBColumn
+        DataBinding.FieldName = 'firstday'
       end
-      object show_visitDBTableView1PID: TcxGridDBColumn
-        DataBinding.FieldName = 'PID'
+      object cxGridDBTableView1vstdate: TcxGridDBColumn
+        DataBinding.FieldName = 'vstdate'
       end
-      object show_visitDBTableView1SEQ: TcxGridDBColumn
-        DataBinding.FieldName = 'SEQ'
+      object cxGridDBTableView1hn: TcxGridDBColumn
+        DataBinding.FieldName = 'hn'
       end
-      object show_visitDBTableView1DATE_SERV: TcxGridDBColumn
-        DataBinding.FieldName = 'DATE_SERV'
-        Width = 99
+      object cxGridDBTableView1cid: TcxGridDBColumn
+        DataBinding.FieldName = 'cid'
       end
-      object show_visitDBTableView1DENTTYPE: TcxGridDBColumn
-        DataBinding.FieldName = 'DENTTYPE'
-        OnCustomDrawCell = show_visitDBTableView1DENTTYPECustomDrawCell
-        Width = 80
-      end
-      object show_visitDBTableView1SERVPLACE: TcxGridDBColumn
-        DataBinding.FieldName = 'SERVPLACE'
-        OnCustomDrawCell = show_visitDBTableView1SERVPLACECustomDrawCell
-        Width = 98
-      end
-      object show_visitDBTableView1PTEETH: TcxGridDBColumn
-        DataBinding.FieldName = 'PTEETH'
-        Width = 73
-      end
-      object show_visitDBTableView1PCARIES: TcxGridDBColumn
-        DataBinding.FieldName = 'PCARIES'
-        Width = 64
-      end
-      object show_visitDBTableView1PFILLING: TcxGridDBColumn
-        DataBinding.FieldName = 'PFILLING'
-        Width = 63
-      end
-      object show_visitDBTableView1PEXTRACT: TcxGridDBColumn
-        DataBinding.FieldName = 'PEXTRACT'
-        Width = 90
-      end
-      object show_visitDBTableView1DTEETH: TcxGridDBColumn
-        DataBinding.FieldName = 'DTEETH'
-        Width = 62
-      end
-      object show_visitDBTableView1DCARIES: TcxGridDBColumn
-        DataBinding.FieldName = 'DCARIES'
-        Width = 65
-      end
-      object show_visitDBTableView1DFILLING: TcxGridDBColumn
-        DataBinding.FieldName = 'DFILLING'
-        Width = 76
-      end
-      object show_visitDBTableView1DEXTRACT: TcxGridDBColumn
-        DataBinding.FieldName = 'DEXTRACT'
-        Width = 79
-      end
-      object show_visitDBTableView1NEED_FLUORIDE: TcxGridDBColumn
-        DataBinding.FieldName = 'NEED_FLUORIDE'
-        OnCustomDrawCell = show_visitDBTableView1NEED_FLUORIDECustomDrawCell
-        Width = 118
-      end
-      object show_visitDBTableView1NEED_SCALING: TcxGridDBColumn
-        DataBinding.FieldName = 'NEED_SCALING'
-        OnCustomDrawCell = show_visitDBTableView1NEED_SCALINGCustomDrawCell
-        Width = 108
-      end
-      object show_visitDBTableView1NEED_SEALANT: TcxGridDBColumn
-        DataBinding.FieldName = 'NEED_SEALANT'
-        OnCustomDrawCell = show_visitDBTableView1NEED_SEALANTCustomDrawCell
-        Width = 113
-      end
-      object show_visitDBTableView1NEED_PFILLING: TcxGridDBColumn
-        DataBinding.FieldName = 'NEED_PFILLING'
-        OnCustomDrawCell = show_visitDBTableView1NEED_PFILLINGCustomDrawCell
-        Width = 108
-      end
-      object show_visitDBTableView1NEED_DFILLING: TcxGridDBColumn
-        DataBinding.FieldName = 'NEED_DFILLING'
-        OnCustomDrawCell = show_visitDBTableView1NEED_DFILLINGCustomDrawCell
-        Width = 109
-      end
-      object show_visitDBTableView1NEED_PEXTRACT: TcxGridDBColumn
-        DataBinding.FieldName = 'NEED_PEXTRACT'
-        OnCustomDrawCell = show_visitDBTableView1NEED_PEXTRACTCustomDrawCell
-        Width = 123
-      end
-      object show_visitDBTableView1NEED_DEXTRACT: TcxGridDBColumn
-        DataBinding.FieldName = 'NEED_DEXTRACT'
-        OnCustomDrawCell = show_visitDBTableView1NEED_DEXTRACTCustomDrawCell
-        Width = 136
-      end
-      object show_visitDBTableView1NPROSTHESIS: TcxGridDBColumn
-        DataBinding.FieldName = 'NPROSTHESIS'
-        Width = 115
-      end
-      object show_visitDBTableView1PERMANENT_PERMANENT: TcxGridDBColumn
-        DataBinding.FieldName = 'PERMANENT_PERMANENT'
-        Width = 185
-      end
-      object show_visitDBTableView1PERMANENT_PROSTHESIS: TcxGridDBColumn
-        DataBinding.FieldName = 'PERMANENT_PROSTHESIS'
-        Width = 198
-      end
-      object show_visitDBTableView1PROSTHESIS_PROSTHESIS: TcxGridDBColumn
-        DataBinding.FieldName = 'PROSTHESIS_PROSTHESIS'
-        Width = 187
-      end
-      object show_visitDBTableView1GUM: TcxGridDBColumn
-        DataBinding.FieldName = 'GUM'
-        OnCustomDrawCell = show_visitDBTableView1GUMCustomDrawCell
+      object cxGridDBTableView1pname: TcxGridDBColumn
+        DataBinding.FieldName = 'pname'
         Width = 48
       end
-      object show_visitDBTableView1SCHOOLTYPE: TcxGridDBColumn
-        DataBinding.FieldName = 'SCHOOLTYPE'
-        OnCustomDrawCell = show_visitDBTableView1SCHOOLTYPECustomDrawCell
-        Width = 109
+      object cxGridDBTableView1fname: TcxGridDBColumn
+        DataBinding.FieldName = 'fname'
+        Width = 62
       end
-      object show_visitDBTableView1CLASS: TcxGridDBColumn
-        DataBinding.FieldName = 'CLASS'
-        OnCustomDrawCell = show_visitDBTableView1CLASSCustomDrawCell
-        Width = 49
+      object cxGridDBTableView1lname: TcxGridDBColumn
+        DataBinding.FieldName = 'lname'
+        Width = 81
       end
-      object show_visitDBTableView1PROVIDER: TcxGridDBColumn
-        DataBinding.FieldName = 'PROVIDER'
-        Width = 97
+      object cxGridDBTableView1sex: TcxGridDBColumn
+        DataBinding.FieldName = 'sex'
+        Width = 27
       end
-      object show_visitDBTableView1D_UPDATE: TcxGridDBColumn
-        DataBinding.FieldName = 'D_UPDATE'
-        Width = 104
+      object cxGridDBTableView1birthday: TcxGridDBColumn
+        DataBinding.FieldName = 'birthday'
       end
-      object show_visitDBTableView1CID: TcxGridDBColumn
-        DataBinding.FieldName = 'CID'
-        Width = 97
+      object cxGridDBTableView1marrystatus: TcxGridDBColumn
+        DataBinding.FieldName = 'marrystatus'
+        Width = 75
       end
-      object show_visitDBTableView1HN: TcxGridDBColumn
-        DataBinding.FieldName = 'HN'
-        Width = 69
+      object cxGridDBTableView1occupation: TcxGridDBColumn
+        DataBinding.FieldName = 'occupation'
+        Width = 84
       end
-      object show_visitDBTableView1ptname: TcxGridDBColumn
-        DataBinding.FieldName = 'ptname'
-        Width = 143
+      object cxGridDBTableView1citizenship: TcxGridDBColumn
+        DataBinding.FieldName = 'citizenship'
+        Width = 68
       end
-      object show_visitDBTableView1typearea: TcxGridDBColumn
-        DataBinding.FieldName = 'typearea'
-        Width = 72
-      end
-      object show_visitDBTableView1discharge: TcxGridDBColumn
-        DataBinding.FieldName = 'discharge'
+      object cxGridDBTableView1nationality: TcxGridDBColumn
+        DataBinding.FieldName = 'nationality'
         Width = 78
       end
+      object cxGridDBTableView1type_area: TcxGridDBColumn
+        DataBinding.FieldName = 'type_area'
+        Width = 67
+      end
+      object cxGridDBTableView1informaddr: TcxGridDBColumn
+        DataBinding.FieldName = 'informaddr'
+        Width = 162
+      end
+      object cxGridDBTableView1road: TcxGridDBColumn
+        DataBinding.FieldName = 'road'
+        Width = 90
+      end
+      object cxGridDBTableView1addrpart: TcxGridDBColumn
+        DataBinding.FieldName = 'addrpart'
+        Width = 57
+      end
+      object cxGridDBTableView1moopart: TcxGridDBColumn
+        DataBinding.FieldName = 'moopart'
+        Width = 56
+      end
+      object cxGridDBTableView1tmbpart: TcxGridDBColumn
+        DataBinding.FieldName = 'tmbpart'
+        Width = 51
+      end
+      object cxGridDBTableView1chwpart: TcxGridDBColumn
+        DataBinding.FieldName = 'chwpart'
+        Width = 52
+      end
+      object cxGridDBTableView1po_code: TcxGridDBColumn
+        DataBinding.FieldName = 'po_code'
+        Width = 72
+      end
     end
-    object show_visitLevel1: TcxGridLevel
-      GridView = show_visitDBTableView1
+    object cxGridLevel1: TcxGridLevel
+      GridView = cxGridDBTableView1
     end
   end
-  object process_Qrb1k: TcxProgressBar
-    Left = 40
-    Top = 288
-    Anchors = [akLeft, akTop, akRight, akBottom]
-    TabOrder = 4
-    Visible = False
-    Width = 691
-  end
-  object Qf43_dent: TMyQuery
+  object QPatient: TMyQuery
     SQLInsert.Strings = (
       'INSERT INTO opdscreen'
       
@@ -461,70 +438,19 @@ object f43_dental_form: Tf43_dental_form
         ' :pulse, :temperature, :rr, :height, :bmi, :hpi, :pmh, :waist)')
     Connection = db_connect_m.connect_db
     SQL.Strings = (
-      'SELECT '
-      '(SELECT hospitalcode FROM opdconfig) AS HOSPCODE,'#9
-      'IFNULL(p.person_id,o.hn) AS PID,'
-      'dc.vn AS SEQ,'
       
-        'IF(o.vstdate='#39#39' OR o.vstdate = NULL,'#39#39',DATE_FORMAT(o.vstdate,'#39'%Y' +
-        '%m%d'#39')) AS DATE_SERV,'
+        'SELECT p.firstday,v.vstdate,p.hn,p.cid,p.pname,p.fname,p.lname,p' +
+        '.sex,p.birthday,p.marrystatus,p.occupation,p.citizenship,p.natio' +
+        'nality,'
       
-        'IF(dc.dental_care_type_id IS NULL OR dc.dental_care_type_id = '#39#39 +
-        ','#39'5'#39',dc.dental_care_type_id) AS DENTTYPE,'
-      
-        'IF(dc.dental_care_service_place_type_id  IS NULL OR dc.dental_ca' +
-        're_service_place_type_id  = '#39#39','#39'1'#39',dc.dental_care_service_place_' +
-        'type_id ) AS SERVPLACE,'
-      'IFNULL(dc.pteeth,'#39'0'#39') AS PTEETH,'
-      'IFNULL(dc.pcaries,'#39'0'#39') AS PCARIES,'
-      'IFNULL(dc.pfilling,'#39'0'#39') AS PFILLING,'
-      'IFNULL(dc.pextract,'#39'0'#39') AS PEXTRACT,'
-      'IFNULL(dc.dteeth,'#39'0'#39') AS DTEETH,'
-      'IFNULL(dc.dcaries,'#39'0'#39') AS DCARIES,'
-      'IFNULL(dc.dfilling,'#39'0'#39')AS DFILLING,'
-      'IFNULL(dc.dextract,'#39'0'#39') AS DEXTRACT,'
-      'IF(dc.need_fluoride ='#39'Y'#39','#39'1'#39','#39'2'#39') AS NEED_FLUORIDE,'
-      'IF(dc.need_scaling  ='#39'Y'#39','#39'1'#39','#39'2'#39') AS NEED_SCALING,'
-      'IFNULL(dc.need_sealant,'#39'0'#39') AS NEED_SEALANT,'
-      'IFNULL(dc.need_pfilling,'#39'0'#39') AS NEED_PFILLING,'
-      'IFNULL(dc.need_dfilling,'#39'0'#39') AS NEED_DFILLING,'
-      'IFNULL(dc.need_pextract,'#39'0'#39') AS NEED_PEXTRACT,'
-      'IFNULL(dc.need_dextract,'#39'0'#39') AS NEED_DEXTRACT,'
-      'IFNULL(dc.dental_care_nprosthesis_id,'#39'4'#39') AS NPROSTHESIS,'
-      'IFNULL(dc.permanent_perma,'#39'0'#39') AS PERMANENT_PERMANENT,'
-      'IFNULL(dc.permanent_prost,'#39'0'#39') AS PERMANENT_PROSTHESIS,'
-      'IFNULL(dc.prosthesis_prost,'#39'0'#39') AS PROSTHESIS_PROSTHESIS,'
-      
-        'CONCAT(IFNULL(dental_care_gum_type_id_1,'#39'9'#39'),IFNULL(dental_care_' +
-        'gum_type_id_2,'#39'9'#39'),IFNULL(dental_care_gum_type_id_3,'#39'9'#39'),'
-      
-        'IFNULL(dental_care_gum_type_id_4,'#39'9'#39'),IFNULL(dental_care_gum_typ' +
-        'e_id_5,'#39'9'#39'),IFNULL(dental_care_gum_type_id_6,'#39'9'#39'))AS GUM,'
-      'IFNULL(dc.dental_care_school_type_id,'#39#39') AS SCHOOLTYPE,'
-      'IFNULL(dc.dental_care_school_class_type_id,'#39#39') AS CLASS,'
-      
-        'IFNULL((SELECT cid FROM doctor WHERE dc.doctor = `code`),'#39#39') AS ' +
-        'PROVIDER,'
-      
-        'IF(dc.entry_datetime IS NULL OR TRIM(dc.entry_datetime)='#39#39' OR dc' +
-        '.entry_datetime LIKE '#39'0000-00-00%'#39','#39#39',DATE_FORMAT(dc.entry_datet' +
-        'ime,'#39'%Y%m%d%H%i%s'#39'))AS D_UPDATE,'
-      'IFNULL(IFNULL(pt.cid,p.cid),'#39#39') AS CID,'
-      'IFNULL(p.patient_hn,pt.hn) as HN,'
-      
-        'IFNULL(concat(p.pname,p.fname," ",p.lname),concat(pt.pname,pt.fn' +
-        'ame," ",pt.lname)) as ptname,'
-      'IFNULL(p.house_regist_type_id,pt.type_area) as typearea,'
-      'p.person_discharge_id as discharge'
-      ''
-      'FROM dental_care dc'
-      'LEFT JOIN ovst o ON dc.vn = o.vn'
-      'LEFT JOIN person p ON o.hn = p.patient_hn'
-      'LEFT JOIN patient pt ON o.hn = pt.hn'
-      'WHERE pt.hn IS NOT NULL '
-      '#AND o.vstdate BETWEEN 20160701 AND 20160731'
-      'AND o.vstdate BETWEEN :date_start_text AND :date_end_text'
-      '#BETWEEN :date_start_text AND :date_end_text')
+        'p.type_area,p.informaddr,p.road,p.addrpart,p.moopart,p.tmbpart,p' +
+        '.chwpart,p.po_code'
+      'from patient p'
+      'INNER JOIN ovst v ON v.hn = p.hn'
+      'WHERE p.firstday BETWEEN :date_start_text AND :date_end_text'
+      '#WHERE p.firstday BETWEEN 20161101 AND 20161116'
+      'AND p.hn > 40000'
+      'GROUP BY p.hn')
     ReadOnly = True
     RefreshOptions = [roAfterInsert, roAfterUpdate, roBeforeEdit]
     Options.AutoRefresh = True
@@ -541,8 +467,8 @@ object f43_dental_form: Tf43_dental_form
         Name = 'date_end_text'
       end>
   end
-  object Df43_dent: TMyDataSource
-    DataSet = Qf43_dent
+  object DPatient: TMyDataSource
+    DataSet = QPatient
     Left = 424
     Top = 168
   end

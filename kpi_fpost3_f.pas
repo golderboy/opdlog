@@ -44,6 +44,24 @@ type
     procedure RzBitBtn1Click(Sender: TObject);
     procedure excel_export_btnClick(Sender: TObject);
     function  GetTempDir : string;
+    procedure show_visitDBTableView1labor_dateCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1preg_noCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1care1CustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1care2CustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1care3CustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1discharge_dateCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
   private
     { Private declarations }
   public
@@ -96,6 +114,54 @@ end;
 procedure Tkpi_post3_form.RzBitBtn1Click(Sender: TObject);
 begin
 close;
+end;
+
+procedure Tkpi_post3_form.show_visitDBTableView1care1CustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if VarToStr(AViewInfo.GridRecord.Values[8]) = '' then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tkpi_post3_form.show_visitDBTableView1care2CustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if VarToStr(AViewInfo.GridRecord.Values[9]) = '' then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tkpi_post3_form.show_visitDBTableView1care3CustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if VarToStr(AViewInfo.GridRecord.Values[10]) = '' then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tkpi_post3_form.show_visitDBTableView1discharge_dateCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if (VarToStr(AViewInfo.GridRecord.Values[2]) = 'Y') AND (VarToStr(AViewInfo.GridRecord.Values[3]) = '') then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tkpi_post3_form.show_visitDBTableView1labor_dateCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if VarToStr(AViewInfo.GridRecord.Values[4]) = '' then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tkpi_post3_form.show_visitDBTableView1preg_noCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if VarToStr(AViewInfo.GridRecord.Values[7]) = '' then
+        Acanvas.brush.Color := clRed ;
 end;
 
 end.

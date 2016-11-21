@@ -470,7 +470,6 @@ object report_rb1k: Treport_rb1k
     Font.Style = []
     ParentFont = False
     TabOrder = 3
-    ExplicitLeft = -2
     object cxGridDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = Dshow_rb1k
@@ -518,6 +517,7 @@ object report_rb1k: Treport_rb1k
       object cxGridDBTableView1type_area: TcxGridDBColumn
         Caption = 'type'
         DataBinding.FieldName = 'type_area'
+        OnCustomDrawCell = cxGridDBTableView1type_areaCustomDrawCell
         Width = 32
       end
       object cxGridDBTableView1pttype: TcxGridDBColumn
@@ -584,15 +584,18 @@ object report_rb1k: Treport_rb1k
       end
       object cxGridDBTableView1cc: TcxGridDBColumn
         DataBinding.FieldName = 'cc'
+        OnCustomDrawCell = cxGridDBTableView1ccCustomDrawCell
         Width = 219
       end
       object cxGridDBTableView1main_pdx: TcxGridDBColumn
         Caption = 'pdx'
         DataBinding.FieldName = 'main_pdx'
+        OnCustomDrawCell = cxGridDBTableView1main_pdxCustomDrawCell
         Width = 64
       end
       object cxGridDBTableView1pdx_name: TcxGridDBColumn
         DataBinding.FieldName = 'pdx_name'
+        OnCustomDrawCell = cxGridDBTableView1pdx_nameCustomDrawCell
         Width = 593
       end
       object cxGridDBTableView1dx0: TcxGridDBColumn
@@ -619,6 +622,7 @@ object report_rb1k: Treport_rb1k
       end
       object cxGridDBTableView1income: TcxGridDBColumn
         DataBinding.FieldName = 'income'
+        OnCustomDrawCell = cxGridDBTableView1incomeCustomDrawCell
         Width = 62
       end
       object cxGridDBTableView1paid: TcxGridDBColumn

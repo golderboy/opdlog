@@ -86,12 +86,15 @@ object show_dent_form: Tshow_dent_form
       end
       object show_visitDBTableView1pdx: TcxGridDBColumn
         DataBinding.FieldName = 'pdx'
+        OnCustomDrawCell = show_visitDBTableView1pdxCustomDrawCell
       end
       object show_visitDBTableView1height: TcxGridDBColumn
         DataBinding.FieldName = 'height'
+        OnCustomDrawCell = show_visitDBTableView1heightCustomDrawCell
       end
       object show_visitDBTableView1bw: TcxGridDBColumn
         DataBinding.FieldName = 'bw'
+        OnCustomDrawCell = show_visitDBTableView1bwCustomDrawCell
       end
       object show_visitDBTableView1waist: TcxGridDBColumn
         DataBinding.FieldName = 'waist'
@@ -101,9 +104,11 @@ object show_dent_form: Tshow_dent_form
       end
       object show_visitDBTableView1bpd: TcxGridDBColumn
         DataBinding.FieldName = 'bpd'
+        OnCustomDrawCell = show_visitDBTableView1bpdCustomDrawCell
       end
       object show_visitDBTableView1bps: TcxGridDBColumn
         DataBinding.FieldName = 'bps'
+        OnCustomDrawCell = show_visitDBTableView1bpsCustomDrawCell
       end
       object show_visitDBTableView1hr: TcxGridDBColumn
         DataBinding.FieldName = 'hr'
@@ -124,6 +129,7 @@ object show_dent_form: Tshow_dent_form
       end
       object show_visitDBTableView1cc: TcxGridDBColumn
         DataBinding.FieldName = 'cc'
+        OnCustomDrawCell = show_visitDBTableView1ccCustomDrawCell
         Width = 160
       end
       object show_visitDBTableView1hpi: TcxGridDBColumn
@@ -145,6 +151,7 @@ object show_dent_form: Tshow_dent_form
       object show_visitDBTableView1GROUP_CONCATdenticd9: TcxGridDBColumn
         Caption = 'icd9'
         DataBinding.FieldName = 'GROUP_CONCAT(dent.icd9)'
+        OnCustomDrawCell = show_visitDBTableView1GROUP_CONCATdenticd9CustomDrawCell
       end
       object show_visitDBTableView1GROUP_CONCATdentscount: TcxGridDBColumn
         Caption = 'scount'
@@ -156,6 +163,7 @@ object show_dent_form: Tshow_dent_form
       end
       object show_visitDBTableView1ttcode: TcxGridDBColumn
         DataBinding.FieldName = 'ttcode'
+        OnCustomDrawCell = show_visitDBTableView1ttcodeCustomDrawCell
       end
       object show_visitDBTableView1GROUP_CONCATdentpregnancy: TcxGridDBColumn
         Caption = 'pregnancy'

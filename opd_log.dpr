@@ -54,7 +54,11 @@ uses
   f43_dental_f in 'f43_dental_f.pas' {f43_dental_form},
   show_money_f in 'show_money_f.pas' {chk_money_form},
   chk_patient_f in 'chk_patient_f.pas' {chk_patient_form},
-  chk_diag_f in 'chk_diag_f.pas' {chk_diag_form};
+  chk_diag_f in 'chk_diag_f.pas' {chk_diag_form},
+  f43_labfu_f in 'f43_labfu_f.pas' {f43_labfu_form},
+  pt_pe_f in 'pt_pe_f.pas' {pt_pe_form},
+  new_patient_f in 'new_patient_f.pas' {new_patient_form},
+  account_lost_f in 'account_lost_f.pas' {account_lost_form};
 
 {$R *.res}
 
@@ -64,5 +68,8 @@ begin
   Application.CreateForm(Tlogin_form, login_form);
   Application.CreateForm(Tconnection_form, connection_form);
   Application.CreateForm(Tdb_connect_m, db_connect_m);
+  Application.CreateForm(Tpt_pe_form, pt_pe_form);
+  Application.CreateForm(Tnew_patient_form, new_patient_form);
+  Application.CreateForm(Taccount_lost_form, account_lost_form);
   Application.Run;
 end.

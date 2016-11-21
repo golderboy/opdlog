@@ -160,6 +160,10 @@ type
     BarManagerBar6: TdxBar;
     dxBarLargeButton17: TdxBarLargeButton;
     dxBarLargeButton18: TdxBarLargeButton;
+    dxBarButton6: TdxBarButton;
+    dxBarLargeButton19: TdxBarLargeButton;
+    dxBarLargeButton20: TdxBarLargeButton;
+    dxBarLargeButton21: TdxBarLargeButton;
     procedure dxBarLargeButton3Click(Sender: TObject);
     procedure connect_btnClick(Sender: TObject);
     procedure dxBarLargeButton6Click(Sender: TObject);
@@ -217,6 +221,10 @@ type
     procedure btn_moneyClick(Sender: TObject);
     procedure dxBarLargeButton17Click(Sender: TObject);
     procedure dxBarLargeButton18Click(Sender: TObject);
+    procedure btn_lab_fuClick(Sender: TObject);
+    procedure dxBarLargeButton19Click(Sender: TObject);
+    procedure dxBarLargeButton20Click(Sender: TObject);
+    procedure dxBarLargeButton21Click(Sender: TObject);
 
 
   private
@@ -236,12 +244,12 @@ uses  db_connect_module, connection_unit, blood_mian_f,
   show_erlog_f, show_emslog_f, room_config_f, show_physic_f, show_medlog_f,
   show_dentlog_f, show_opdlog, show_clinic_f, f43_anc_f, f43_women_f, f43_fp_f,
   f43_postnatal_f, f43_prenatal_f, f43_labor_f, f43_newborn_f,
-  f43_newborncare_f, f43_epi_f, miniEMR_f, f43_chronic_f, f43_chronicfu_f,
+  f43_newborncare_f, f43_epi_f, f43_chronic_f, f43_chronicfu_f,
   kpi_fanc_f, kpi_pre5_f, kpi_fpost3_f, Qtarget_women_f, Qtarget_0_5y_f,
   Qtarget_person_f, report_r506_f, Qtarget_60y_f,
   Qtarget_35_60y_f, Qtarget_ncd_f, f43_accident_f, f43_servillance_f,
   f43_death_f, f43_drugal_f, f43_dental_f, show_money_f, chk_patient_f,
-  chk_diag_f;
+  chk_diag_f, miniEMR_f, f43_labfu_f, pt_pe_f, new_patient_f, account_lost_f;
 
 {$R *.dfm}
 
@@ -455,6 +463,13 @@ begin
     f43_labor_form.Free;
 end;
 
+procedure Tmain_u.btn_lab_fuClick(Sender: TObject);
+begin
+    f43_labfu_form := Tf43_labfu_form.Create(application);
+    f43_labfu_form.ShowModal;
+    f43_labfu_form.Free;
+end;
+
 procedure Tmain_u.btn_moneyClick(Sender: TObject);
 begin
     chk_money_form := Tchk_money_form.Create(application);
@@ -510,6 +525,27 @@ begin
     chk_diag_form := Tchk_diag_form.Create(application);
     chk_diag_form.ShowModal;
     chk_diag_form.Free;
+end;
+
+procedure Tmain_u.dxBarLargeButton19Click(Sender: TObject);
+begin
+    pt_pe_form := Tpt_pe_form.Create(application);
+    pt_pe_form.ShowModal;
+    pt_pe_form.Free;
+end;
+
+procedure Tmain_u.dxBarLargeButton20Click(Sender: TObject);
+begin
+    new_patient_form := Tnew_patient_form.Create(application);
+    new_patient_form.ShowModal;
+    new_patient_form.Free;
+end;
+
+procedure Tmain_u.dxBarLargeButton21Click(Sender: TObject);
+begin
+    account_lost_form := Taccount_lost_form.Create(application);
+    account_lost_form.ShowModal;
+    account_lost_form.Free;
 end;
 
 procedure Tmain_u.dxBarLargeButton3Click(Sender: TObject);

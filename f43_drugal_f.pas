@@ -52,6 +52,15 @@ type
     function  GetTempDir : string;
     procedure FormShow(Sender: TObject);
     procedure RzBitBtn1Click(Sender: TObject);
+    procedure show_visitDBTableView1DATERECORDCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1DRUGALLERGYCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1INFORMANTCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
   private
     { Private declarations }
   public
@@ -118,6 +127,30 @@ end;
 procedure Tf43_drugal_form.RzBitBtn1Click(Sender: TObject);
 begin
 close;
+end;
+
+procedure Tf43_drugal_form.show_visitDBTableView1DATERECORDCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if VarToStr(AViewInfo.GridRecord.Values[2]) = '' then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tf43_drugal_form.show_visitDBTableView1DRUGALLERGYCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if VarToStr(AViewInfo.GridRecord.Values[3]) = '' then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tf43_drugal_form.show_visitDBTableView1INFORMANTCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if VarToStr(AViewInfo.GridRecord.Values[8]) = '' then
+        Acanvas.brush.Color := clRed ;
 end;
 
 end.

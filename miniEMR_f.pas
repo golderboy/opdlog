@@ -1,4 +1,4 @@
-unit miniEMR_f;
+﻿unit miniEMR_f;
 
 interface
 
@@ -9,8 +9,8 @@ uses
   DBAccess, MyAccess, MemDS, StdCtrls, DBCtrls, cxLabel, Grids, DBGrids,
   cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxNavigator,
   cxDBData, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
-  cxGridLevel, cxClasses, cxGridCustomView, cxGrid;
-
+  cxGridLevel, cxClasses, cxGridCustomView,shellapi,cxGrid,printers, frxClass,
+  frxDBSet;
 type
   TminiEMR_form = class(TForm)
     header_login: TJvNavPanelHeader;
@@ -20,7 +20,6 @@ type
     Qperson: TMyQuery;
     Qnure_note: TMyQuery;
     Qdoctor_note: TMyQuery;
-    RzBitBtn2: TRzBitBtn;
     Qdaig_note: TMyQuery;
     Qdrug_note: TMyQuery;
     Ddrug_note: TDataSource;
@@ -69,8 +68,23 @@ type
     GdiagDBTableView1icd10: TcxGridDBColumn;
     GdiagDBTableView1diag_name: TcxGridDBColumn;
     GdiagLevel1: TcxGridLevel;
+    RzBitBtn2: TRzBitBtn;
+    FReport: TfrxReport;
+    Fdiag_note: TfrxDBDataset;
+    Fdrug_note: TfrxDBDataset;
+    Flab_note: TfrxDBDataset;
+    Fdent_note: TfrxDBDataset;
+    Fmed_note: TfrxDBDataset;
+    Fxray_note: TfrxDBDataset;
+    Dperson: TMyDataSource;
+    Dnure_note: TMyDataSource;
+    Ddoctor_note: TMyDataSource;
+    Fperson: TfrxDBDataset;
+    Fnure_note: TfrxDBDataset;
+    Fdoctor_note: TfrxDBDataset;
     procedure FormShow(Sender: TObject);
     procedure RzBitBtn1Click(Sender: TObject);
+    procedure RzBitBtn2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -139,6 +153,13 @@ end;
 procedure TminiEMR_form.RzBitBtn1Click(Sender: TObject);
 begin
 close;
+end;
+
+
+
+procedure TminiEMR_form.RzBitBtn2Click(Sender: TObject);
+begin
+ // FReport.ShowReport();
 end;
 
 end.

@@ -77,14 +77,17 @@ object emslog_form: Temslog_form
       end
       object show_visitDBTableView1revisit48hr: TcxGridDBColumn
         DataBinding.FieldName = 'revisit48hr'
+        OnCustomDrawCell = show_visitDBTableView1revisit48hrCustomDrawCell
         Width = 66
       end
       object show_visitDBTableView1admit_2hr: TcxGridDBColumn
         DataBinding.FieldName = 'admit_2hr'
+        OnCustomDrawCell = show_visitDBTableView1admit_2hrCustomDrawCell
         Width = 64
       end
       object show_visitDBTableView1cc: TcxGridDBColumn
         DataBinding.FieldName = 'cc'
+        OnCustomDrawCell = show_visitDBTableView1ccCustomDrawCell
         Width = 183
       end
       object show_visitDBTableView1hpi: TcxGridDBColumn
@@ -97,6 +100,7 @@ object emslog_form: Temslog_form
       end
       object show_visitDBTableView1er_list: TcxGridDBColumn
         DataBinding.FieldName = 'er_list'
+        OnCustomDrawCell = show_visitDBTableView1er_listCustomDrawCell
         Width = 251
       end
       object show_visitDBTableView1er_pt_type: TcxGridDBColumn
@@ -105,14 +109,17 @@ object emslog_form: Temslog_form
       end
       object show_visitDBTableView1emergency: TcxGridDBColumn
         DataBinding.FieldName = 'emergency'
+        OnCustomDrawCell = show_visitDBTableView1emergencyCustomDrawCell
         Width = 86
       end
       object show_visitDBTableView1trauma: TcxGridDBColumn
         DataBinding.FieldName = 'trauma'
+        OnCustomDrawCell = show_visitDBTableView1traumaCustomDrawCell
         Width = 47
       end
       object show_visitDBTableView1accident_type: TcxGridDBColumn
         DataBinding.FieldName = 'accident_type'
+        OnCustomDrawCell = show_visitDBTableView1accident_typeCustomDrawCell
         Width = 213
       end
       object show_visitDBTableView1bpd: TcxGridDBColumn
@@ -156,38 +163,47 @@ object emslog_form: Temslog_form
       end
       object show_visitDBTableView1person_type: TcxGridDBColumn
         DataBinding.FieldName = 'person_type'
+        OnCustomDrawCell = show_visitDBTableView1person_typeCustomDrawCell
         Width = 81
       end
       object show_visitDBTableView1alcohol: TcxGridDBColumn
         DataBinding.FieldName = 'alcohol'
+        OnCustomDrawCell = show_visitDBTableView1alcoholCustomDrawCell
         Width = 50
       end
       object show_visitDBTableView1drug: TcxGridDBColumn
         DataBinding.FieldName = 'drug'
+        OnCustomDrawCell = show_visitDBTableView1drugCustomDrawCell
         Width = 45
       end
       object show_visitDBTableView1airway: TcxGridDBColumn
         DataBinding.FieldName = 'airway'
+        OnCustomDrawCell = show_visitDBTableView1airwayCustomDrawCell
         Width = 57
       end
       object show_visitDBTableView1bleed: TcxGridDBColumn
         DataBinding.FieldName = 'bleed'
+        OnCustomDrawCell = show_visitDBTableView1bleedCustomDrawCell
         Width = 127
       end
       object show_visitDBTableView1belt: TcxGridDBColumn
         DataBinding.FieldName = 'belt'
+        OnCustomDrawCell = show_visitDBTableView1beltCustomDrawCell
         Width = 40
       end
       object show_visitDBTableView1helmet: TcxGridDBColumn
         DataBinding.FieldName = 'helmet'
+        OnCustomDrawCell = show_visitDBTableView1helmetCustomDrawCell
         Width = 46
       end
       object show_visitDBTableView1splint: TcxGridDBColumn
         DataBinding.FieldName = 'splint'
+        OnCustomDrawCell = show_visitDBTableView1splintCustomDrawCell
         Width = 49
       end
       object show_visitDBTableView1fluid: TcxGridDBColumn
         DataBinding.FieldName = 'fluid'
+        OnCustomDrawCell = show_visitDBTableView1fluidCustomDrawCell
         Width = 46
       end
       object show_visitDBTableView1refer_hosptype: TcxGridDBColumn
@@ -208,6 +224,7 @@ object emslog_form: Temslog_form
       end
       object show_visitDBTableView1pdx: TcxGridDBColumn
         DataBinding.FieldName = 'pdx'
+        OnCustomDrawCell = show_visitDBTableView1pdxCustomDrawCell
       end
       object show_visitDBTableView1department: TcxGridDBColumn
         DataBinding.FieldName = 'department'

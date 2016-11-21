@@ -32,8 +32,6 @@ object f43_chronic_form: Tf43_chronic_form
     Font.Style = [fsBold]
     ParentFont = False
     ImageIndex = 0
-    ExplicitLeft = -12
-    ExplicitWidth = 781
   end
   object Panel2: TPanel
     Left = 0
@@ -42,8 +40,6 @@ object f43_chronic_form: Tf43_chronic_form
     Height = 41
     Align = alTop
     TabOrder = 1
-    ExplicitLeft = -12
-    ExplicitWidth = 781
     DesignSize = (
       769
       41)
@@ -124,7 +120,6 @@ object f43_chronic_form: Tf43_chronic_form
         5E5E5E5EE8E8E8E8E8E8E8818181818181818181E8E8E8E8E8E8E8E8E8E8E8E8
         E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 560
     end
     object excel_export_btn: TRzBitBtn
       Left = 668
@@ -185,7 +180,6 @@ object f43_chronic_form: Tf43_chronic_form
         5E5E5E5E5E5E5E5EE8E8E8E8E8E8E8E2E2E2E2E2E2E2E2E2E8E8E8E8E8E8E8E8
         E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 680
     end
   end
   object show_visit: TcxGrid
@@ -202,9 +196,6 @@ object f43_chronic_form: Tf43_chronic_form
     Font.Style = []
     ParentFont = False
     TabOrder = 2
-    ExplicitLeft = -6
-    ExplicitWidth = 775
-    ExplicitHeight = 407
     object show_visitDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = Df43_chronic
@@ -228,14 +219,17 @@ object f43_chronic_form: Tf43_chronic_form
       end
       object show_visitDBTableView1CHRONIC: TcxGridDBColumn
         DataBinding.FieldName = 'CHRONIC'
+        OnCustomDrawCell = show_visitDBTableView1CHRONICCustomDrawCell
         Width = 67
       end
       object show_visitDBTableView1HOSP_DX: TcxGridDBColumn
         DataBinding.FieldName = 'HOSP_DX'
+        OnCustomDrawCell = show_visitDBTableView1HOSP_DXCustomDrawCell
         Width = 69
       end
       object show_visitDBTableView1HOSP_RX: TcxGridDBColumn
         DataBinding.FieldName = 'HOSP_RX'
+        OnCustomDrawCell = show_visitDBTableView1HOSP_RXCustomDrawCell
         Width = 69
       end
       object show_visitDBTableView1DATE_DISCH: TcxGridDBColumn
@@ -244,6 +238,7 @@ object f43_chronic_form: Tf43_chronic_form
       end
       object show_visitDBTableView1TYPEDISCH: TcxGridDBColumn
         DataBinding.FieldName = 'TYPEDISCH'
+        OnCustomDrawCell = show_visitDBTableView1TYPEDISCHCustomDrawCell
         Width = 83
       end
       object show_visitDBTableView1D_UPDATE: TcxGridDBColumn
@@ -278,9 +273,6 @@ object f43_chronic_form: Tf43_chronic_form
     Height = 27
     Align = alBottom
     TabOrder = 3
-    ExplicitLeft = -12
-    ExplicitTop = 503
-    ExplicitWidth = 781
     DesignSize = (
       769
       27)
@@ -343,7 +335,6 @@ object f43_chronic_form: Tf43_chronic_form
         57A2A2A2E8E8E8E8E8E8E8DE8181DED781818181E8E8E8E8E8E8E8E8E8AC8257
         57E8E8E8E8E8E8E8E8E8E8E8E8AC818181E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 703
     end
     object cxLabel1: TcxLabel
       Left = 40

@@ -303,10 +303,12 @@ object f43_fp_form: Tf43_fp_form
       end
       object show_visitDBTableView1FPTYPE: TcxGridDBColumn
         DataBinding.FieldName = 'FPTYPE'
+        OnCustomDrawCell = show_visitDBTableView1FPTYPECustomDrawCell
         Width = 71
       end
       object show_visitDBTableView1FPPLACE: TcxGridDBColumn
         DataBinding.FieldName = 'FPPLACE'
+        OnCustomDrawCell = show_visitDBTableView1FPPLACECustomDrawCell
         Width = 66
       end
       object show_visitDBTableView1PROVIDER: TcxGridDBColumn

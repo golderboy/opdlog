@@ -82,13 +82,16 @@ object opdlog_f: Topdlog_f
       end
       object show_visitDBTableView1pdx: TcxGridDBColumn
         DataBinding.FieldName = 'pdx'
+        OnCustomDrawCell = show_visitDBTableView1pdxCustomDrawCell
       end
       object show_visitDBTableView1height: TcxGridDBColumn
         DataBinding.FieldName = 'height'
+        OnCustomDrawCell = show_visitDBTableView1heightCustomDrawCell
         Width = 57
       end
       object show_visitDBTableView1bw: TcxGridDBColumn
         DataBinding.FieldName = 'bw'
+        OnCustomDrawCell = show_visitDBTableView1bwCustomDrawCell
         Width = 54
       end
       object show_visitDBTableView1waist: TcxGridDBColumn
@@ -100,10 +103,12 @@ object opdlog_f: Topdlog_f
       end
       object show_visitDBTableView1bpd: TcxGridDBColumn
         DataBinding.FieldName = 'bpd'
+        OnCustomDrawCell = show_visitDBTableView1bpdCustomDrawCell
         Width = 59
       end
       object show_visitDBTableView1bps: TcxGridDBColumn
         DataBinding.FieldName = 'bps'
+        OnCustomDrawCell = show_visitDBTableView1bpsCustomDrawCell
         Width = 58
       end
       object show_visitDBTableView1hr: TcxGridDBColumn
@@ -129,6 +134,7 @@ object opdlog_f: Topdlog_f
       end
       object show_visitDBTableView1cc: TcxGridDBColumn
         DataBinding.FieldName = 'cc'
+        OnCustomDrawCell = show_visitDBTableView1ccCustomDrawCell
         Width = 155
       end
       object show_visitDBTableView1hpi: TcxGridDBColumn

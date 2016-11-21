@@ -86,9 +86,15 @@ object erlog_form: Terlog_form
       end
       object show_visitDBTableView1pdx: TcxGridDBColumn
         DataBinding.FieldName = 'pdx'
+        OnCustomDrawCell = show_visitDBTableView1pdxCustomDrawCell
       end
       object show_visitDBTableView1height: TcxGridDBColumn
         DataBinding.FieldName = 'height'
+        OnCustomDrawCell = show_visitDBTableView1heightCustomDrawCell
+      end
+      object show_visitDBTableView1bw: TcxGridDBColumn
+        DataBinding.FieldName = 'bw'
+        OnCustomDrawCell = show_visitDBTableView1bwCustomDrawCell
       end
       object show_visitDBTableView1waist: TcxGridDBColumn
         DataBinding.FieldName = 'waist'
@@ -102,9 +108,6 @@ object erlog_form: Terlog_form
       object show_visitDBTableView1bps: TcxGridDBColumn
         DataBinding.FieldName = 'bps'
       end
-      object show_visitDBTableView1bw: TcxGridDBColumn
-        DataBinding.FieldName = 'bw'
-      end
       object show_visitDBTableView1hr: TcxGridDBColumn
         DataBinding.FieldName = 'hr'
       end
@@ -113,15 +116,18 @@ object erlog_form: Terlog_form
       end
       object show_visitDBTableView1pulse: TcxGridDBColumn
         DataBinding.FieldName = 'pulse'
+        OnCustomDrawCell = show_visitDBTableView1pulseCustomDrawCell
       end
       object show_visitDBTableView1rr: TcxGridDBColumn
         DataBinding.FieldName = 'rr'
+        OnCustomDrawCell = show_visitDBTableView1rrCustomDrawCell
       end
       object show_visitDBTableView1temperature: TcxGridDBColumn
         DataBinding.FieldName = 'temperature'
       end
       object show_visitDBTableView1cc: TcxGridDBColumn
         DataBinding.FieldName = 'cc'
+        OnCustomDrawCell = show_visitDBTableView1ccCustomDrawCell
         Width = 205
       end
       object show_visitDBTableView1hpi: TcxGridDBColumn
@@ -134,18 +140,22 @@ object erlog_form: Terlog_form
       end
       object show_visitDBTableView1er_list: TcxGridDBColumn
         DataBinding.FieldName = 'er_list'
+        OnCustomDrawCell = show_visitDBTableView1er_listCustomDrawCell
         Width = 254
       end
       object show_visitDBTableView1er_period: TcxGridDBColumn
         DataBinding.FieldName = 'er_period'
+        OnCustomDrawCell = show_visitDBTableView1er_periodCustomDrawCell
         Width = 76
       end
       object show_visitDBTableView1er_pt_type: TcxGridDBColumn
         DataBinding.FieldName = 'er_pt_type'
+        OnCustomDrawCell = show_visitDBTableView1er_pt_typeCustomDrawCell
         Width = 101
       end
       object show_visitDBTableView1er_emergency_type: TcxGridDBColumn
         DataBinding.FieldName = 'er_emergency_type'
+        OnCustomDrawCell = show_visitDBTableView1er_emergency_typeCustomDrawCell
         Width = 126
       end
       object show_visitDBTableView1department: TcxGridDBColumn

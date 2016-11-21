@@ -58,8 +58,8 @@ object chk_patient_form: Tchk_patient_form
       Caption = #3623#3633#3609#3607#3637#3656
     end
     object post_date_btn1: TRzBitBtn
-      Left = 560
-      Top = 10
+      Left = 671
+      Top = 8
       Width = 107
       Anchors = [akTop, akRight]
       Caption = #3605#3619#3623#3592#3621#3632#3648#3629#3637#3618#3604
@@ -179,8 +179,8 @@ object chk_patient_form: Tchk_patient_form
       NumGlyphs = 2
     end
     object post_date_btn2: TRzBitBtn
-      Left = 431
-      Top = 10
+      Left = 542
+      Top = 8
       Width = 123
       Anchors = [akTop, akRight]
       Caption = #3605#3619#3623#3592#3626#3629#3610#3648#3610#3639#3657#3629#3591#3605#3657#3609
@@ -603,13 +603,14 @@ object chk_patient_form: Tchk_patient_form
       
         '(SELECT '#39#39',v.vstdate,p.hn,p.cid,p.pname,p.fname,p.lname,p.sex,p.' +
         'birthday,p.marrystatus,p.occupation,p.citizenship,p.nationality,'
-      'v.pttype,concat(p.type_area,'#39','#39',pe.house_regist_type_id)'
-      ',p.road,p.addrpart,p.moopart,p.tmbpart,p.chwpart,p.po_code,'
+      
+        'v.pttype,p.type_area,p.road,p.addrpart,p.moopart,p.tmbpart,p.chw' +
+        'part,p.po_code,'
       'CONCAT('
       
         'if(p.cid like concat('#39'0'#39',(SELECT hospitalcode FROM opdconfig),'#39'%' +
         #39'),'#39'CHACK GEN CID,'#39','#39#39'),'
-      'if(p.cid like '#39'00%'#39','#39'CHACK ALIEN CID,'#39','#39#39'),'
+      'if(p.cid like '#39'000%'#39','#39'CHACK ALIEN CID,'#39','#39#39'),'
       'if(p.cid like '#39'0000000000000'#39','#39'LOST CID,'#39','#39#39'),'
       
         'if(p.pname not in (SELECT `name` from pname),'#39'Pname not match,'#39',' +
@@ -723,10 +724,11 @@ object chk_patient_form: Tchk_patient_form
       
         '(SELECT '#39#39',v.vstdate,p.hn,p.cid,p.pname,p.fname,p.lname,p.sex,p.' +
         'birthday,p.marrystatus,p.occupation,p.citizenship,p.nationality,'
-      'v.pttype,concat(p.type_area,'#39','#39',pe.house_regist_type_id)'
-      ',p.road,p.addrpart,p.moopart,p.tmbpart,p.chwpart,p.po_code,'
+      
+        'v.pttype,p.type_area,p.road,p.addrpart,p.moopart,p.tmbpart,p.chw' +
+        'part,p.po_code,'
       'CONCAT('
-      'if(p.cid like '#39'00%'#39','#39'CHACK ALIEN CID,'#39','#39#39'),'
+      'if(p.cid like '#39'000%'#39','#39'CHACK ALIEN CID,'#39','#39#39'),'
       'if(p.cid like '#39'0000000000000'#39','#39'LOST CID,'#39','#39#39'),'
       
         'if(p.pname not in (SELECT `name` from pname),'#39'Pname not match,'#39',' +
@@ -753,9 +755,6 @@ object chk_patient_form: Tchk_patient_form
         #39'pttype not match,'#39','#39#39'),'
       'IF(p.type_area ="",'#39'type_area IS NULL,'#39','#39#39'),'
       'IF(p.type_area is null,'#39'type_area IS NULL,'#39','#39#39'),'
-      
-        'IF(p.type_area != pe.house_regist_type_id,'#39'type_area NOT MATCH,'#39 +
-        ','#39#39'),'
       'IF(p.addrpart is null,'#39'home_number IS NULL,'#39','#39#39'),'
       'IF(p.moopart is null,'#39'moo IS NULL,'#39','#39#39'),'
       'IF(p.tmbpart is null,'#39'tumbon IS NULL,'#39','#39#39'),'

@@ -259,6 +259,15 @@ object login_form: Tlogin_form
     Height = 102
     Width = 497
   end
+  object version: TcxTextEdit
+    Left = 392
+    Top = 8
+    Enabled = False
+    TabOrder = 9
+    Text = '20161121'
+    Visible = False
+    Width = 121
+  end
   object Qopd_user: TMyQuery
     Connection = db_connect_m.connect_db
     SQL.Strings = (

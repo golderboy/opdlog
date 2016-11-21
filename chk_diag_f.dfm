@@ -2,7 +2,7 @@ object chk_diag_form: Tchk_diag_form
   Left = 0
   Top = 0
   Caption = 'chk_diag_form'
-  ClientHeight = 540
+  ClientHeight = 557
   ClientWidth = 764
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -181,7 +181,7 @@ object chk_diag_form: Tchk_diag_form
   end
   object Panel1: TPanel
     Left = 0
-    Top = 513
+    Top = 530
     Width = 764
     Height = 27
     Align = alBottom
@@ -321,16 +321,15 @@ object chk_diag_form: Tchk_diag_form
     end
   end
   object show_visit: TcxGrid
-    AlignWithMargins = True
-    Left = 3
-    Top = 77
-    Width = 758
-    Height = 433
+    Left = 0
+    Top = 74
+    Width = 764
+    Height = 456
     Align = alClient
     Font.Charset = THAI_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'MS Sans Serif'
+    Font.Height = -19
+    Font.Name = 'TH SarabunPSK'
     Font.Style = []
     ParentFont = False
     TabOrder = 3
@@ -342,6 +341,7 @@ object chk_diag_form: Tchk_diag_form
       DataController.Summary.SummaryGroups = <>
       Filtering.ColumnFilteredItemsList = True
       OptionsData.Appending = True
+      OptionsView.DataRowHeight = 30
       OptionsView.GroupByBox = False
       object show_visitDBTableView1vstdate: TcxGridDBColumn
         DataBinding.FieldName = 'vstdate'
@@ -357,6 +357,7 @@ object chk_diag_form: Tchk_diag_form
       end
       object show_visitDBTableView1pdx: TcxGridDBColumn
         DataBinding.FieldName = 'pdx'
+        OnCustomDrawCell = show_visitDBTableView1pdxCustomDrawCell
         Width = 40
       end
       object show_visitDBTableView1pdx_name: TcxGridDBColumn
@@ -365,6 +366,7 @@ object chk_diag_form: Tchk_diag_form
       end
       object show_visitDBTableView1dx_note: TcxGridDBColumn
         DataBinding.FieldName = 'dx_note'
+        OnCustomDrawCell = show_visitDBTableView1dx_noteCustomDrawCell
         Width = 303
       end
       object show_visitDBTableView1dx_doctor: TcxGridDBColumn
@@ -395,8 +397,14 @@ object chk_diag_form: Tchk_diag_form
         DataBinding.FieldName = 'dx5'
         Width = 79
       end
+      object show_visitDBTableView1EX: TcxGridDBColumn
+        DataBinding.FieldName = 'EX'
+        OnCustomDrawCell = show_visitDBTableView1EXCustomDrawCell
+        Width = 141
+      end
       object show_visitDBTableView1cc: TcxGridDBColumn
         DataBinding.FieldName = 'cc'
+        OnCustomDrawCell = show_visitDBTableView1ccCustomDrawCell
         Width = 176
       end
       object show_visitDBTableView1hpi: TcxGridDBColumn
@@ -433,11 +441,12 @@ object chk_diag_form: Tchk_diag_form
       end
       object show_visitDBTableView1income: TcxGridDBColumn
         DataBinding.FieldName = 'income'
-        Width = 62
+        OnCustomDrawCell = show_visitDBTableView1incomeCustomDrawCell
+        Width = 60
       end
       object show_visitDBTableView1status_: TcxGridDBColumn
         DataBinding.FieldName = 'status_'
-        Width = 192
+        Width = 47
       end
     end
     object show_visitLevel1: TcxGridLevel
@@ -481,6 +490,7 @@ object chk_diag_form: Tchk_diag_form
       #9#9#9' dx3  VARCHAR(50),'
       #9#9#9' dx4  VARCHAR(50),'
       #9#9#9' dx5  VARCHAR(50),'
+      #9#9#9' EX'#9#9'VARCHAR(50),'
       #9#9#9' cc  VARCHAR(255),'
       #9#9#9' hpi  VARCHAR(255),'
       #9#9#9' income '#9'VARCHAR(50),'
@@ -497,6 +507,35 @@ object chk_diag_form: Tchk_diag_form
       
         'v.main_pdx,v.pdx,i1.`name`,d.dx_code_note,dt.`name`,v.dx0,v.dx1,' +
         'v.dx2,v.dx3,v.dx4,v.dx5,'
+      'RTRIM (concat('
+      
+        'if(v.pdx LIKE "V%" OR v.pdx LIKE "W%" OR v.pdx LIKE "X%" OR v.pd' +
+        'x LIKE "Y%" OR v.pdx LIKE "S%" OR v.pdx LIKE "T%",v.pdx ,'#39#39'),'
+      #39' '#39','
+      
+        'if(v.dx0 LIKE "V%" OR v.dx0 LIKE "W%" OR v.dx0 LIKE "X%" OR v.dx' +
+        '0 LIKE "Y%",v.dx0 ,'#39#39'),'
+      #39' '#39','
+      
+        'if(v.dx1 LIKE "V%" OR v.dx1 LIKE "W%" OR v.dx1 LIKE "X%" OR v.dx' +
+        '1 LIKE "Y%",v.dx1 ,'#39#39'),'
+      #39' '#39','
+      
+        'if(v.dx2 LIKE "V%" OR v.dx2 LIKE "W%" OR v.dx2 LIKE "X%" OR v.dx' +
+        '2 LIKE "Y%",v.dx2 ,'#39#39'),'
+      #39' '#39','
+      
+        'if(v.dx3 LIKE "V%" OR v.dx3 LIKE "W%" OR v.dx3 LIKE "X%" OR v.dx' +
+        '3 LIKE "Y%",v.dx3 ,'#39#39'),'
+      #39' '#39','
+      
+        'if(v.dx4 LIKE "V%" OR v.dx4 LIKE "W%" OR v.dx4 LIKE "X%" OR v.dx' +
+        '4 LIKE "Y%",v.dx4 ,'#39#39'),'
+      #39' '#39','
+      
+        'if(v.dx5 LIKE "V%" OR v.dx5 LIKE "W%" OR v.dx5 LIKE "X%" OR v.dx' +
+        '5 LIKE "Y%",v.dx5 ,'#39#39')'
+      ')),'
       'oc.cc,oc.hpi,v.income,'
       'concat('
       'if(v.pdx = "",'#39'DIAG IS LOST,'#39','#39#39'),'
@@ -531,7 +570,7 @@ object chk_diag_form: Tchk_diag_form
       '  '
       ''
       '  where v.vn not in (select vn from an_stat) '
-      '  #where v.vstdate between 20160404 AND 20160404'
+      '  #AND v.vstdate between 20160404 AND 20160404'
       '  AND d.diagtype = 1'
       '  AND v.vstdate between :date_start_text AND :date_end_text'
       ''
@@ -545,6 +584,7 @@ object chk_diag_form: Tchk_diag_form
     RefreshOptions = [roAfterInsert, roAfterUpdate, roBeforeEdit]
     Options.AutoRefresh = True
     Options.AutoRefreshInterval = 120
+    Active = True
     Left = 320
     Top = 168
     ParamData = <

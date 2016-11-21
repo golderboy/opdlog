@@ -10,7 +10,7 @@ uses
   MyAccess, MemDS, cxGridLevel, cxGridCustomTableView, cxGridTableView,
   cxGridDBTableView, cxClasses, cxGridCustomView, cxGrid, RzButton, cxLabel,
   cxTextEdit, cxMaskEdit, cxDropDownEdit, cxCalendar, ExtCtrls, JvExControls,
-  JvNavigationPane,ShellAPI,cxExport,cxGridExportLink;
+  JvNavigationPane,ShellAPI,cxExport,cxGridExportLink, cxDBLabel;
 
 type
   Tchk_diag_form = class(TForm)
@@ -55,12 +55,28 @@ type
     show_visitDBTableView1status_: TcxGridDBColumn;
     show_visitDBTableView1dx_note: TcxGridDBColumn;
     show_visitDBTableView1dx_doctor: TcxGridDBColumn;
+    show_visitDBTableView1EX: TcxGridDBColumn;
     procedure post_date_btnClick(Sender: TObject);
     procedure excel_export_btnClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     function  GetTempDir : string;
     procedure RzBitBtn1Click(Sender: TObject);
     procedure emr_btnClick(Sender: TObject);
+    procedure show_visitDBTableView1pdxCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1dx_noteCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1ccCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1EXCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+    procedure show_visitDBTableView1incomeCustomDrawCell(
+      Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+      AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
   private
     { Private declarations }
   public
@@ -119,6 +135,46 @@ end;
 procedure Tchk_diag_form.RzBitBtn1Click(Sender: TObject);
 begin
 close;
+end;
+
+procedure Tchk_diag_form.show_visitDBTableView1ccCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if VarToStr(AViewInfo.GridRecord.Values[14]) = '' then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tchk_diag_form.show_visitDBTableView1dx_noteCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if VarToStr(AViewInfo.GridRecord.Values[5]) = '' then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tchk_diag_form.show_visitDBTableView1EXCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if VarToStr(AViewInfo.GridRecord.Values[13]) <> '' then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tchk_diag_form.show_visitDBTableView1incomeCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if VarToStr(AViewInfo.GridRecord.Values[23]) <= '0' then
+        Acanvas.brush.Color := clRed ;
+end;
+
+procedure Tchk_diag_form.show_visitDBTableView1pdxCustomDrawCell(
+  Sender: TcxCustomGridTableView; ACanvas: TcxCanvas;
+  AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
+begin
+if VarToStr(AViewInfo.GridRecord.Values[3]) = '' then
+        Acanvas.brush.Color := clRed ;
 end;
 
 end.

@@ -1,9 +1,9 @@
-object chk_money_form: Tchk_money_form
+object pt_pe_form: Tpt_pe_form
   Left = 0
   Top = 0
-  Caption = 'chk_money_form'
-  ClientHeight = 549
-  ClientWidth = 782
+  Caption = 'pt_pe_form'
+  ClientHeight = 539
+  ClientWidth = 785
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,16 +12,18 @@ object chk_money_form: Tchk_money_form
   Font.Style = []
   OldCreateOrder = False
   WindowState = wsMaximized
-  OnShow = FormShow
+  DesignSize = (
+    785
+    539)
   PixelsPerInch = 96
   TextHeight = 13
   object header_opdlog: TJvNavPanelHeader
     Left = 0
     Top = 0
-    Width = 782
+    Width = 785
     Height = 33
     Align = alTop
-    Caption = ' CHACK MONEY'
+    Caption = ' CHACK PATIENT NOT IN PERSON'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
     Font.Height = -16
@@ -29,16 +31,20 @@ object chk_money_form: Tchk_money_form
     Font.Style = [fsBold]
     ParentFont = False
     ImageIndex = 0
+    ExplicitLeft = -13
+    ExplicitWidth = 781
   end
   object Panel2: TPanel
     Left = 0
     Top = 33
-    Width = 782
+    Width = 785
     Height = 41
     Align = alTop
     TabOrder = 1
+    ExplicitLeft = -13
+    ExplicitWidth = 781
     DesignSize = (
-      782
+      785
       41)
     object date_start_text: TcxDateEdit
       Left = 70
@@ -57,74 +63,12 @@ object chk_money_form: Tchk_money_form
       Top = 18
       Caption = #3623#3633#3609#3607#3637#3656
     end
-    object post_date_btn: TRzBitBtn
-      Left = 561
-      Top = 10
-      Width = 107
-      Anchors = [akTop, akRight]
-      Caption = 'Preview'
-      TabOrder = 3
-      OnClick = post_date_btnClick
-      Glyph.Data = {
-        36060000424D3606000000000000360400002800000020000000100000000100
-        08000000000000020000830E0000830E00000001000000000000000000003300
-        00006600000099000000CC000000FF0000000033000033330000663300009933
-        0000CC330000FF33000000660000336600006666000099660000CC660000FF66
-        000000990000339900006699000099990000CC990000FF99000000CC000033CC
-        000066CC000099CC0000CCCC0000FFCC000000FF000033FF000066FF000099FF
-        0000CCFF0000FFFF000000003300330033006600330099003300CC003300FF00
-        330000333300333333006633330099333300CC333300FF333300006633003366
-        33006666330099663300CC663300FF6633000099330033993300669933009999
-        3300CC993300FF99330000CC330033CC330066CC330099CC3300CCCC3300FFCC
-        330000FF330033FF330066FF330099FF3300CCFF3300FFFF3300000066003300
-        66006600660099006600CC006600FF0066000033660033336600663366009933
-        6600CC336600FF33660000666600336666006666660099666600CC666600FF66
-        660000996600339966006699660099996600CC996600FF99660000CC660033CC
-        660066CC660099CC6600CCCC6600FFCC660000FF660033FF660066FF660099FF
-        6600CCFF6600FFFF660000009900330099006600990099009900CC009900FF00
-        990000339900333399006633990099339900CC339900FF339900006699003366
-        99006666990099669900CC669900FF6699000099990033999900669999009999
-        9900CC999900FF99990000CC990033CC990066CC990099CC9900CCCC9900FFCC
-        990000FF990033FF990066FF990099FF9900CCFF9900FFFF99000000CC003300
-        CC006600CC009900CC00CC00CC00FF00CC000033CC003333CC006633CC009933
-        CC00CC33CC00FF33CC000066CC003366CC006666CC009966CC00CC66CC00FF66
-        CC000099CC003399CC006699CC009999CC00CC99CC00FF99CC0000CCCC0033CC
-        CC0066CCCC0099CCCC00CCCCCC00FFCCCC0000FFCC0033FFCC0066FFCC0099FF
-        CC00CCFFCC00FFFFCC000000FF003300FF006600FF009900FF00CC00FF00FF00
-        FF000033FF003333FF006633FF009933FF00CC33FF00FF33FF000066FF003366
-        FF006666FF009966FF00CC66FF00FF66FF000099FF003399FF006699FF009999
-        FF00CC99FF00FF99FF0000CCFF0033CCFF0066CCFF0099CCFF00CCCCFF00FFCC
-        FF0000FFFF0033FFFF0066FFFF0099FFFF00CCFFFF00FFFFFF00000080000080
-        000000808000800000008000800080800000C0C0C00080808000191919004C4C
-        4C00B2B2B200E5E5E500C8AC2800E0CC6600F2EABF00B59B2400D8E9EC009933
-        6600D075A300ECC6D900646F710099A8AC00E2EFF10000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000E8E8E8E8E8E8
-        E8E8E8E8E8E8E8820982E8E8E8E8E8E8E8E8E8E8E8E8E8AC81ACE85E5E5E5E5E
-        5E5E5E5E5E5E82090909E88181818181818181818181AC818181E85ED7D7D7D7
-        D7D7D7D7D7DF09090982E881E8E8E8E8E8E8E8E8E8DF818181ACE85ED7E3E3E3
-        E3E3DFDFDF09090982E8E881E8ACACACACACDFDFDF818181ACE8E85ED7D7D7D7
-        E35DB3B3D7880982E8E8E881E8E8E8E8AC81E3E3D7E381ACE8E8E85ED7E3E3E3
-        81E6B3B3B3D756E8E8E8E881E8ACACAC81E3E3E3E3D756E8E8E8E85ED7D7D7D7
-        81E6D7E6B3B356E8E8E8E881E8E8E8E881E3D7E3E3E356E8E8E8E85ED7E3E3E3
-        81E6D7D7E6B356E8E8E8E881E8ACACAC81E3D7D7E3E356E8E8E8E85ED7D7D7D7
-        D781E6E6E65DDFE8E8E8E881E8E8E8E8E881E3E3E381DFE8E8E8E85ED7E3E3E3
-        E3E3818181E35EE8E8E8E881E8ACACACACAC818181E381E8E8E8E85ED7D7D7D7
-        D7D7D7D7D7D75EE8E8E8E881E8E8E8E8E8E8E8E8E8E881E8E8E8E85ED7E3E3E3
-        E3E3D75E5E5E5EE8E8E8E881E8ACACACACACE881818181E8E8E8E85ED7D7D7D7
-        D7D7D75EE35EE8E8E8E8E881E8E8E8E8E8E8E881E381E8E8E8E8E85ED7D7D7D7
-        D7D7D75E5EE8E8E8E8E8E881E8E8E8E8E8E8E88181E8E8E8E8E8E85E5E5E5E5E
-        5E5E5E5EE8E8E8E8E8E8E8818181818181818181E8E8E8E8E8E8E8E8E8E8E8E8
-        E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
-      NumGlyphs = 2
-    end
     object excel_export_btn: TRzBitBtn
-      Left = 681
-      Top = 10
+      Left = 740
+      Top = -25
       Anchors = [akTop, akRight]
       Caption = 'EXCEL'
-      TabOrder = 4
-      OnClick = excel_export_btnClick
+      TabOrder = 3
       Glyph.Data = {
         36060000424D3606000000000000360400002800000020000000100000000100
         08000000000000020000730E0000730E00000001000000000000000000003300
@@ -177,20 +121,86 @@ object chk_money_form: Tchk_money_form
         5E5E5E5E5E5E5E5EE8E8E8E8E8E8E8E2E2E2E2E2E2E2E2E2E8E8E8E8E8E8E8E8
         E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
+      ExplicitLeft = 736
+    end
+    object post_date_btn2: TRzBitBtn
+      Left = 643
+      Top = 6
+      Width = 123
+      Anchors = [akTop, akRight]
+      Caption = #3605#3619#3623#3592#3626#3629#3610#3648#3610#3639#3657#3629#3591#3605#3657#3609
+      TabOrder = 4
+      OnClick = post_date_btn2Click
+      Glyph.Data = {
+        36060000424D3606000000000000360400002800000020000000100000000100
+        08000000000000020000330B0000330B00000001000000000000000000003300
+        00006600000099000000CC000000FF0000000033000033330000663300009933
+        0000CC330000FF33000000660000336600006666000099660000CC660000FF66
+        000000990000339900006699000099990000CC990000FF99000000CC000033CC
+        000066CC000099CC0000CCCC0000FFCC000000FF000033FF000066FF000099FF
+        0000CCFF0000FFFF000000003300330033006600330099003300CC003300FF00
+        330000333300333333006633330099333300CC333300FF333300006633003366
+        33006666330099663300CC663300FF6633000099330033993300669933009999
+        3300CC993300FF99330000CC330033CC330066CC330099CC3300CCCC3300FFCC
+        330000FF330033FF330066FF330099FF3300CCFF3300FFFF3300000066003300
+        66006600660099006600CC006600FF0066000033660033336600663366009933
+        6600CC336600FF33660000666600336666006666660099666600CC666600FF66
+        660000996600339966006699660099996600CC996600FF99660000CC660033CC
+        660066CC660099CC6600CCCC6600FFCC660000FF660033FF660066FF660099FF
+        6600CCFF6600FFFF660000009900330099006600990099009900CC009900FF00
+        990000339900333399006633990099339900CC339900FF339900006699003366
+        99006666990099669900CC669900FF6699000099990033999900669999009999
+        9900CC999900FF99990000CC990033CC990066CC990099CC9900CCCC9900FFCC
+        990000FF990033FF990066FF990099FF9900CCFF9900FFFF99000000CC003300
+        CC006600CC009900CC00CC00CC00FF00CC000033CC003333CC006633CC009933
+        CC00CC33CC00FF33CC000066CC003366CC006666CC009966CC00CC66CC00FF66
+        CC000099CC003399CC006699CC009999CC00CC99CC00FF99CC0000CCCC0033CC
+        CC0066CCCC0099CCCC00CCCCCC00FFCCCC0000FFCC0033FFCC0066FFCC0099FF
+        CC00CCFFCC00FFFFCC000000FF003300FF006600FF009900FF00CC00FF00FF00
+        FF000033FF003333FF006633FF009933FF00CC33FF00FF33FF000066FF003366
+        FF006666FF009966FF00CC66FF00FF66FF000099FF003399FF006699FF009999
+        FF00CC99FF00FF99FF0000CCFF0033CCFF0066CCFF0099CCFF00CCCCFF00FFCC
+        FF0000FFFF0033FFFF0066FFFF0099FFFF00CCFFFF00FFFFFF00000080000080
+        000000808000800000008000800080800000C0C0C00080808000191919004C4C
+        4C00B2B2B200E5E5E500C8AC2800E0CC6600F2EABF00B59B2400D8E9EC009933
+        6600D075A300ECC6D900646F710099A8AC00E2EFF10000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000E8ACDEE3E8E8
+        E8E8E8E8E8E8E8E8E8E8E8ACDEE3E8E8E8E8E8E8E8E8E8E8E8E8AC807A81E3E8
+        E8E8E8E8E8E8E8E8E8E8ACE28181E3E8E8E8E8E8E8E8E8E8E8E8E8CEA37A81E3
+        E8E8E8E8E8E8E8E8E8E8E8ACE28181E3E8E8E8E8E8E8E8E8E8E8E8D0CEA37A81
+        E3E8E8E8E8E8E8E8E8E8E8E3ACE28181E3E8E8E8E8E8E8E8E8E8E8E8D0CEA37A
+        81E3E8E8E8E8E8E8E8E8E8E8E3ACE28181E3E8E8E8E8E8E8E8E8E8E8E8D0CEA3
+        7AACAD82828288E3E8E8E8E8E8E3ACE281ACE3818181E2E3E8E8E8E8E8E8D0CE
+        E28288E6B3E6E682EBE8E8E8E8E8E3ACE281E2ACACACAC81E3E8E8E8E8E8E8E3
+        8289B3B3B3D7D7D782E3E8E8E8E8E8E381E3ACACACE3E3E381E3E8E8E8E8E8AD
+        88B3E6B3B3D7D7D7E688E8E8E8E8E8E3E2ACACACACE3E3E3ACE2E8E8E8E8E888
+        89E6E6B3B3B3D7D7E682E8E8E8E8E8E2E3ACACACACACE3E3AC81E8E8E8E8E882
+        E6E6E6E6B3B3B3B3B382E8E8E8E8E881ACACACACACACACACAC81E8E8E8E8E888
+        E6B3E6E6E6B3B3B3E682E8E8E8E8E8E2ACACACACACACACACAC81E8E8E8E8E8AD
+        88D7D7E6E6E6E6B38888E8E8E8E8E8E3E2E3E3ACACACACACE2E2E8E8E8E8E8E3
+        82EBD7B3E6E6E68982E3E8E8E8E8E8E381E3E3ACACACACE381E3E8E8E8E8E8E8
+        AD82ADE6E6E68882ADE8E8E8E8E8E8E8E381E3ACACACE281E3E8E8E8E8E8E8E8
+        E8E38882828282E3E8E8E8E8E8E8E8E8E8E3E281818181E3E8E8}
+      NumGlyphs = 2
+      ExplicitLeft = 626
     end
   end
   object Panel1: TPanel
     Left = 0
-    Top = 522
-    Width = 782
+    Top = 512
+    Width = 785
     Height = 27
     Align = alBottom
     TabOrder = 2
+    ExplicitLeft = -13
+    ExplicitTop = 511
+    ExplicitWidth = 781
     DesignSize = (
-      782
+      785
       27)
     object RzBitBtn1: TRzBitBtn
-      Left = 704
+      Left = 707
       Top = 3
       Anchors = [akRight, akBottom]
       Caption = 'Exit'
@@ -248,6 +258,7 @@ object chk_money_form: Tchk_money_form
         57A2A2A2E8E8E8E8E8E8E8DE8181DED781818181E8E8E8E8E8E8E8E8E8AC8257
         57E8E8E8E8E8E8E8E8E8E8E8E8AC818181E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
+      ExplicitLeft = 703
     end
     object cxLabel1: TcxLabel
       Left = 40
@@ -259,73 +270,13 @@ object chk_money_form: Tchk_money_form
       Top = 3
       Caption = '0'
     end
-    object emr_btn: TRzBitBtn
-      Left = 623
-      Top = 2
-      Anchors = [akRight, akBottom]
-      Caption = 'EMR'
-      TabOrder = 3
-      OnClick = emr_btnClick
-      Glyph.Data = {
-        36060000424D3606000000000000360400002800000020000000100000000100
-        08000000000000020000730E0000730E00000001000000000000000000003300
-        00006600000099000000CC000000FF0000000033000033330000663300009933
-        0000CC330000FF33000000660000336600006666000099660000CC660000FF66
-        000000990000339900006699000099990000CC990000FF99000000CC000033CC
-        000066CC000099CC0000CCCC0000FFCC000000FF000033FF000066FF000099FF
-        0000CCFF0000FFFF000000003300330033006600330099003300CC003300FF00
-        330000333300333333006633330099333300CC333300FF333300006633003366
-        33006666330099663300CC663300FF6633000099330033993300669933009999
-        3300CC993300FF99330000CC330033CC330066CC330099CC3300CCCC3300FFCC
-        330000FF330033FF330066FF330099FF3300CCFF3300FFFF3300000066003300
-        66006600660099006600CC006600FF0066000033660033336600663366009933
-        6600CC336600FF33660000666600336666006666660099666600CC666600FF66
-        660000996600339966006699660099996600CC996600FF99660000CC660033CC
-        660066CC660099CC6600CCCC6600FFCC660000FF660033FF660066FF660099FF
-        6600CCFF6600FFFF660000009900330099006600990099009900CC009900FF00
-        990000339900333399006633990099339900CC339900FF339900006699003366
-        99006666990099669900CC669900FF6699000099990033999900669999009999
-        9900CC999900FF99990000CC990033CC990066CC990099CC9900CCCC9900FFCC
-        990000FF990033FF990066FF990099FF9900CCFF9900FFFF99000000CC003300
-        CC006600CC009900CC00CC00CC00FF00CC000033CC003333CC006633CC009933
-        CC00CC33CC00FF33CC000066CC003366CC006666CC009966CC00CC66CC00FF66
-        CC000099CC003399CC006699CC009999CC00CC99CC00FF99CC0000CCCC0033CC
-        CC0066CCCC0099CCCC00CCCCCC00FFCCCC0000FFCC0033FFCC0066FFCC0099FF
-        CC00CCFFCC00FFFFCC000000FF003300FF006600FF009900FF00CC00FF00FF00
-        FF000033FF003333FF006633FF009933FF00CC33FF00FF33FF000066FF003366
-        FF006666FF009966FF00CC66FF00FF66FF000099FF003399FF006699FF009999
-        FF00CC99FF00FF99FF0000CCFF0033CCFF0066CCFF0099CCFF00CCCCFF00FFCC
-        FF0000FFFF0033FFFF0066FFFF0099FFFF00CCFFFF00FFFFFF00000080000080
-        000000808000800000008000800080800000C0C0C00080808000191919004C4C
-        4C00B2B2B200E5E5E500C8AC2800E0CC6600F2EABF00B59B2400D8E9EC009933
-        6600D075A300ECC6D900646F710099A8AC00E2EFF10000000000000000000000
-        0000000000000000000000000000000000000000000000000000000000000000
-        0000000000000000000000000000000000000000000000000000E8E8E8E8E8E8
-        E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E85E5E5E5E
-        5E5E5E5E5E5E5E5EE8E8E8E8818181818181818181818181E8E8E8E85ED7D7D7
-        D7D7D7D7D7D7D75EE8E8E8E881E8E8E8E8E8E8E8E8E8E881E8E8E8E85ED7E3E3
-        E3E3E3E3E3E3D75EE8E8E8E881E8ACACACACACACACACE881E8E8E8E85ED7D7D7
-        D7D7D7D7D7D7D75EE8E8E8E881E8E8E8E8E8E8E8E8E8E881E8E8E8E85ED7E3E3
-        E3E3E3E3E3E3D75EE8E8E8E881E8ACACACACACACACACE881E8E8E8E85ED7D7D7
-        D7D7D7D7D7D7D75EE8E8E8E881E8E8E8E8E8E8E8E8E8E881E8E8E8E85ED7E3E3
-        E3E3E3E3E3E3D75EE8E8E8E881E8ACACACACACACACACE881E8E8E8E85ED7D7D7
-        D7D7D7D7D7D7D75EE8E8E8E881E8E8E8E8E8E8E8E8E8E881E8E8E8E85ED7E3E3
-        E3E3E3E3E3E3D75EE8E8E8E881E8ACACACACACACACACE881E8E8E8E85ED7D7D7
-        D7D7D7D7D7D7D75EE8E8E8E881E8E8E8E8E8E8E8E8E8E881E8E8E8E85ED7E3E3
-        E3E3E3D75E5E5E5EE8E8E8E881E8ACACACACACE881818181E8E8E8E85ED7D7D7
-        D7D7D7D75EE35EE8E8E8E8E881E8E8E8E8E8E8E881E881E8E8E8E8E85ED7D7D7
-        D7D7D7D75E5EE8E8E8E8E8E881E8E8E8E8E8E8E88181E8E8E8E8E8E85E5E5E5E
-        5E5E5E5E5EE8E8E8E8E8E8E8818181818181818181E8E8E8E8E8E8E8E8E8E8E8
-        E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
-      NumGlyphs = 2
-    end
   end
   object show_visit: TcxGrid
     AlignWithMargins = True
     Left = 3
     Top = 77
-    Width = 776
-    Height = 442
+    Width = 779
+    Height = 432
     Align = alClient
     Font.Charset = THAI_CHARSET
     Font.Color = clWindowText
@@ -334,75 +285,123 @@ object chk_money_form: Tchk_money_form
     Font.Style = []
     ParentFont = False
     TabOrder = 3
-    object show_visitDBTableView1: TcxGridDBTableView
+    ExplicitLeft = -7
+    ExplicitWidth = 775
+    ExplicitHeight = 431
+    object cxGridDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
-      DataController.DataSource = DMoney
+      DataController.DataSource = DPt_pe
       DataController.Summary.DefaultGroupSummaryItems = <>
       DataController.Summary.FooterSummaryItems = <>
       DataController.Summary.SummaryGroups = <>
       Filtering.ColumnFilteredItemsList = True
       OptionsData.Appending = True
       OptionsView.GroupByBox = False
-      object show_visitDBTableView1vn: TcxGridDBColumn
-        DataBinding.FieldName = 'vn'
-        Width = 90
-      end
-      object show_visitDBTableView1vstdate: TcxGridDBColumn
+      object cxGridDBTableView1vstdate: TcxGridDBColumn
         DataBinding.FieldName = 'vstdate'
         Width = 70
       end
-      object show_visitDBTableView1hn: TcxGridDBColumn
+      object cxGridDBTableView1hn: TcxGridDBColumn
         DataBinding.FieldName = 'hn'
         Width = 69
       end
-      object show_visitDBTableView1pttype: TcxGridDBColumn
+      object cxGridDBTableView1cid: TcxGridDBColumn
+        DataBinding.FieldName = 'cid'
+        Width = 97
+      end
+      object cxGridDBTableView1pname: TcxGridDBColumn
+        DataBinding.FieldName = 'pname'
+        OnCustomDrawCell = cxGridDBTableView1pnameCustomDrawCell
+        Width = 60
+      end
+      object cxGridDBTableView1fname: TcxGridDBColumn
+        DataBinding.FieldName = 'fname'
+        OnCustomDrawCell = cxGridDBTableView1fnameCustomDrawCell
+        Width = 61
+      end
+      object cxGridDBTableView1lname: TcxGridDBColumn
+        DataBinding.FieldName = 'lname'
+        OnCustomDrawCell = cxGridDBTableView1lnameCustomDrawCell
+        Width = 87
+      end
+      object cxGridDBTableView1sex: TcxGridDBColumn
+        DataBinding.FieldName = 'sex'
+        OnCustomDrawCell = cxGridDBTableView1sexCustomDrawCell
+        Width = 27
+      end
+      object cxGridDBTableView1birthday: TcxGridDBColumn
+        DataBinding.FieldName = 'birthday'
+        Width = 70
+      end
+      object cxGridDBTableView1marrystatus: TcxGridDBColumn
+        DataBinding.FieldName = 'marrystatus'
+        Width = 75
+      end
+      object cxGridDBTableView1occupation: TcxGridDBColumn
+        DataBinding.FieldName = 'occupation'
+        Width = 72
+      end
+      object cxGridDBTableView1citizenship: TcxGridDBColumn
+        DataBinding.FieldName = 'citizenship'
+        Width = 68
+      end
+      object cxGridDBTableView1nationality: TcxGridDBColumn
+        DataBinding.FieldName = 'nationality'
+        Width = 66
+      end
+      object cxGridDBTableView1pttype: TcxGridDBColumn
         DataBinding.FieldName = 'pttype'
-        Width = 55
-      end
-      object show_visitDBTableView1pdx: TcxGridDBColumn
-        DataBinding.FieldName = 'pdx'
-        OnCustomDrawCell = show_visitDBTableView1pdxCustomDrawCell
-        Width = 45
-      end
-      object show_visitDBTableView1income: TcxGridDBColumn
-        DataBinding.FieldName = 'income'
-        OnCustomDrawCell = show_visitDBTableView1incomeCustomDrawCell
-        Width = 51
-      end
-      object show_visitDBTableView1paid_money: TcxGridDBColumn
-        DataBinding.FieldName = 'paid_money'
-        Width = 93
-      end
-      object show_visitDBTableView1uc_money: TcxGridDBColumn
-        DataBinding.FieldName = 'uc_money'
-        Width = 80
-      end
-      object show_visitDBTableView1item_money: TcxGridDBColumn
-        DataBinding.FieldName = 'item_money'
-      end
-      object show_visitDBTableView1Sum_17: TcxGridDBColumn
-        DataBinding.FieldName = 'Sum_17'
-        Width = 54
-      end
-      object show_visitDBTableView1cost: TcxGridDBColumn
-        DataBinding.FieldName = 'cost'
-        OnCustomDrawCell = show_visitDBTableView1costCustomDrawCell
         Width = 43
       end
-      object show_visitDBTableView1chk_cost: TcxGridDBColumn
-        DataBinding.FieldName = 'chk_cost'
-        Width = 71
+      object cxGridDBTableView1type_area: TcxGridDBColumn
+        DataBinding.FieldName = 'type_area'
+        OnCustomDrawCell = cxGridDBTableView1type_areaCustomDrawCell
+        Width = 79
       end
-      object show_visitDBTableView1Status_: TcxGridDBColumn
-        DataBinding.FieldName = 'Status_'
-        Width = 544
+      object cxGridDBTableView1road: TcxGridDBColumn
+        DataBinding.FieldName = 'road'
+        Width = 84
+      end
+      object cxGridDBTableView1addrpart: TcxGridDBColumn
+        DataBinding.FieldName = 'addrpart'
+        Width = 69
+      end
+      object cxGridDBTableView1moopart: TcxGridDBColumn
+        DataBinding.FieldName = 'moopart'
+        OnCustomDrawCell = cxGridDBTableView1moopartCustomDrawCell
+        Width = 56
+      end
+      object cxGridDBTableView1tmbpart: TcxGridDBColumn
+        DataBinding.FieldName = 'tmbpart'
+        OnCustomDrawCell = cxGridDBTableView1tmbpartCustomDrawCell
+        Width = 51
+      end
+      object cxGridDBTableView1chwpart: TcxGridDBColumn
+        DataBinding.FieldName = 'chwpart'
+        Width = 64
+      end
+      object cxGridDBTableView1po_code: TcxGridDBColumn
+        DataBinding.FieldName = 'po_code'
+        Width = 60
+      end
+      object cxGridDBTableView1status_: TcxGridDBColumn
+        DataBinding.FieldName = 'status_'
+        Width = 20
       end
     end
-    object show_visitLevel1: TcxGridLevel
-      GridView = show_visitDBTableView1
+    object cxGridLevel1: TcxGridLevel
+      GridView = cxGridDBTableView1
     end
   end
-  object QMoney: TMyQuery
+  object process_Qrb1k: TcxProgressBar
+    Left = 24
+    Top = 288
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    TabOrder = 4
+    Visible = False
+    Width = 724
+  end
+  object QPt_pe: TMyQuery
     SQLInsert.Strings = (
       'INSERT INTO opdscreen'
       
@@ -414,69 +413,88 @@ object chk_money_form: Tchk_money_form
         ' :pulse, :temperature, :rr, :height, :bmi, :hpi, :pmh, :waist)')
     Connection = db_connect_m.connect_db
     SQL.Strings = (
-      'DROP TABLE IF EXISTS `temp_money`;'
+      'DROP TABLE IF EXISTS `temp_person_patient`;'
       ''
-      'CREATE TEMPORARY TABLE IF NOT EXISTS temp_money('
+      'CREATE TABLE  temp_person_patient('
       #9#9#9'RowID INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,'
-      #9#9#9'vn VARCHAR(25), '
-      #9#9#9'vstdate VARCHAR(50), '
-      #9#9#9'hn VARCHAR(15), '
-      #9#9#9'pttype VARCHAR(4), '
-      #9#9#9'pdx VARCHAR(10), '
-      #9#9#9'income DOUBLE, '
-      #9#9#9'paid_money DOUBLE, '
-      #9#9#9'uc_money DOUBLE, '
-      #9#9#9'item_money DOUBLE,'
-      #9#9#9'Sum_17 DOUBLE,'
-      #9#9#9'cost DOUBLE,'
-      #9#9#9'qty DOUBLE,'
-      #9#9#9'chk_cost DOUBLE,'
-      #9#9#9'Status_ VARCHAR(255)'
+      #9#9#9' vstdate VARCHAR(50),'
+      #9#9#9' hn  VARCHAR(50),'
+      #9#9#9' cid  VARCHAR(50),'
+      #9#9#9' pname  VARCHAR(50),'
+      #9#9#9' fname  VARCHAR(50),'
+      #9#9#9' lname  VARCHAR(50),'
+      #9#9#9' sex  VARCHAR(50),'
+      #9#9#9' birthday  VARCHAR(50),'
+      #9#9#9' marrystatus  VARCHAR(50),'
+      #9#9#9' occupation  VARCHAR(50),'
+      #9#9#9' citizenship  VARCHAR(50),'
+      #9#9#9' nationality  VARCHAR(50),'
+      #9#9#9' pttype  VARCHAR(50),'
+      #9#9#9' type_area  VARCHAR(50),'
+      #9#9#9' road  VARCHAR(50),'
+      #9#9#9' addrpart  VARCHAR(50),'
+      #9#9#9' moopart  VARCHAR(50),'
+      #9#9#9' tmbpart  VARCHAR(50),'
+      #9#9#9' chwpart  VARCHAR(50),'
+      #9#9#9' po_code '#9'VARCHAR(50),'
+      #9#9#9' status_  VARCHAR(255) '
       #9#9#9') ENGINE = MEMORY;'
       ''
       #9#9#9'# Insert Table'
-      #9#9#9'INSERT INTO temp_money '
+      #9#9#9'INSERT INTO temp_person_patient'
+      ''
       
-        '(select '#39#39',v.vn,v.vstdate,v.hn,v.pttype,IFNULL(v.pdx,od.icd10),v' +
-        '.income,v.paid_money,v.uc_money,v.item_money,'
+        '(SELECT '#39#39',v.vstdate,p.hn,p.cid,p.pname,p.fname,p.lname,p.sex,p.' +
+        'birthday,p.marrystatus,p.occupation,p.citizenship,p.nationality,'
       
-        '(v.inc01+v.inc02+v.inc03+v.inc04+v.inc05+v.inc06+v.inc07+v.inc08' +
-        '+v.inc09+v.inc10+v.inc11+v.inc12+v.inc13+v.inc14+v.inc15+v.inc16' +
-        '+v.inc17),'
-      'sum(opt.cost),sum(opt.qty),sum(opt.cost*opt.qty)as chk_cost,'
-      'concat('
-      'if(  v.pdx = '#39#39','#39'Visit not DIAG ,'#39','#39#39'),'
-      'if(  od.icd10 = '#39#39','#39'Visit not IDC10 ,'#39','#39#39'),'
-      'if(  v.income <= 0,'#39'No Money in visit ,'#39','#39#39'),'
+        'v.pttype,p.type_area,p.road,p.addrpart,p.moopart,p.tmbpart,p.chw' +
+        'part,p.po_code,'
+      'CONCAT('
       
-        'if( (v.income - v.paid_money) != v.uc_money,'#39'Uc_money not match ' +
-        ','#39','#39#39'),'
-      'if(  v.income != item_money,'#39'Income not match ,'#39','#39#39'),'
+        'if(p.cid like concat('#39'0'#39',(SELECT hospitalcode FROM opdconfig),'#39'%' +
+        #39'),'#39'CID,'#39','#39#39'),'
+      'if(p.cid like '#39'000%'#39','#39'CID,'#39','#39#39'),'
+      'if(p.cid like '#39'0000000000000'#39','#39'CID,'#39','#39#39'),'
+      'if(p.pname not in (SELECT `name` from pname),'#39'Pname,'#39','#39#39'),'
+      'IF(p.pname is null ,'#39'Pname,'#39','#39#39'),'
+      'if(p.fname like '#39'%'#3610#3609'.%'#39','#39'name,'#39','#39#39'),'
+      'if(p.lname like '#39'%-%'#39','#39'lname,'#39','#39#39'),'
+      'if(p.sex not in(1,2),'#39'sex,'#39','#39#39'),'
+      'if(p.birthday = '#39'0000-00-00'#39','#39'birthday,'#39','#39#39'),'
+      'if(p.marrystatus not in (1,2,3,4,5,6,9),'#39'marry,'#39','#39#39'),'
+      'IF(p.occupation is null,'#39'occupation,'#39','#39#39'),'
       
-        'if(  v.income != (v.inc01+v.inc02+v.inc03+v.inc04+v.inc05+v.inc0' +
-        '6+v.inc07+v.inc08+v.inc09+v.inc10+v.inc11+v.inc12+v.inc13+v.inc1' +
-        '4+v.inc15+v.inc16+v.inc17),'#39'income not match billing ,'#39','#39#39'),'
-      'if( sum(opt.cost) <= 0,'#39'Visit not cost ,'#39','#39#39'),'
-      'if( sum(opt.cost) is null ,'#39'Visit not cost '#39','#39#39')'
+        'if(p.occupation not in (SELECT occupation from occupation),'#39'occu' +
+        'pation,'#39','#39#39'),'
+      'IF(p.citizenship is null,'#39'citizenship,'#39','#39#39'),'
+      'IF(p.nationality is null,'#39'nationality,'#39','#39#39'),'
+      
+        'if(p.nationality not in (SELECT nationality from nationality),'#39'n' +
+        'ationality not match,'#39','#39#39'),'
+      'if(p.nationality in('#39'00'#39'),'#39'nationality,'#39','#39#39'),'
+      'IF(p.type_area ="",'#39'type_area,'#39','#39#39'),'
+      'IF(p.type_area is null,'#39'type_area,'#39','#39#39'),'
+      'IF(p.addrpart is null,'#39'home_number,'#39','#39#39'),'
+      'IF(p.moopart is null,'#39'moo,'#39','#39#39'),'
+      'IF(p.tmbpart is null,'#39'tumbon,'#39','#39#39'),'
+      'IF(p.chwpart is null,'#39'changwat,'#39','#39#39'), '
+      'IF(p.po_code is null ,'#39'postcode'#39','#39#39')'
       ')'
       ''
-      'from vn_stat v'
-      'LEFT OUTER JOIN opitemrece opt ON opt.vn =v.vn'
-      'LEFT OUTER JOIN ovstdiag od ON od.vn = v.vn'
-      '#WHERE v.vstdate BETWEEN 20160701 AND 20160715'
-      'WHERE v.vstdate BETWEEN :date_start_text AND :date_end_text'
-      'AND v.vn not in(select vn from an_stat)'
-      'GROUP BY v.vn '
+      'from patient p'
+      'LEFT JOIN vn_stat v ON v.hn = p.hn'
+      'WHERE p.hn not in (select patient_hn from person)'
       ''
+      'AND v.vstdate BETWEEN :date_start_text AND :date_end_text'
+      '#AND v.vstdate BETWEEN 20160901 AND 20160930'
       ');'
       ''
-      'SELECT *'
-      'FROM temp_money '
-      'WHERE Status_ !='#39#39';')
+      'SELECT * from temp_person_patient ;')
     ReadOnly = True
     RefreshOptions = [roAfterInsert, roAfterUpdate, roBeforeEdit]
     Options.AutoRefresh = True
     Options.AutoRefreshInterval = 120
+    Active = True
     Left = 320
     Top = 168
     ParamData = <
@@ -489,8 +507,8 @@ object chk_money_form: Tchk_money_form
         Name = 'date_end_text'
       end>
   end
-  object DMoney: TMyDataSource
-    DataSet = QMoney
+  object DPt_pe: TMyDataSource
+    DataSet = QPt_pe
     Left = 424
     Top = 168
   end

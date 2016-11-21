@@ -40,7 +40,6 @@ object f43_epi_form: Tf43_epi_form
     Height = 41
     Align = alTop
     TabOrder = 1
-    ExplicitTop = 49
     DesignSize = (
       786
       41)
@@ -197,8 +196,6 @@ object f43_epi_form: Tf43_epi_form
     Font.Style = []
     ParentFont = False
     TabOrder = 2
-    ExplicitTop = 93
-    ExplicitHeight = 426
     object show_visitDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = Df43_epi
@@ -214,6 +211,7 @@ object f43_epi_form: Tf43_epi_form
       end
       object show_visitDBTableView1PID: TcxGridDBColumn
         DataBinding.FieldName = 'PID'
+        OnCustomDrawCell = show_visitDBTableView1PIDCustomDrawCell
         Width = 41
       end
       object show_visitDBTableView1SEQ: TcxGridDBColumn
@@ -222,14 +220,17 @@ object f43_epi_form: Tf43_epi_form
       end
       object show_visitDBTableView1DATE_SERV: TcxGridDBColumn
         DataBinding.FieldName = 'DATE_SERV'
+        OnCustomDrawCell = show_visitDBTableView1DATE_SERVCustomDrawCell
         Width = 87
       end
       object show_visitDBTableView1VACCINETYPE: TcxGridDBColumn
         DataBinding.FieldName = 'VACCINETYPE'
+        OnCustomDrawCell = show_visitDBTableView1VACCINETYPECustomDrawCell
         Width = 112
       end
       object show_visitDBTableView1VACCINEPLACE: TcxGridDBColumn
         DataBinding.FieldName = 'VACCINEPLACE'
+        OnCustomDrawCell = show_visitDBTableView1VACCINEPLACECustomDrawCell
         Width = 107
       end
       object show_visitDBTableView1PROVIDER: TcxGridDBColumn

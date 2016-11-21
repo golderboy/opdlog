@@ -220,21 +220,26 @@ object f43_newborncare_form: Tf43_newborncare_form
       end
       object show_visitDBTableView1BDATE: TcxGridDBColumn
         DataBinding.FieldName = 'BDATE'
+        OnCustomDrawCell = show_visitDBTableView1BDATECustomDrawCell
         Width = 62
       end
       object show_visitDBTableView1BCARE: TcxGridDBColumn
         DataBinding.FieldName = 'BCARE'
+        OnCustomDrawCell = show_visitDBTableView1BCARECustomDrawCell
         Width = 64
       end
       object show_visitDBTableView1BCPLACE: TcxGridDBColumn
         DataBinding.FieldName = 'BCPLACE'
+        OnCustomDrawCell = show_visitDBTableView1BCPLACECustomDrawCell
       end
       object show_visitDBTableView1BCARERESULT: TcxGridDBColumn
         DataBinding.FieldName = 'BCARERESULT'
+        OnCustomDrawCell = show_visitDBTableView1BCARERESULTCustomDrawCell
         Width = 106
       end
       object show_visitDBTableView1FOOD: TcxGridDBColumn
         DataBinding.FieldName = 'FOOD'
+        OnCustomDrawCell = show_visitDBTableView1FOODCustomDrawCell
         Width = 56
       end
       object show_visitDBTableView1PROVIDER: TcxGridDBColumn

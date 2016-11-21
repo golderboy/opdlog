@@ -40,8 +40,6 @@ object f43_drugal_form: Tf43_drugal_form
     Height = 41
     Align = alTop
     TabOrder = 1
-    ExplicitLeft = -17
-    ExplicitWidth = 786
     DesignSize = (
       769
       41)
@@ -122,7 +120,6 @@ object f43_drugal_form: Tf43_drugal_form
         5E5E5E5EE8E8E8E8E8E8E8818181818181818181E8E8E8E8E8E8E8E8E8E8E8E8
         E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 565
     end
     object excel_export_btn: TRzBitBtn
       Left = 668
@@ -183,7 +180,6 @@ object f43_drugal_form: Tf43_drugal_form
         5E5E5E5E5E5E5E5EE8E8E8E8E8E8E8E2E2E2E2E2E2E2E2E2E8E8E8E8E8E8E8E8
         E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 685
     end
   end
   object Panel1: TPanel
@@ -193,8 +189,6 @@ object f43_drugal_form: Tf43_drugal_form
     Height = 27
     Align = alBottom
     TabOrder = 2
-    ExplicitLeft = -17
-    ExplicitWidth = 786
     DesignSize = (
       769
       27)
@@ -257,7 +251,6 @@ object f43_drugal_form: Tf43_drugal_form
         57A2A2A2E8E8E8E8E8E8E8DE8181DED781818181E8E8E8E8E8E8E8E8E8AC8257
         57E8E8E8E8E8E8E8E8E8E8E8E8AC818181E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 708
     end
     object cxLabel1: TcxLabel
       Left = 40
@@ -284,7 +277,6 @@ object f43_drugal_form: Tf43_drugal_form
     Font.Style = []
     ParentFont = False
     TabOrder = 3
-    ExplicitLeft = -2
     object show_visitDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = Df43_drug
@@ -304,10 +296,12 @@ object f43_drugal_form: Tf43_drugal_form
       end
       object show_visitDBTableView1DATERECORD: TcxGridDBColumn
         DataBinding.FieldName = 'DATERECORD'
+        OnCustomDrawCell = show_visitDBTableView1DATERECORDCustomDrawCell
         Width = 101
       end
       object show_visitDBTableView1DRUGALLERGY: TcxGridDBColumn
         DataBinding.FieldName = 'DRUGALLERGY'
+        OnCustomDrawCell = show_visitDBTableView1DRUGALLERGYCustomDrawCell
         Width = 174
       end
       object show_visitDBTableView1DNAME: TcxGridDBColumn
@@ -327,6 +321,7 @@ object f43_drugal_form: Tf43_drugal_form
       end
       object show_visitDBTableView1INFORMANT: TcxGridDBColumn
         DataBinding.FieldName = 'INFORMANT'
+        OnCustomDrawCell = show_visitDBTableView1INFORMANTCustomDrawCell
         Width = 86
       end
       object show_visitDBTableView1INFORMHOSP: TcxGridDBColumn

@@ -32,8 +32,6 @@ object f43_servillance_form: Tf43_servillance_form
     Font.Style = [fsBold]
     ParentFont = False
     ImageIndex = 0
-    ExplicitLeft = -10
-    ExplicitWidth = 764
   end
   object Panel2: TPanel
     Left = 0
@@ -42,8 +40,6 @@ object f43_servillance_form: Tf43_servillance_form
     Height = 41
     Align = alTop
     TabOrder = 1
-    ExplicitLeft = -10
-    ExplicitWidth = 764
     DesignSize = (
       754
       41)
@@ -124,7 +120,6 @@ object f43_servillance_form: Tf43_servillance_form
         5E5E5E5EE8E8E8E8E8E8E8818181818181818181E8E8E8E8E8E8E8E8E8E8E8E8
         E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 543
     end
     object excel_export_btn: TRzBitBtn
       Left = 653
@@ -185,7 +180,6 @@ object f43_servillance_form: Tf43_servillance_form
         5E5E5E5E5E5E5E5EE8E8E8E8E8E8E8E2E2E2E2E2E2E2E2E2E8E8E8E8E8E8E8E8
         E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 663
     end
   end
   object Panel1: TPanel
@@ -195,8 +189,6 @@ object f43_servillance_form: Tf43_servillance_form
     Height = 27
     Align = alBottom
     TabOrder = 2
-    ExplicitLeft = -10
-    ExplicitWidth = 764
     DesignSize = (
       754
       27)
@@ -259,7 +251,6 @@ object f43_servillance_form: Tf43_servillance_form
         57A2A2A2E8E8E8E8E8E8E8DE8181DED781818181E8E8E8E8E8E8E8E8E8AC8257
         57E8E8E8E8E8E8E8E8E8E8E8E8AC818181E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 686
     end
     object cxLabel1: TcxLabel
       Left = 40
@@ -286,7 +277,6 @@ object f43_servillance_form: Tf43_servillance_form
     Font.Style = []
     ParentFont = False
     TabOrder = 3
-    ExplicitLeft = 40
     object show_visitDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = Df43_servillnce
@@ -310,6 +300,7 @@ object f43_servillance_form: Tf43_servillance_form
       end
       object show_visitDBTableView1DATE_SERV: TcxGridDBColumn
         DataBinding.FieldName = 'DATE_SERV'
+        OnCustomDrawCell = show_visitDBTableView1DATE_SERVCustomDrawCell
         Width = 99
       end
       object show_visitDBTableView1AN: TcxGridDBColumn
@@ -326,9 +317,11 @@ object f43_servillance_form: Tf43_servillance_form
       end
       object show_visitDBTableView1DIAGCODE: TcxGridDBColumn
         DataBinding.FieldName = 'DIAGCODE'
+        OnCustomDrawCell = show_visitDBTableView1DIAGCODECustomDrawCell
       end
       object show_visitDBTableView1CODE506: TcxGridDBColumn
         DataBinding.FieldName = 'CODE506'
+        OnCustomDrawCell = show_visitDBTableView1CODE506CustomDrawCell
       end
       object show_visitDBTableView1DIAGCODELAST: TcxGridDBColumn
         DataBinding.FieldName = 'DIAGCODELAST'
@@ -340,26 +333,32 @@ object f43_servillance_form: Tf43_servillance_form
       end
       object show_visitDBTableView1ILLDATE: TcxGridDBColumn
         DataBinding.FieldName = 'ILLDATE'
+        OnCustomDrawCell = show_visitDBTableView1ILLDATECustomDrawCell
         Width = 62
       end
       object show_visitDBTableView1ILLHOUSE: TcxGridDBColumn
         DataBinding.FieldName = 'ILLHOUSE'
+        OnCustomDrawCell = show_visitDBTableView1ILLHOUSECustomDrawCell
         Width = 71
       end
       object show_visitDBTableView1ILLVILLAGE: TcxGridDBColumn
         DataBinding.FieldName = 'ILLVILLAGE'
+        OnCustomDrawCell = show_visitDBTableView1ILLVILLAGECustomDrawCell
         Width = 77
       end
       object show_visitDBTableView1ILLTAMBON: TcxGridDBColumn
         DataBinding.FieldName = 'ILLTAMBON'
+        OnCustomDrawCell = show_visitDBTableView1ILLTAMBONCustomDrawCell
         Width = 93
       end
       object show_visitDBTableView1ILLAMPUR: TcxGridDBColumn
         DataBinding.FieldName = 'ILLAMPUR'
+        OnCustomDrawCell = show_visitDBTableView1ILLAMPURCustomDrawCell
         Width = 72
       end
       object show_visitDBTableView1ILLCHANGWAT: TcxGridDBColumn
         DataBinding.FieldName = 'ILLCHANGWAT'
+        OnCustomDrawCell = show_visitDBTableView1ILLCHANGWATCustomDrawCell
         Width = 114
       end
       object show_visitDBTableView1LATITUDE: TcxGridDBColumn
@@ -372,6 +371,7 @@ object f43_servillance_form: Tf43_servillance_form
       end
       object show_visitDBTableView1PTSTATUS: TcxGridDBColumn
         DataBinding.FieldName = 'PTSTATUS'
+        OnCustomDrawCell = show_visitDBTableView1PTSTATUSCustomDrawCell
         Width = 79
       end
       object show_visitDBTableView1DATE_DEATH: TcxGridDBColumn

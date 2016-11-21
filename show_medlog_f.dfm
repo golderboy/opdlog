@@ -86,6 +86,7 @@ object show_med_form: Tshow_med_form
       end
       object show_visitDBTableView1pdx: TcxGridDBColumn
         DataBinding.FieldName = 'pdx'
+        OnCustomDrawCell = show_visitDBTableView1pdxCustomDrawCell
       end
       object show_visitDBTableView1doctor: TcxGridDBColumn
         DataBinding.FieldName = 'doctor'
@@ -97,9 +98,11 @@ object show_med_form: Tshow_med_form
       end
       object show_visitDBTableView1height: TcxGridDBColumn
         DataBinding.FieldName = 'height'
+        OnCustomDrawCell = show_visitDBTableView1heightCustomDrawCell
       end
       object show_visitDBTableView1bw: TcxGridDBColumn
         DataBinding.FieldName = 'bw'
+        OnCustomDrawCell = show_visitDBTableView1bwCustomDrawCell
       end
       object show_visitDBTableView1waist: TcxGridDBColumn
         DataBinding.FieldName = 'waist'
@@ -109,9 +112,11 @@ object show_med_form: Tshow_med_form
       end
       object show_visitDBTableView1bpd: TcxGridDBColumn
         DataBinding.FieldName = 'bpd'
+        OnCustomDrawCell = show_visitDBTableView1bpdCustomDrawCell
       end
       object show_visitDBTableView1bps: TcxGridDBColumn
         DataBinding.FieldName = 'bps'
+        OnCustomDrawCell = show_visitDBTableView1bpsCustomDrawCell
       end
       object show_visitDBTableView1hr: TcxGridDBColumn
         DataBinding.FieldName = 'hr'
@@ -130,6 +135,7 @@ object show_med_form: Tshow_med_form
       end
       object show_visitDBTableView1cc: TcxGridDBColumn
         DataBinding.FieldName = 'cc'
+        OnCustomDrawCell = show_visitDBTableView1ccCustomDrawCell
       end
       object show_visitDBTableView1hpi: TcxGridDBColumn
         DataBinding.FieldName = 'hpi'
@@ -139,6 +145,7 @@ object show_med_form: Tshow_med_form
       end
       object show_visitDBTableView1treatment: TcxGridDBColumn
         DataBinding.FieldName = 'treatment'
+        OnCustomDrawCell = show_visitDBTableView1treatmentCustomDrawCell
       end
       object show_visitDBTableView1department: TcxGridDBColumn
         DataBinding.FieldName = 'department'

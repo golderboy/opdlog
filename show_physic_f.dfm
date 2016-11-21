@@ -90,9 +90,11 @@ object show_physic_form: Tshow_physic_form
       end
       object show_visitDBTableView1height: TcxGridDBColumn
         DataBinding.FieldName = 'height'
+        OnCustomDrawCell = show_visitDBTableView1heightCustomDrawCell
       end
       object show_visitDBTableView1bw: TcxGridDBColumn
         DataBinding.FieldName = 'bw'
+        OnCustomDrawCell = show_visitDBTableView1bwCustomDrawCell
       end
       object show_visitDBTableView1waist: TcxGridDBColumn
         DataBinding.FieldName = 'waist'
@@ -102,9 +104,11 @@ object show_physic_form: Tshow_physic_form
       end
       object show_visitDBTableView1bpd: TcxGridDBColumn
         DataBinding.FieldName = 'bpd'
+        OnCustomDrawCell = show_visitDBTableView1bpdCustomDrawCell
       end
       object show_visitDBTableView1bps: TcxGridDBColumn
         DataBinding.FieldName = 'bps'
+        OnCustomDrawCell = show_visitDBTableView1bpsCustomDrawCell
       end
       object show_visitDBTableView1hr: TcxGridDBColumn
         DataBinding.FieldName = 'hr'
@@ -124,6 +128,7 @@ object show_physic_form: Tshow_physic_form
       end
       object show_visitDBTableView1cc: TcxGridDBColumn
         DataBinding.FieldName = 'cc'
+        OnCustomDrawCell = show_visitDBTableView1ccCustomDrawCell
         Width = 221
       end
       object show_visitDBTableView1hpi: TcxGridDBColumn
@@ -136,6 +141,7 @@ object show_physic_form: Tshow_physic_form
       end
       object show_visitDBTableView1pdx: TcxGridDBColumn
         DataBinding.FieldName = 'pdx'
+        OnCustomDrawCell = show_visitDBTableView1pdxCustomDrawCell
         Width = 45
       end
       object show_visitDBTableView1Item_list: TcxGridDBColumn
@@ -144,6 +150,7 @@ object show_physic_form: Tshow_physic_form
       end
       object show_visitDBTableView1physic_money: TcxGridDBColumn
         DataBinding.FieldName = 'physic_money'
+        OnCustomDrawCell = show_visitDBTableView1physic_moneyCustomDrawCell
         Width = 93
       end
       object show_visitDBTableView1department: TcxGridDBColumn
