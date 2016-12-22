@@ -1,9 +1,9 @@
-object f43_newborn_form: Tf43_newborn_form
+object f43_ncdscreen_form: Tf43_ncdscreen_form
   Left = 0
   Top = 0
-  Caption = 'f43_newborn_form'
-  ClientHeight = 552
-  ClientWidth = 787
+  Caption = 'f43_ncdscreen_form'
+  ClientHeight = 527
+  ClientWidth = 774
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,17 +14,17 @@ object f43_newborn_form: Tf43_newborn_form
   WindowState = wsMaximized
   OnShow = FormShow
   DesignSize = (
-    787
-    552)
+    774
+    527)
   PixelsPerInch = 96
   TextHeight = 13
   object header_opdlog: TJvNavPanelHeader
     Left = 0
     Top = 0
-    Width = 787
+    Width = 774
     Height = 33
     Align = alTop
-    Caption = 'NEWBORN'
+    Caption = ' NCDSCREEN'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
     Font.Height = -16
@@ -32,17 +32,20 @@ object f43_newborn_form: Tf43_newborn_form
     Font.Style = [fsBold]
     ParentFont = False
     ImageIndex = 0
+    ExplicitLeft = -314
+    ExplicitWidth = 761
   end
   object Panel2: TPanel
     Left = 0
     Top = 33
-    Width = 787
+    Width = 774
     Height = 41
     Align = alTop
     TabOrder = 1
-    ExplicitTop = 49
+    ExplicitLeft = -314
+    ExplicitWidth = 761
     DesignSize = (
-      787
+      774
       41)
     object date_start_text: TcxDateEdit
       Left = 70
@@ -62,7 +65,7 @@ object f43_newborn_form: Tf43_newborn_form
       Caption = #3623#3633#3609#3607#3637#3656
     end
     object post_date_btn: TRzBitBtn
-      Left = 566
+      Left = 553
       Top = 10
       Width = 107
       Anchors = [akTop, akRight]
@@ -121,9 +124,10 @@ object f43_newborn_form: Tf43_newborn_form
         5E5E5E5EE8E8E8E8E8E8E8818181818181818181E8E8E8E8E8E8E8E8E8E8E8E8
         E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
+      ExplicitLeft = 540
     end
     object excel_export_btn: TRzBitBtn
-      Left = 686
+      Left = 673
       Top = 10
       Anchors = [akTop, akRight]
       Caption = 'EXCEL'
@@ -181,20 +185,183 @@ object f43_newborn_form: Tf43_newborn_form
         5E5E5E5E5E5E5E5EE8E8E8E8E8E8E8E2E2E2E2E2E2E2E2E2E8E8E8E8E8E8E8E8
         E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
+      ExplicitLeft = 660
     end
+  end
+  object show_visit: TcxGrid
+    AlignWithMargins = True
+    Left = 3
+    Top = 77
+    Width = 768
+    Height = 420
+    Align = alClient
+    Font.Charset = THAI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    ExplicitLeft = 83
+    ExplicitTop = 74
+    object show_visitDBTableView1: TcxGridDBTableView
+      Navigator.Buttons.CustomButtons = <>
+      DataController.DataSource = Df43_ncdscreen
+      DataController.Summary.DefaultGroupSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.SummaryGroups = <>
+      Filtering.ColumnFilteredItemsList = True
+      OptionsData.Appending = True
+      OptionsView.GroupByBox = False
+      object show_visitDBTableView1HOSPCODE: TcxGridDBColumn
+        DataBinding.FieldName = 'HOSPCODE'
+        OnCustomDrawCell = show_visitDBTableView1HOSPCODECustomDrawCell
+        Width = 82
+      end
+      object show_visitDBTableView1PID: TcxGridDBColumn
+        DataBinding.FieldName = 'PID'
+        OnCustomDrawCell = show_visitDBTableView1PIDCustomDrawCell
+        Width = 41
+      end
+      object show_visitDBTableView1SEQ: TcxGridDBColumn
+        DataBinding.FieldName = 'SEQ'
+        Width = 46
+      end
+      object show_visitDBTableView1DATE_SERV: TcxGridDBColumn
+        DataBinding.FieldName = 'DATE_SERV'
+        OnCustomDrawCell = show_visitDBTableView1DATE_SERVCustomDrawCell
+        Width = 87
+      end
+      object show_visitDBTableView1SERVPLACE: TcxGridDBColumn
+        DataBinding.FieldName = 'SERVPLACE'
+        OnCustomDrawCell = show_visitDBTableView1SERVPLACECustomDrawCell
+        Width = 98
+      end
+      object show_visitDBTableView1SMOKE: TcxGridDBColumn
+        DataBinding.FieldName = 'SMOKE'
+        OnCustomDrawCell = show_visitDBTableView1SMOKECustomDrawCell
+        Width = 53
+      end
+      object show_visitDBTableView1ALCOHOL: TcxGridDBColumn
+        DataBinding.FieldName = 'ALCOHOL'
+        OnCustomDrawCell = show_visitDBTableView1ALCOHOLCustomDrawCell
+        Width = 80
+      end
+      object show_visitDBTableView1DMFAMILY: TcxGridDBColumn
+        DataBinding.FieldName = 'DMFAMILY'
+        OnCustomDrawCell = show_visitDBTableView1DMFAMILYCustomDrawCell
+        Width = 86
+      end
+      object show_visitDBTableView1HTFAMILY: TcxGridDBColumn
+        DataBinding.FieldName = 'HTFAMILY'
+        OnCustomDrawCell = show_visitDBTableView1HTFAMILYCustomDrawCell
+        Width = 72
+      end
+      object show_visitDBTableView1WEIGHT: TcxGridDBColumn
+        DataBinding.FieldName = 'WEIGHT'
+        OnCustomDrawCell = show_visitDBTableView1WEIGHTCustomDrawCell
+        Width = 60
+      end
+      object show_visitDBTableView1HEIGHT: TcxGridDBColumn
+        DataBinding.FieldName = 'HEIGHT'
+        OnCustomDrawCell = show_visitDBTableView1HEIGHTCustomDrawCell
+        Width = 69
+      end
+      object show_visitDBTableView1WAIST_CM: TcxGridDBColumn
+        DataBinding.FieldName = 'WAIST_CM'
+        OnCustomDrawCell = show_visitDBTableView1WAIST_CMCustomDrawCell
+        Width = 76
+      end
+      object show_visitDBTableView1SBP_1: TcxGridDBColumn
+        DataBinding.FieldName = 'SBP_1'
+        OnCustomDrawCell = show_visitDBTableView1SBP_1CustomDrawCell
+        Width = 47
+      end
+      object show_visitDBTableView1DBP_1: TcxGridDBColumn
+        DataBinding.FieldName = 'DBP_1'
+        OnCustomDrawCell = show_visitDBTableView1DBP_1CustomDrawCell
+        Width = 60
+      end
+      object show_visitDBTableView1SBP_2: TcxGridDBColumn
+        DataBinding.FieldName = 'SBP_2'
+        OnCustomDrawCell = show_visitDBTableView1SBP_2CustomDrawCell
+        Width = 59
+      end
+      object show_visitDBTableView1DBP_2: TcxGridDBColumn
+        DataBinding.FieldName = 'DBP_2'
+        OnCustomDrawCell = show_visitDBTableView1DBP_2CustomDrawCell
+        Width = 48
+      end
+      object show_visitDBTableView1BSLEVEL: TcxGridDBColumn
+        DataBinding.FieldName = 'BSLEVEL'
+        OnCustomDrawCell = show_visitDBTableView1BSLEVELCustomDrawCell
+        Width = 65
+      end
+      object show_visitDBTableView1BSTEST: TcxGridDBColumn
+        DataBinding.FieldName = 'BSTEST'
+        OnCustomDrawCell = show_visitDBTableView1BSTESTCustomDrawCell
+        Width = 72
+      end
+      object show_visitDBTableView1SCREENPLACE: TcxGridDBColumn
+        DataBinding.FieldName = 'SCREENPLACE'
+        Width = 105
+      end
+      object show_visitDBTableView1PROVIDER: TcxGridDBColumn
+        DataBinding.FieldName = 'PROVIDER'
+        Width = 97
+      end
+      object show_visitDBTableView1D_UPDATE: TcxGridDBColumn
+        DataBinding.FieldName = 'D_UPDATE'
+        Width = 104
+      end
+      object show_visitDBTableView1CID: TcxGridDBColumn
+        DataBinding.FieldName = 'CID'
+      end
+      object show_visitDBTableView1HN: TcxGridDBColumn
+        DataBinding.FieldName = 'HN'
+        Width = 69
+      end
+      object show_visitDBTableView1ptname: TcxGridDBColumn
+        DataBinding.FieldName = 'ptname'
+        Width = 135
+      end
+      object show_visitDBTableView1typearea: TcxGridDBColumn
+        DataBinding.FieldName = 'typearea'
+        OnCustomDrawCell = show_visitDBTableView1typeareaCustomDrawCell
+        Width = 72
+      end
+      object show_visitDBTableView1discharge: TcxGridDBColumn
+        DataBinding.FieldName = 'discharge'
+        Width = 78
+      end
+    end
+    object show_visitLevel1: TcxGridLevel
+      GridView = show_visitDBTableView1
+    end
+  end
+  object process_Qrb1k: TcxProgressBar
+    Left = 70
+    Top = 245
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    TabOrder = 3
+    Visible = False
+    Width = 635
   end
   object Panel1: TPanel
     Left = 0
-    Top = 525
-    Width = 787
+    Top = 500
+    Width = 774
     Height = 27
     Align = alBottom
-    TabOrder = 2
+    TabOrder = 4
+    ExplicitLeft = -314
+    ExplicitTop = 175
+    ExplicitWidth = 761
     DesignSize = (
-      787
+      774
       27)
     object RzBitBtn1: TRzBitBtn
-      Left = 709
+      Left = 696
       Top = 3
       Anchors = [akRight, akBottom]
       Caption = 'Exit'
@@ -252,6 +419,7 @@ object f43_newborn_form: Tf43_newborn_form
         57A2A2A2E8E8E8E8E8E8E8DE8181DED781818181E8E8E8E8E8E8E8E8E8AC8257
         57E8E8E8E8E8E8E8E8E8E8E8E8AC818181E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
+      ExplicitLeft = 683
     end
     object cxLabel1: TcxLabel
       Left = 40
@@ -264,152 +432,7 @@ object f43_newborn_form: Tf43_newborn_form
       Caption = '0'
     end
   end
-  object show_visit: TcxGrid
-    AlignWithMargins = True
-    Left = 3
-    Top = 77
-    Width = 781
-    Height = 445
-    Align = alClient
-    Font.Charset = THAI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'MS Sans Serif'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 3
-    ExplicitTop = 93
-    ExplicitHeight = 429
-    object show_visitDBTableView1: TcxGridDBTableView
-      Navigator.Buttons.CustomButtons = <>
-      DataController.DataSource = Df43_newborn
-      DataController.Summary.DefaultGroupSummaryItems = <>
-      DataController.Summary.FooterSummaryItems = <>
-      DataController.Summary.SummaryGroups = <>
-      Filtering.ColumnFilteredItemsList = True
-      OptionsData.Appending = True
-      OptionsView.GroupByBox = False
-      object show_visitDBTableView1HOSPCODE: TcxGridDBColumn
-        DataBinding.FieldName = 'HOSPCODE'
-        Width = 94
-      end
-      object show_visitDBTableView1PID: TcxGridDBColumn
-        DataBinding.FieldName = 'PID'
-        Width = 40
-      end
-      object show_visitDBTableView1MPID: TcxGridDBColumn
-        DataBinding.FieldName = 'MPID'
-        OnCustomDrawCell = show_visitDBTableView1MPIDCustomDrawCell
-        Width = 51
-      end
-      object show_visitDBTableView1GRAVIDA: TcxGridDBColumn
-        DataBinding.FieldName = 'GRAVIDA'
-        OnCustomDrawCell = show_visitDBTableView1GRAVIDACustomDrawCell
-        Width = 66
-      end
-      object show_visitDBTableView1GA: TcxGridDBColumn
-        DataBinding.FieldName = 'GA'
-        OnCustomDrawCell = show_visitDBTableView1GACustomDrawCell
-        Width = 25
-      end
-      object show_visitDBTableView1BDATE: TcxGridDBColumn
-        DataBinding.FieldName = 'BDATE'
-        OnCustomDrawCell = show_visitDBTableView1BDATECustomDrawCell
-        Width = 64
-      end
-      object show_visitDBTableView1BTIME: TcxGridDBColumn
-        DataBinding.FieldName = 'BTIME'
-        OnCustomDrawCell = show_visitDBTableView1BTIMECustomDrawCell
-        Width = 48
-      end
-      object show_visitDBTableView1BPLACE: TcxGridDBColumn
-        DataBinding.FieldName = 'BPLACE'
-        OnCustomDrawCell = show_visitDBTableView1BPLACECustomDrawCell
-        Width = 70
-      end
-      object show_visitDBTableView1BHOSP: TcxGridDBColumn
-        DataBinding.FieldName = 'BHOSP'
-        OnCustomDrawCell = show_visitDBTableView1BHOSPCustomDrawCell
-        Width = 65
-      end
-      object show_visitDBTableView1BIRTHNO: TcxGridDBColumn
-        DataBinding.FieldName = 'BIRTHNO'
-        OnCustomDrawCell = show_visitDBTableView1BIRTHNOCustomDrawCell
-        Width = 79
-      end
-      object show_visitDBTableView1BTYPE: TcxGridDBColumn
-        DataBinding.FieldName = 'BTYPE'
-        OnCustomDrawCell = show_visitDBTableView1BTYPECustomDrawCell
-        Width = 51
-      end
-      object show_visitDBTableView1BDOCTOR: TcxGridDBColumn
-        DataBinding.FieldName = 'BDOCTOR'
-        OnCustomDrawCell = show_visitDBTableView1BDOCTORCustomDrawCell
-        Width = 73
-      end
-      object show_visitDBTableView1BWEIGHT: TcxGridDBColumn
-        DataBinding.FieldName = 'BWEIGHT'
-        OnCustomDrawCell = show_visitDBTableView1BWEIGHTCustomDrawCell
-        Width = 81
-      end
-      object show_visitDBTableView1ASPHYXIA: TcxGridDBColumn
-        DataBinding.FieldName = 'ASPHYXIA'
-        OnCustomDrawCell = show_visitDBTableView1ASPHYXIACustomDrawCell
-        Width = 84
-      end
-      object show_visitDBTableView1VITK: TcxGridDBColumn
-        DataBinding.FieldName = 'VITK'
-        OnCustomDrawCell = show_visitDBTableView1VITKCustomDrawCell
-        Width = 35
-      end
-      object show_visitDBTableView1TSH: TcxGridDBColumn
-        DataBinding.FieldName = 'TSH'
-        OnCustomDrawCell = show_visitDBTableView1TSHCustomDrawCell
-        Width = 34
-      end
-      object show_visitDBTableView1TSHRESULT: TcxGridDBColumn
-        DataBinding.FieldName = 'TSHRESULT'
-        OnCustomDrawCell = show_visitDBTableView1TSHRESULTCustomDrawCell
-        Width = 88
-      end
-      object show_visitDBTableView1D_UPDATE: TcxGridDBColumn
-        DataBinding.FieldName = 'D_UPDATE'
-        Width = 104
-      end
-      object show_visitDBTableView1CID: TcxGridDBColumn
-        DataBinding.FieldName = 'CID'
-        Width = 97
-      end
-      object show_visitDBTableView1HN: TcxGridDBColumn
-        DataBinding.FieldName = 'HN'
-        Width = 69
-      end
-      object show_visitDBTableView1ptname: TcxGridDBColumn
-        DataBinding.FieldName = 'ptname'
-        Width = 136
-      end
-      object show_visitDBTableView1typearea: TcxGridDBColumn
-        DataBinding.FieldName = 'typearea'
-        Width = 60
-      end
-      object show_visitDBTableView1discharge: TcxGridDBColumn
-        DataBinding.FieldName = 'discharge'
-        Width = 66
-      end
-    end
-    object show_visitLevel1: TcxGridLevel
-      GridView = show_visitDBTableView1
-    end
-  end
-  object process_Qrb1k: TcxProgressBar
-    Left = 40
-    Top = 288
-    Anchors = [akLeft, akTop, akRight, akBottom]
-    TabOrder = 4
-    Visible = False
-    Width = 707
-  end
-  object Qf43_newborn: TMyQuery
+  object Qf43_ncdscreen: TMyQuery
     SQLInsert.Strings = (
       'INSERT INTO opdscreen'
       
@@ -421,55 +444,89 @@ object f43_newborn_form: Tf43_newborn_form
         ' :pulse, :temperature, :rr, :height, :bmi, :hpi, :pmh, :waist)')
     Connection = db_connect_m.connect_db
     SQL.Strings = (
-      'SELECT'
+      'SELECT '
       '(SELECT hospitalcode FROM opdconfig) AS HOSPCODE,'
-      'psl.person_id AS PID,'
-      'p.mother_person_id AS MPID,'
-      'psl.gravida AS GRAVIDA,'
-      'psl.ga AS GA,'
-      'IFNULL(DATE_FORMAT(p.birthdate,'#39'%Y%m%d'#39'),'#39#39') AS BDATE,'
-      'IFNULL(DATE_FORMAT(p.birthtime,'#39'%H%i%s'#39'),'#39#39')AS BTIME,'
-      'psl.person_labour_place_id AS BPLACE,'
-      'psl.labour_hospcode AS BHOSP,'
-      'psl.person_labour_birth_no_id AS BIRTHNO,'
-      'psl.person_labour_type_id AS BTYPE,'
-      'psl.person_labour_doctor_type_id AS BDOCTOR,'
-      'psl.birth_weight AS BWEIGHT,'
-      '(SELECT CASE psl.has_asphyxia'
-      'WHEN '#39'Y'#39' THEN '#39'1'#39
-      'WHEN '#39'N'#39' THEN '#39'0'#39
-      'ELSE '#39'0'#39'  END )AS ASPHYXIA,'
-      '(SELECT CASE psl.has_vitk'
-      'WHEN '#39'Y'#39' THEN '#39'1'#39
-      'WHEN '#39'N'#39' THEN '#39'0'#39
-      'ELSE '#39'9'#39' END )AS VITK,'
-      '(SELECT CASE psl.thyroid_screen'
-      'WHEN '#39'Y'#39' THEN '#39'1'#39
-      'WHEN '#39'N'#39' THEN '#39'2'#39
-      'ELSE '#39'9'#39' END )AS TSH,'
+      'p1.person_id AS PID,'
+      'p1.fake_seq_id AS SEQ,'
       
-        'IF(psl.tsh_result IS NOT NULL OR psl.tsh_result <> '#39#39',FORMAT(psl' +
-        '.tsh_result,1),'#39#39') AS TSHRESULT, '
+        'IF(p2.screen_date IS NULL OR TRIM(p2.screen_date)='#39#39' OR p2.scree' +
+        'n_date LIKE '#39'0000-00-00%'#39','#39#39',DATE_FORMAT(p2.screen_date,'#39'%Y%m%d'#39 +
+        ')) AS DATE_SERV,'
+      '(SELECT CASE (p2.in_hospital) '
+      'WHEN '#39'Y'#39' THEN '#39'1'#39
+      'ELSE '#39'2'#39' END) AS SERVPLACE,'
+      '(SELECT CASE (p4.present_smoking) '
+      'WHEN '#39'Y'#39' THEN '#39'4'#39
+      'WHEN '#39#39' THEN '#39'9'#39
+      'ELSE '#39'1'#39' END) AS SMOKE,'
+      '(SELECT CASE (p4.present_drinking_alcohol) '
+      'WHEN '#39'Y'#39' THEN '#39'4'#39
+      'WHEN '#39#39' THEN '#39'9'#39
+      'ELSE '#39'1'#39' END) AS ALCOHOL,'
+      '(SELECT CASE  '
+      'WHEN p4.family_relate_dm_disease = '#39'Y'#39' THEN '#39'1'#39' '
+      'WHEN p4.family_relate_unknown_disease = '#39'Y'#39' THEN '#39'9'#39
+      'ELSE '#39'2'#39' END) AS DMFAMILY,'
       
-        'IF(p.last_update IS NULL OR TRIM(p.last_update)='#39#39' OR p.last_upd' +
-        'ate LIKE '#39'0000-00-00%'#39','#39#39',DATE_FORMAT(p.last_update,'#39'%Y%m%d%h%m%' +
-        's'#39') ) AS D_UPDATE,'
-      'p.cid AS CID,'
-      'p.patient_hn as HN,'
-      'concat(p.pname,p.fname," ",p.lname) as ptname,'
-      'p.house_regist_type_id as typearea,'
-      'p.person_discharge_id as discharge'
+        '(SELECT CASE  WHEN p4.family_relate_ht_disease = '#39'Y'#39' THEN '#39'1'#39' wh' +
+        'en p4.family_parent_unknown_disease = '#39'Y'#39' THEN '#39'9'#39
+      'ELSE '#39'2'#39' END) AS HTFAMILY,'
+      'p2.body_weight AS WEIGHT,'
+      'p2.body_height AS HEIGHT,'
+      'p2.waist AS WAIST_CM,'
+      'p5.bps AS SBP_1,'
+      'p5.bpd AS DBP_1,'
+      'p6.bps AS SBP_2,'
+      'p6.bpd AS DBP_2,'
+      'p2.last_fgc AS BSLEVEL,'
+      '(SELECT CASE  '
+      'WHEN p2.last_fpg > '#39'0'#39' THEN '#39'1'#39' '
+      'WHEN p2.last_fgc > '#39'0'#39' THEN '#39'3'#39' '
+      'WHEN p2.ppg > '#39'0'#39' THEN '#39'2'#39' '
+      'WHEN p2.last_fgc_no_food_limit > '#39'0'#39' THEN '#39'4'#39
+      'END) AS BSTEST,'
+      '(SELECT hospitalcode FROM opdconfig) AS SCREENPLACE,'
+      
+        '(SELECT cid FROM doctor WHERE p2.doctor_code = `code`)AS PROVIDE' +
+        'R,'
+      
+        'IF( p1.last_screen_datetime  IS NULL OR TRIM(p1.last_screen_date' +
+        'time )='#39#39' OR p1.last_screen_datetime  LIKE '#39'0000-00-00%'#39','#39#39',DATE' +
+        '_FORMAT(p1.last_screen_datetime ,'#39'%Y%m%d%H%i%s'#39') ) AS D_UPDATE,'
+      'p3.cid AS CID,'
+      'p3.patient_hn as HN,'
+      'concat(p3.pname,p3.fname," ",p3.lname) as ptname,'
+      'p3.house_regist_type_id as typearea,'
+      'p3.person_discharge_id as discharge'
       ''
-      'FROM'
-      'person_labour psl'
-      'LEFT OUTER JOIN person p ON p.person_id = psl.person_id'
-      '#where p.birthdate BETWEEN 20160501 AND 20160530'
-      'where p.birthdate BETWEEN :date_start_text AND :date_end_text'
-      'ORDER BY psl.person_id')
+      'FROM person_dmht_screen_summary p1'
+      
+        'LEFT OUTER JOIN person_dmht_risk_screen_head p2 ON p1.person_dmh' +
+        't_screen_summary_id = p2.person_dmht_screen_summary_id '
+      'LEFT OUTER JOIN person p3 ON p1.person_id=p3.person_id'
+      
+        'LEFT OUTER JOIN person_dmht_nhso_screen p4 ON p1.person_dmht_scr' +
+        'een_summary_id=p4.person_dmht_screen_summary_id'
+      
+        'LEFT OUTER JOIN person_ht_risk_bp_screen p5 ON p5.person_dmht_ri' +
+        'sk_screen_head_id = p2.person_dmht_risk_screen_head_id AND p5.sc' +
+        'reen_no = 1'
+      
+        'LEFT OUTER JOIN person_ht_risk_bp_screen p6 ON p6.person_dmht_ri' +
+        'sk_screen_head_id = p2.person_dmht_risk_screen_head_id AND p6.sc' +
+        'reen_no = 2'
+      
+        'WHERE p1.person_dmht_screen_summary_id IN (SELECT DISTINCT perso' +
+        'n_dmht_screen_summary_id FROM person_dmht_risk_screen_head)'
+      'AND p1.status_active='#39'Y'#39' '
+      'AND p2.screen_date BETWEEN :date_start_text AND :date_end_text'
+      ''
+      '/*Design By TAKIS TEAM 28/02/2556*/')
     ReadOnly = True
     RefreshOptions = [roAfterInsert, roAfterUpdate, roBeforeEdit]
     Options.AutoRefresh = True
     Options.AutoRefreshInterval = 120
+    Active = True
     Left = 320
     Top = 168
     ParamData = <
@@ -482,8 +539,8 @@ object f43_newborn_form: Tf43_newborn_form
         Name = 'date_end_text'
       end>
   end
-  object Df43_newborn: TMyDataSource
-    DataSet = Qf43_newborn
+  object Df43_ncdscreen: TMyDataSource
+    DataSet = Qf43_ncdscreen
     Left = 424
     Top = 168
   end

@@ -404,7 +404,17 @@ object Rukai_from: TRukai_from
       'UPDATE person as p '
       'INNER JOIN patient as pt ON pt.hn = patient_hn'
       'SET p.pname = pt.pname'
-      'where p.pname != pt.pname')
+      'where p.pname != pt.pname;'
+      ''
+      'UPDATE person_wbc '
+      'SET force_complete_export = '#39'Y'#39','
+      'force_complete_date = person_wbc_regdate'
+      ''
+      'WHERE force_complete_export != '#39'Y'#39
+      'OR force_complete_date is null'
+      '#AND person_wbc_regdate BETWEEN 20161001 AND 20170930'
+      'AND person_wbc_regdate < DATE_ADD(NOW(), INTERVAL -1 MONTH)'
+      'AND person_wbc_regdate != "0000-00-00";')
     ParentFont = False
     PlainText = True
     ScrollBars = ssVertical

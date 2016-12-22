@@ -31,7 +31,6 @@ object main_u: Tmain_u
     TabOrder = 0
     TabStop = False
     object main_tab: TdxRibbonTab
-      Active = True
       Caption = 'MAIN'
       Groups = <
         item
@@ -50,6 +49,7 @@ object main_u: Tmain_u
       Index = 0
     end
     object f43_tab: TdxRibbonTab
+      Active = True
       Caption = 'F43'
       Groups = <
         item
@@ -780,10 +780,14 @@ object main_u: Tmain_u
         end
         item
           Visible = True
-          ItemName = 'btn_functional'
+          ItemName = 'btn_ncdscreen'
         end
         item
           BeginGroup = True
+          Visible = True
+          ItemName = 'school_btn'
+        end
+        item
           Visible = True
           ItemName = 'btn_specialpp'
         end
@@ -792,17 +796,17 @@ object main_u: Tmain_u
           ItemName = 'btn_rehab'
         end
         item
+          BeginGroup = True
+          Visible = True
+          ItemName = 'adl_btn'
+        end
+        item
           Visible = True
           ItemName = 'btn_admission'
         end
         item
-          BeginGroup = True
           Visible = True
-          ItemName = 'btn_ncdscreen'
-        end
-        item
-          Visible = True
-          ItemName = 'dxBarButton2'
+          ItemName = 'btn_functional'
         end>
       OneOnRow = True
       Row = 0
@@ -2676,9 +2680,9 @@ object main_u: Tmain_u
     object btn_ncdscreen: TdxBarButton
       Caption = 'Ncdscreen'
       Category = 0
-      Enabled = False
       Hint = 'Ncdscreen'
       Visible = ivAlways
+      OnClick = btn_ncdscreenClick
     end
     object btn_rehab: TdxBarButton
       Caption = 'Rehabiltation'
@@ -2690,9 +2694,9 @@ object main_u: Tmain_u
     object btn_icf: TdxBarButton
       Caption = 'Icf'
       Category = 0
-      Enabled = False
       Hint = 'Icf'
       Visible = ivAlways
+      OnClick = btn_icfClick
     end
     object btn_specialpp: TdxBarButton
       Caption = 'SpecialPP'
@@ -2711,9 +2715,9 @@ object main_u: Tmain_u
     object btn_disability: TdxBarButton
       Caption = 'Disability'
       Category = 0
-      Enabled = False
       Hint = 'Disability'
       Visible = ivAlways
+      OnClick = btn_disabilityClick
     end
     object btn_functional: TdxBarButton
       Caption = 'Functional'
@@ -3059,10 +3063,10 @@ object main_u: Tmain_u
       Hint = 'Nutrition'
       Visible = ivAlways
     end
-    object dxBarButton2: TdxBarButton
-      Caption = '                '
+    object school_btn: TdxBarButton
+      Caption = 'School'
       Category = 0
-      Hint = '                '
+      Hint = 'School'
       Visible = ivAlways
     end
     object dxBarButton5: TdxBarButton
@@ -3486,6 +3490,13 @@ object main_u: Tmain_u
         0000000000000000000000000000000000000000000000000000010101022B2F
         335C545D65B565727ADD69737EE25F6A73CE434A51911517192D000000000000
         0000000000000000000000000000000000000000000000000000}
+    end
+    object adl_btn: TdxBarButton
+      Caption = 'ADL'
+      Category = 0
+      Enabled = False
+      Hint = 'ADL'
+      Visible = ivAlways
     end
   end
   object data_main: TMyDataSource

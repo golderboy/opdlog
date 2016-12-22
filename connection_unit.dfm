@@ -157,7 +157,6 @@ object connection_form: Tconnection_form
     Font.Style = [fsBold]
     ParentFont = False
     ImageIndex = 0
-    ExplicitWidth = 786
   end
   object Panel1: TPanel
     Left = 0
@@ -166,7 +165,6 @@ object connection_form: Tconnection_form
     Height = 58
     Align = alBottom
     TabOrder = 14
-    ExplicitWidth = 786
     DesignSize = (
       822
       58)
@@ -179,7 +177,6 @@ object connection_form: Tconnection_form
       Caption = 'save'
       TabOrder = 0
       OnClick = save_btnClick
-      ExplicitLeft = 674
     end
   end
   object host: TcxTextEdit
@@ -303,7 +300,7 @@ object connection_form: Tconnection_form
   end
   object pass_opd: TcxTextEdit
     Left = 640
-    Top = 247
+    Top = 251
     Properties.EchoMode = eemPassword
     TabOrder = 18
     Text = 'pass_slave'

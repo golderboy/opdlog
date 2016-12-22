@@ -58,18 +58,18 @@ uses
   f43_labfu_f in 'f43_labfu_f.pas' {f43_labfu_form},
   pt_pe_f in 'pt_pe_f.pas' {pt_pe_form},
   new_patient_f in 'new_patient_f.pas' {new_patient_form},
-  account_lost_f in 'account_lost_f.pas' {account_lost_form};
+  account_lost_f in 'account_lost_f.pas' {account_lost_form},
+  f43_disability_f in 'f43_disability_f.pas' {f43_disability_from},
+  f43_icf_f in 'f43_icf_f.pas' {f43_icf_form},
+  f43_ncdscreen_f in 'f43_ncdscreen_f.pas' {f43_ncdscreen_form};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+  Application.CreateForm(Tdb_connect_m, db_connect_m);
   Application.CreateForm(Tlogin_form, login_form);
   Application.CreateForm(Tconnection_form, connection_form);
-  Application.CreateForm(Tdb_connect_m, db_connect_m);
-  Application.CreateForm(Tpt_pe_form, pt_pe_form);
-  Application.CreateForm(Tnew_patient_form, new_patient_form);
-  Application.CreateForm(Taccount_lost_form, account_lost_form);
   Application.Run;
 end.

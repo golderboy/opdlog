@@ -222,6 +222,15 @@
 			<DCCReference Include="account_lost_f.pas">
 				<Form>account_lost_form</Form>
 			</DCCReference>
+			<DCCReference Include="f43_disability_f.pas">
+				<Form>f43_disability_from</Form>
+			</DCCReference>
+			<DCCReference Include="f43_icf_f.pas">
+				<Form>f43_icf_form</Form>
+			</DCCReference>
+			<DCCReference Include="f43_ncdscreen_f.pas">
+				<Form>f43_ncdscreen_form</Form>
+			</DCCReference>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>

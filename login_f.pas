@@ -24,7 +24,7 @@ type
     password_t: TcxTextEdit;
     memo_t: TcxMemo;
     Qopd_admin: TMyQuery;
-    version: TcxTextEdit;
+    version_text: TcxLabel;
     procedure login_bitClick(Sender: TObject);
     procedure RzBitBtn1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -79,16 +79,6 @@ begin
       memo_t.Visible := false;
       db_connect_m.connect_db.Connected := false;
 
-      if db_connect_m.connect_db.Connected then
-      begin
-         login_bit.Enabled := false
-      end
-      else
-      begin
-          login_bit.Enabled := True
-      end;
-
-
 //      if fileexists('D:\opd_log.ini') then
 //         begin
          db_connect_m.connect_db.Server := connection_form.host.Text;
@@ -97,25 +87,38 @@ begin
          db_connect_m.connect_db.Password := connection_form.pass.Text;
          db_connect_m.connect_db.Port := connection_form.Port.Value;
          db_connect_m.connect_db.Options.Charset := 'tis620';
+
+         db_connect_m.connect_slave.Server := connection_form.host_slave.Text;
+         db_connect_m.connect_slave.Database := connection_form.database_slave.Text;
+         db_connect_m.connect_slave.Username := connection_form.user_slave.Text;
+         db_connect_m.connect_slave.Password := connection_form.pass_slave.Text;
+         db_connect_m.connect_slave.Port := connection_form.port_slave.Value;
+         db_connect_m.connect_slave.Options.Charset := 'tis620';
+
+         db_connect_m.connect_opd.Server := connection_form.host_opd.Text;
+         db_connect_m.connect_opd.Database := connection_form.database_opd.Text;
+         db_connect_m.connect_opd.Username := connection_form.user_opd.Text;
+         db_connect_m.connect_opd.Password := connection_form.pass_opd.Text;
+         db_connect_m.connect_opd.Port := connection_form.Port_opd.Value;
+         db_connect_m.connect_opd.Options.Charset := 'tis620';
+
          try
          db_connect_m.connect_db.Connected := true;
-         if db_connect_m.connect_db.Connected then
-            begin
-            showmessage('Connect ok..');
-
-              if version.Text <> db_connect_m.Qversion.FieldByName('version').AsString then
-                  begin
-                    showmessage('OPDLOG IS Low Version.');
-                  end;
-
-            end;
+           if db_connect_m.connect_db.Connected then
+              begin
+              showmessage('Connect ok..');
+              end;
          except
            on e : exception do
               begin
              showmessage('False Connect!!'+e.Message);
+                  connection_form := Tconnection_form.Create(application);
+                  connection_form.ShowModal;
+                  connection_form.Free;
               end;
          end;
 //   end;
+
 
 end;
 
@@ -135,9 +138,9 @@ begin
     if  Qopd_admin.RecordCount > 0 then
           begin
             showmessage (' Login ADMIN ...OK');
-//
+        db_connect_m.connect_opd.Connected := true;
         db_connect_m.Qlog.sql.text := 'Insert into log_opd(log_id,log_date,log_user,log_status,log_sql) '+
-             '  values("",now(),"'+username_t.text+'","login",'+QuotedStr(Qopd_admin.sql.text)+' )   ';
+            '  values("",now(),"'+username_t.text+'","login",'+QuotedStr(Qopd_admin.sql.text)+' )   ';
     //showmessage(Qlog.sql.text);
     db_connect_m.Qlog.ExecSQL;
 //
@@ -159,7 +162,7 @@ begin
                   begin
                     showmessage (' Login USER ...OK');
 
-    //
+        db_connect_m.connect_opd.Connected := true;
         db_connect_m.Qlog.sql.text := 'Insert into log_opd(log_id,log_date,log_user,log_status,log_sql) '+
              '  values("",now(),"'+username_t.text+'","login",'+QuotedStr(Qopd_user.sql.text)+' )   ';
     //showmessage(db_connect_m.Qlog.sql.text);

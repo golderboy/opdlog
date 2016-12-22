@@ -22,7 +22,7 @@ object f43_postnatal_form: Tf43_postnatal_form
     Left = 0
     Top = 0
     Width = 772
-    Height = 49
+    Height = 33
     Align = alTop
     Caption = 'POSTNATAL'
     Font.Charset = DEFAULT_CHARSET
@@ -35,11 +35,12 @@ object f43_postnatal_form: Tf43_postnatal_form
   end
   object Panel2: TPanel
     Left = 0
-    Top = 49
+    Top = 33
     Width = 772
     Height = 41
     Align = alTop
     TabOrder = 1
+    ExplicitTop = 49
     DesignSize = (
       772
       41)
@@ -266,9 +267,9 @@ object f43_postnatal_form: Tf43_postnatal_form
   object show_visit: TcxGrid
     AlignWithMargins = True
     Left = 3
-    Top = 93
+    Top = 77
     Width = 766
-    Height = 421
+    Height = 437
     Align = alClient
     Font.Charset = THAI_CHARSET
     Font.Color = clWindowText
@@ -277,6 +278,8 @@ object f43_postnatal_form: Tf43_postnatal_form
     Font.Style = []
     ParentFont = False
     TabOrder = 3
+    ExplicitTop = 93
+    ExplicitHeight = 421
     object show_visitDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = Df43_postnatal

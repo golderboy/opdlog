@@ -101,6 +101,18 @@ object login_form: Tlogin_form
         57E8E8E8E8E8E8E8E8E8E8E8E8AC818181E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
     end
+    object version_text: TcxLabel
+      Left = 8
+      Top = 13
+      Caption = 'v.20161216'
+      ParentFont = False
+      Style.Font.Charset = THAI_CHARSET
+      Style.Font.Color = clWindowText
+      Style.Font.Height = -21
+      Style.Font.Name = 'TH SarabunPSK'
+      Style.Font.Style = []
+      Style.IsFontAssigned = True
+    end
   end
   object cxLabel1: TcxLabel
     Left = 56
@@ -258,15 +270,6 @@ object login_form: Tlogin_form
     TabOrder = 8
     Height = 102
     Width = 497
-  end
-  object version: TcxTextEdit
-    Left = 392
-    Top = 8
-    Enabled = False
-    TabOrder = 9
-    Text = '20161121'
-    Visible = False
-    Width = 121
   end
   object Qopd_user: TMyQuery
     Connection = db_connect_m.connect_db

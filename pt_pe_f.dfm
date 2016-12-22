@@ -12,6 +12,7 @@ object pt_pe_form: Tpt_pe_form
   Font.Style = []
   OldCreateOrder = False
   WindowState = wsMaximized
+  OnShow = FormShow
   DesignSize = (
     785
     539)
@@ -31,8 +32,6 @@ object pt_pe_form: Tpt_pe_form
     Font.Style = [fsBold]
     ParentFont = False
     ImageIndex = 0
-    ExplicitLeft = -13
-    ExplicitWidth = 781
   end
   object Panel2: TPanel
     Left = 0
@@ -41,8 +40,6 @@ object pt_pe_form: Tpt_pe_form
     Height = 41
     Align = alTop
     TabOrder = 1
-    ExplicitLeft = -13
-    ExplicitWidth = 781
     DesignSize = (
       785
       41)
@@ -121,7 +118,6 @@ object pt_pe_form: Tpt_pe_form
         5E5E5E5E5E5E5E5EE8E8E8E8E8E8E8E2E2E2E2E2E2E2E2E2E8E8E8E8E8E8E8E8
         E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 736
     end
     object post_date_btn2: TRzBitBtn
       Left = 643
@@ -183,7 +179,6 @@ object pt_pe_form: Tpt_pe_form
         AD82ADE6E6E68882ADE8E8E8E8E8E8E8E381E3ACACACE281E3E8E8E8E8E8E8E8
         E8E38882828282E3E8E8E8E8E8E8E8E8E8E3E281818181E3E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 626
     end
   end
   object Panel1: TPanel
@@ -193,9 +188,6 @@ object pt_pe_form: Tpt_pe_form
     Height = 27
     Align = alBottom
     TabOrder = 2
-    ExplicitLeft = -13
-    ExplicitTop = 511
-    ExplicitWidth = 781
     DesignSize = (
       785
       27)
@@ -258,7 +250,6 @@ object pt_pe_form: Tpt_pe_form
         57A2A2A2E8E8E8E8E8E8E8DE8181DED781818181E8E8E8E8E8E8E8E8E8AC8257
         57E8E8E8E8E8E8E8E8E8E8E8E8AC818181E8E8E8E8E8E8E8E8E8}
       NumGlyphs = 2
-      ExplicitLeft = 703
     end
     object cxLabel1: TcxLabel
       Left = 40
@@ -285,9 +276,6 @@ object pt_pe_form: Tpt_pe_form
     Font.Style = []
     ParentFont = False
     TabOrder = 3
-    ExplicitLeft = -7
-    ExplicitWidth = 775
-    ExplicitHeight = 431
     object cxGridDBTableView1: TcxGridDBTableView
       Navigator.Buttons.CustomButtons = <>
       DataController.DataSource = DPt_pe
@@ -489,7 +477,7 @@ object pt_pe_form: Tpt_pe_form
       '#AND v.vstdate BETWEEN 20160901 AND 20160930'
       ');'
       ''
-      'SELECT * from temp_person_patient ;')
+      'SELECT * from temp_person_patient group by hn ;')
     ReadOnly = True
     RefreshOptions = [roAfterInsert, roAfterUpdate, roBeforeEdit]
     Options.AutoRefresh = True

@@ -154,7 +154,7 @@ type
     dxBarButton46: TdxBarButton;
     dxBarButton47: TdxBarButton;
     btn_nutrition: TdxBarButton;
-    dxBarButton2: TdxBarButton;
+    school_btn: TdxBarButton;
     dxBarButton5: TdxBarButton;
     main_ribbonTab2: TdxRibbonTab;
     BarManagerBar6: TdxBar;
@@ -164,6 +164,7 @@ type
     dxBarLargeButton19: TdxBarLargeButton;
     dxBarLargeButton20: TdxBarLargeButton;
     dxBarLargeButton21: TdxBarLargeButton;
+    adl_btn: TdxBarButton;
     procedure dxBarLargeButton3Click(Sender: TObject);
     procedure connect_btnClick(Sender: TObject);
     procedure dxBarLargeButton6Click(Sender: TObject);
@@ -225,6 +226,9 @@ type
     procedure dxBarLargeButton19Click(Sender: TObject);
     procedure dxBarLargeButton20Click(Sender: TObject);
     procedure dxBarLargeButton21Click(Sender: TObject);
+    procedure btn_disabilityClick(Sender: TObject);
+    procedure btn_icfClick(Sender: TObject);
+    procedure btn_ncdscreenClick(Sender: TObject);
 
 
   private
@@ -249,7 +253,8 @@ uses  db_connect_module, connection_unit, blood_mian_f,
   Qtarget_person_f, report_r506_f, Qtarget_60y_f,
   Qtarget_35_60y_f, Qtarget_ncd_f, f43_accident_f, f43_servillance_f,
   f43_death_f, f43_drugal_f, f43_dental_f, show_money_f, chk_patient_f,
-  chk_diag_f, miniEMR_f, f43_labfu_f, pt_pe_f, new_patient_f, account_lost_f;
+  chk_diag_f, miniEMR_f, f43_labfu_f, pt_pe_f, new_patient_f, account_lost_f,
+  f43_disability_f, f43_icf_f, f43_ncdscreen_f;
 
 {$R *.dfm}
 
@@ -279,6 +284,13 @@ begin
     f43_prenatal_form   := Tf43_prenatal_form.Create(application);
     f43_prenatal_form.ShowModal;
     f43_prenatal_form.Free
+end;
+
+procedure Tmain_u.btn_ncdscreenClick(Sender: TObject);
+begin
+    f43_ncdscreen_form   := Tf43_ncdscreen_form.Create(application);
+    f43_ncdscreen_form.ShowModal;
+    f43_ncdscreen_form.Free
 end;
 
 procedure Tmain_u.btn_newborncareClick(Sender: TObject);
@@ -328,6 +340,13 @@ begin
     f43_dental_form   := Tf43_dental_form.Create(application);
     f43_dental_form.ShowModal;
     f43_dental_form.Free
+end;
+
+procedure Tmain_u.btn_disabilityClick(Sender: TObject);
+begin
+    f43_disability_from   := Tf43_disability_from.Create(application);
+    f43_disability_from.ShowModal;
+    f43_disability_from.Free
 end;
 
 procedure Tmain_u.btn_drugallergyClick(Sender: TObject);
@@ -454,6 +473,13 @@ begin
     f43_fp_form := Tf43_fp_form.Create(application);
     f43_fp_form.ShowModal;
     f43_fp_form.Free;
+end;
+
+procedure Tmain_u.btn_icfClick(Sender: TObject);
+begin
+    f43_icf_form := Tf43_icf_form.Create(application);
+    f43_icf_form.ShowModal;
+    f43_icf_form.Free;
 end;
 
 procedure Tmain_u.btn_laborClick(Sender: TObject);

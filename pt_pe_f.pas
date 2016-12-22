@@ -75,6 +75,7 @@ type
       AViewInfo: TcxGridTableDataCellViewInfo; var ADone: Boolean);
     procedure RzBitBtn1Click(Sender: TObject);
     procedure post_date_btn2Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -177,6 +178,12 @@ begin
        // if VarToStr(AViewInfo.GridRecord.Values[20]) = '%Pname not match,%' then
         Acanvas.brush.Color := clRed ;
       end;
+end;
+
+procedure Tpt_pe_form.FormShow(Sender: TObject);
+begin
+  date_start_text.Date := now;
+  date_end_text.Date   := now;
 end;
 
 procedure Tpt_pe_form.post_date_btn2Click(Sender: TObject);
