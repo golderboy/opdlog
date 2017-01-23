@@ -414,7 +414,19 @@ object Rukai_from: TRukai_from
       'OR force_complete_date is null'
       '#AND person_wbc_regdate BETWEEN 20161001 AND 20170930'
       'AND person_wbc_regdate < DATE_ADD(NOW(), INTERVAL -1 MONTH)'
-      'AND person_wbc_regdate != "0000-00-00";')
+      'AND person_wbc_regdate != "0000-00-00";'
+      ''
+      'UPDATE  person_anc'
+      'SET force_complete_date = labor_date,'
+      'force_complete_export = "Y"'
+      'WHERE labor_status_id in (1,2)'
+      'AND force_complete_export is null;'
+      ''
+      'UPDATE  person_anc'
+      'SET force_complete_date = CURDATE()'
+      ''
+      'WHERE labor_status_id in (1,2)'
+      'AND force_complete_date is null;')
     ParentFont = False
     PlainText = True
     ScrollBars = ssVertical

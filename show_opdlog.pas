@@ -132,6 +132,7 @@ begin
   Qshow_opdscreen.Params.ParamValues['date_start_text']:=StrToDate(FormatDateTime('dd/mm/yyyy',date_start_text.Date));
   Qshow_opdscreen.Params.ParamValues['date_end_text']:=StrToDate(FormatDateTime('dd/mm/yyyy',date_end_text.Date));
   Qshow_opdscreen.Params.ParamValues['room']:= room_chk.Text;
+
   Qshow_opdscreen.Open;
   record_count.Caption :=  IntToStr(Qshow_opdscreen.RecordCount);
 end;

@@ -132,7 +132,7 @@ begin
     ' from opduser '+
     ' where loginname = "'+username_t.text+'" '+
     ' and passweb = "'+pwd+'" '+
-    ' and account_disable = "N" '+
+    ' and account_disable != "Y"  '+
     ' and groupname Like "%¼Ùé´ÙáÅÃĞºº%" ';
   Qopd_admin.Open;
     if  Qopd_admin.RecordCount > 0 then
@@ -156,7 +156,7 @@ begin
         ' from opduser '+
         ' where loginname = "'+username_t.text+'" '+
         ' and passweb = "'+pwd+'" '+
-        ' and account_disable = "N" ';
+        ' and account_disable != "Y" ';
       Qopd_user.Open;
            if  Qopd_user.RecordCount > 0 then
                   begin

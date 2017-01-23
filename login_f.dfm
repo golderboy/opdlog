@@ -104,7 +104,7 @@ object login_form: Tlogin_form
     object version_text: TcxLabel
       Left = 8
       Top = 13
-      Caption = 'v.20161216'
+      Caption = 'v.20170120'
       ParentFont = False
       Style.Font.Charset = THAI_CHARSET
       Style.Font.Color = clWindowText

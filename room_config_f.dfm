@@ -73,7 +73,7 @@ object room_config_from: Troom_config_from
   object opd_chk: TcxTextEdit
     Left = 40
     Top = 96
-    Properties.MaxLength = 4
+    Properties.MaxLength = 3
     TabOrder = 3
     Text = '000'
     Width = 121
